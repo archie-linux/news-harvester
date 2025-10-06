@@ -1,0 +1,1196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Security News Scraping Results - 2025-08-27 10:58</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+        
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+        
+        .header .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            margin-bottom: 20px;
+        }
+        
+        .stats {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 20px;
+        }
+        
+        .stat-item {
+            text-align: center;
+        }
+        
+        .stat-number {
+            font-size: 2rem;
+            font-weight: bold;
+            display: block;
+        }
+        
+        .stat-label {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+        
+        .content {
+            padding: 40px;
+        }
+        
+        .site-section {
+            margin-bottom: 50px;
+        }
+        
+        .site-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid #f0f0f0;
+        }
+        
+        .site-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            margin-right: 15px;
+            font-size: 1.2rem;
+        }
+        
+        .site-name {
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: #2c3e50;
+            flex: 1;
+        }
+        
+        .article-count {
+            background: #e74c3c;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+        
+        .articles-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 25px;
+        }
+        
+        .article-card {
+            background: #fff;
+            border: 1px solid #e0e0e0;
+            border-radius: 15px;
+            padding: 25px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .article-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+            border-color: #667eea;
+        }
+        
+        .article-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        
+        .article-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 12px;
+            line-height: 1.4;
+        }
+        
+        .article-title a {
+            color: inherit;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .article-title a:hover {
+            color: #667eea;
+        }
+        
+        .article-summary {
+            color: #666;
+            margin-bottom: 15px;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+        
+        .article-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.85rem;
+            color: #999;
+            border-top: 1px solid #f0f0f0;
+            padding-top: 15px;
+        }
+        
+        .article-author {
+            font-weight: 500;
+            color: #667eea;
+        }
+        
+        .article-date {
+            opacity: 0.8;
+        }
+        
+        .no-articles {
+            text-align: center;
+            color: #999;
+            font-style: italic;
+            padding: 40px;
+            background: #f9f9f9;
+            border-radius: 10px;
+        }
+        
+        .footer {
+            background: #f8f9fa;
+            padding: 30px;
+            text-align: center;
+            color: #666;
+            border-top: 1px solid #e0e0e0;
+        }
+        
+        .footer p {
+            margin-bottom: 10px;
+        }
+        
+        .footer .timestamp {
+            font-weight: 600;
+            color: #333;
+        }
+        
+        /* Security-specific styling */
+        .security-theme .header {
+            background: linear-gradient(135deg, #c0392b 0%, #8e44ad 100%);
+        }
+        
+        .security-theme .site-icon {
+            background: linear-gradient(135deg, #c0392b 0%, #8e44ad 100%);
+        }
+        
+        .security-theme .article-card::before {
+            background: linear-gradient(135deg, #c0392b 0%, #8e44ad 100%);
+        }
+        
+        .security-theme .article-title a:hover {
+            color: #c0392b;
+        }
+        
+        .security-theme .article-author {
+            color: #c0392b;
+        }
+        
+        /* Combined theme styling */
+        .combined-theme .header {
+            background: linear-gradient(135deg, #2c3e50 0%, #3498db 50%, #9b59b6 100%);
+        }
+        
+        .combined-theme .site-icon {
+            background: linear-gradient(135deg, #2c3e50 0%, #9b59b6 100%);
+        }
+        
+        .tech-prefix .site-icon {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        
+        .security-prefix .site-icon {
+            background: linear-gradient(135deg, #c0392b 0%, #8e44ad 100%);
+        }
+        
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2rem;
+            }
+            
+            .stats {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .content {
+                padding: 20px;
+            }
+            
+            .articles-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .site-header {
+                flex-direction: column;
+                text-align: center;
+                gap: 15px;
+            }
+        }
+        
+        /* Enhanced animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .article-card {
+            animation: fadeInUp 0.6s ease-out;
+        }
+        
+        .article-card:nth-child(even) {
+            animation-delay: 0.1s;
+        }
+        
+        .article-card:nth-child(3n) {
+            animation-delay: 0.2s;
+        }
+        
+        /* Loading state */
+        .loading {
+            text-align: center;
+            padding: 40px;
+            color: #666;
+        }
+        
+        .loading::after {
+            content: '...';
+            animation: dots 2s infinite;
+        }
+        
+        @keyframes dots {
+            0%, 20% { content: '.'; }
+            40% { content: '..'; }
+            60%, 100% { content: '...'; }
+        }
+        
+        /* Enhanced hover effects */
+        .article-card:hover .article-title a {
+            text-shadow: 0 2px 4px rgba(102, 126, 234, 0.3);
+        }
+        
+        /* Status indicators */
+        .status-indicator {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #27ae60;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(39, 174, 96, 0.7); }
+            70% { box-shadow: 0 0 0 10px rgba(39, 174, 96, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(39, 174, 96, 0); }
+        }
+        
+        /* Dark mode support */
+        @media (prefers-color-scheme: dark) {
+            body {
+                background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            }
+            
+            .container {
+                background: #2c3e50;
+                color: #ecf0f1;
+            }
+            
+            .article-card {
+                background: #34495e;
+                border-color: #4a6741;
+                color: #ecf0f1;
+            }
+            
+            .article-title {
+                color: #ecf0f1;
+            }
+            
+            .article-summary {
+                color: #bdc3c7;
+            }
+            
+            .no-articles {
+                background: #34495e;
+                color: #bdc3c7;
+            }
+        }
+    </style>
+</head>
+<body class="security-theme">
+    <div class="container">
+        <div class="header">
+            <h1>🔒 Cybersecurity News Scraping Results</h1>
+            <div class="subtitle">Latest cybersecurity articles from top security news sources</div>
+            <div class="stats">
+                <div class="stat-item">
+                    <span class="stat-number">50</span>
+                    <span class="stat-label">Total Articles</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">15</span>
+                    <span class="stat-label">Sources</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">10:58</span>
+                    <span class="stat-label">Generated</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="content">
+            
+            <div class="site-section ">
+                <div class="site-header">
+                    <div class="site-icon">T</div>
+                    <h2 class="site-name">🔒 Thehackernews</h2>
+                    <div class="article-count">4 articles</div>
+                </div>
+<div class="articles-grid">
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://thehackernews.uk/grc-maturity-assessment-3" target="_blank" rel="noopener noreferrer">
+                                FREE GRC Maturity Assessment in 15 MinutesUnlock Your GRC Maturity Score. Get Expert Insights and Peer Benchmark Report.
+                            </a>
+                        </h3>
+                        <div class="article-summary">No summary available.</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Aug 27, 2025 at 10:56</span>
+                        </div>
+                    </div>
+
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://thehackernews.uk/sans-business-value" target="_blank" rel="noopener noreferrer">
+                                Cyber Training That Pays Off — In Speed and SavingsSANS-trained teams detect threats 4.2x faster and save millions.
+                            </a>
+                        </h3>
+                        <div class="article-summary">No summary available.</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Aug 27, 2025 at 10:56</span>
+                        </div>
+                    </div>
+
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://thehackernews.uk/5-reasons-remote-support" target="_blank" rel="noopener noreferrer">
+                                A Practical Guide to Maturing Your PAM ProgramTake a PAM Maturity Test and gain expert guidance for your journey to reduce risk.
+                            </a>
+                        </h3>
+                        <div class="article-summary">No summary available.</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Aug 27, 2025 at 10:56</span>
+                        </div>
+                    </div>
+
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://thehackernews.uk/ctem-5-stages-guide-native" target="_blank" rel="noopener noreferrer">
+                                Discover How to Make CTEM a Reality in 2025: Download Your Guide Now!Ensure CTEM success! Download our ebook for practical tips on using XM Cyber to implement your exposure management strategy.
+                            </a>
+                        </h3>
+                        <div class="article-summary">No summary available.</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Aug 27, 2025 at 10:56</span>
+                        </div>
+                    </div>
+</div></div>
+            <div class="site-section ">
+                <div class="site-header">
+                    <div class="site-icon">C</div>
+                    <h2 class="site-name">🔒 Csoonline</h2>
+                    <div class="article-count">3 articles</div>
+                </div>
+<div class="articles-grid">
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://www.csoonline.com/article/4044730/disgruntled-developer-gets-four-year-sentence-for-revenge-attack-on-employers-network.html" target="_blank" rel="noopener noreferrer">
+                                newsDisgruntled developer gets four-year sentence for revenge attack on employer’s networkDavis Lu hid a ‘logic bomb’ inside his employer’s network that deleted the Active Directory profiles of other employees when his ID was revoked.By John E. Dunn22 Aug 20255 minsActive DirectoryCybercrimeHacking
+                            </a>
+                        </h3>
+                        <div class="article-summary">Davis Lu hid a ‘logic bomb’ inside his employer’s network that deleted the Active Directory profiles of other employees when his ID was revoked.</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Aug 27, 2025 at 10:57</span>
+                        </div>
+                    </div>
+
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://www.csoonline.com/article/4044730/disgruntled-developer-gets-four-year-sentence-for-revenge-attack-on-employers-network.html" target="_blank" rel="noopener noreferrer">
+                                newsDisgruntled developer gets four-year sentence for revenge attack on employer’s networkDavis Lu hid a ‘logic bomb’ inside his employer’s network that deleted the Active Directory profiles of other employees when his ID was revoked.By John E. Dunn22 Aug 20255 minsActive DirectoryCybercrimeHacking
+                            </a>
+                        </h3>
+                        <div class="article-summary">Davis Lu hid a ‘logic bomb’ inside his employer’s network that deleted the Active Directory profiles of other employees when his ID was revoked.</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Aug 27, 2025 at 10:57</span>
+                        </div>
+                    </div>
+
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://www.csoonline.com/article/4044730/disgruntled-developer-gets-four-year-sentence-for-revenge-attack-on-employers-network.html" target="_blank" rel="noopener noreferrer">
+                                newsDisgruntled developer gets four-year sentence for revenge attack on employer’s networkDavis Lu hid a ‘logic bomb’ inside his employer’s network that deleted the Active Directory profiles of other employees when his ID was revoked.By John E. Dunn22 Aug 20255 minsActive DirectoryCybercrimeHacking
+                            </a>
+                        </h3>
+                        <div class="article-summary">Davis Lu hid a ‘logic bomb’ inside his employer’s network that deleted the Active Directory profiles of other employees when his ID was revoked.</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Aug 27, 2025 at 10:57</span>
+                        </div>
+                    </div>
+</div></div>
+            <div class="site-section ">
+                <div class="site-header">
+                    <div class="site-icon">D</div>
+                    <h2 class="site-name">🔒 Darkreading</h2>
+                    <div class="article-count">1 articles</div>
+                </div>
+<div class="articles-grid">
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://www.darkreading.com/cyberattacks-data-breaches/interpol-operation-serengeti-2-0" target="_blank" rel="noopener noreferrer">
+                                Interpol Arrests Over 1K Cybercriminals in 'Operation Serengeti 2.0'
+                            </a>
+                        </h3>
+                        <div class="article-summary">No summary available.</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Aug 27, 2025 at 10:57</span>
+                        </div>
+                    </div>
+</div></div>
+            <div class="site-section ">
+                <div class="site-header">
+                    <div class="site-icon">S</div>
+                    <h2 class="site-name">🔒 Securityweek</h2>
+                    <div class="article-count">1 articles</div>
+                </div>
+<div class="articles-grid">
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://www.securityweek.com/beyond-the-prompt-building-trustworthy-agent-systems/" target="_blank" rel="noopener noreferrer">
+                                Beyond the Prompt: Building Trustworthy Agent Systems
+                            </a>
+                        </h3>
+                        <div class="article-summary">Building secure AI agent systems requires a disciplined engineering approach focused on deliberate architecture and human oversight.</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Aug 27, 2025 at 10:57</span>
+                        </div>
+                    </div>
+</div></div>
+            <div class="site-section ">
+                <div class="site-header">
+                    <div class="site-icon">I</div>
+                    <h2 class="site-name">🔒 Infosecurity-Magazine</h2>
+                    <div class="article-count">5 articles</div>
+                </div>
+<div class="articles-grid">
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://www.infosecurity-magazine.com/news/android-trojan-expands-ransomware/" target="_blank" rel="noopener noreferrer">
+                                New Android Trojan Variant Expands with Ransomware Tactics
+                            </a>
+                        </h3>
+                        <div class="article-summary">No summary available.</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Aug 27, 2025 at 10:57</span>
+                        </div>
+                    </div>
+
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://www.infosecurity-magazine.com/news/phishing-upcrypter-deploy-rat/" target="_blank" rel="noopener noreferrer">
+                                Phishing Campaign Uses UpCrypter to Deploy Remote Access Tools
+                            </a>
+                        </h3>
+                        <div class="article-summary">No summary available.</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Aug 27, 2025 at 10:57</span>
+                        </div>
+                    </div>
+
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://www.infosecurity-magazine.com/news/us-maryland-cyber-incident/" target="_blank" rel="noopener noreferrer">
+                                US: Maryland Confirms Cyber Incident Affecting State Transport Systems
+                            </a>
+                        </h3>
+                        <div class="article-summary">All previously scheduled mobility trips across Maryland for this week will be honored, said the state’s transportation administration</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Aug 27, 2025 at 10:57</span>
+                        </div>
+                    </div>
+
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://www.infosecurity-magazine.com/news/ciisec-security-professionals/" target="_blank" rel="noopener noreferrer">
+                                CIISec: Most Security Professionals Want Stricter Regulations
+                            </a>
+                        </h3>
+                        <div class="article-summary">A new CIISec poll finds the majority of industry professionals would prefer more rigorous cybersecurity laws</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Aug 27, 2025 at 10:57</span>
+                        </div>
+                    </div>
+
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://www.infosecurity-magazine.com/news/tech-manufacturer-data-io-hit-by/" target="_blank" rel="noopener noreferrer">
+                                Tech Manufacturer Data I/O Hit by Ransomware
+                            </a>
+                        </h3>
+                        <div class="article-summary">No summary available.</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Aug 27, 2025 at 10:57</span>
+                        </div>
+                    </div>
+</div></div>
+            <div class="site-section ">
+                <div class="site-header">
+                    <div class="site-icon">K</div>
+                    <h2 class="site-name">🔒 Krebsonsecurity</h2>
+                    <div class="article-count">5 articles</div>
+                </div>
+<div class="articles-grid">
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://krebsonsecurity.com/2025/08/dslroot-proxies-and-the-threat-of-legal-botnets/" target="_blank" rel="noopener noreferrer">
+                                DSLRoot, Proxies, and the Threat of ‘Legal Botnets’
+                            </a>
+                        </h3>
+                        <div class="article-summary">The cybersecurity community onRedditresponded in disbelief this month when a self-described Air National Guard member with top secret security clearance began questioning the arrangement they’d made w...</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Aug 27, 2025 at 10:57</span>
+                        </div>
+                    </div>
+
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://krebsonsecurity.com/2025/08/sim-swapper-scattered-spider-hacker-gets-10-years/" target="_blank" rel="noopener noreferrer">
+                                SIM-Swapper, Scattered Spider Hacker Gets 10 Years
+                            </a>
+                        </h3>
+                        <div class="article-summary">A 20-year-old Florida man at the center of a prolific cybercrime group known as “Scattered Spider” was sentenced to 10 years in federal prison today, and ordered to pay roughly $13 million in restitut...</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Aug 27, 2025 at 10:57</span>
+                        </div>
+                    </div>
+
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://krebsonsecurity.com/2025/08/oregon-man-charged-in-rapper-bot-ddos-service/" target="_blank" rel="noopener noreferrer">
+                                Oregon Man Charged in ‘Rapper Bot’ DDoS Service
+                            </a>
+                        </h3>
+                        <div class="article-summary">A 22-year-old Oregon man has been arrested on suspicion of operating “Rapper Bot,” a massive botnet used to power a service for launching distributed denial-of-service (DDoS) attacks against targets —...</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Aug 27, 2025 at 10:57</span>
+                        </div>
+                    </div>
+
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://krebsonsecurity.com/2025/08/mobile-phishers-target-brokerage-accounts-in-ramp-and-dump-cashout-scheme/" target="_blank" rel="noopener noreferrer">
+                                Mobile Phishers Target Brokerage Accounts in ‘Ramp and Dump’ Cashout Scheme
+                            </a>
+                        </h3>
+                        <div class="article-summary">Cybercriminal groups peddling sophisticated phishing kits that convert stolen card data into mobile wallets have recently shifted their focus to targeting customers of brokerage services, new research...</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Aug 27, 2025 at 10:57</span>
+                        </div>
+                    </div>
+
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://krebsonsecurity.com/2025/08/microsoft-patch-tuesday-august-2025-edition/" target="_blank" rel="noopener noreferrer">
+                                Microsoft Patch Tuesday, August 2025 Edition
+                            </a>
+                        </h3>
+                        <div class="article-summary">Microsofttoday released updates to fix more than 100 security flaws in itsWindowsoperating systems and other software. At least 13 of the bugs received Microsoft’s most-dire “critical” rating, meaning...</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Aug 27, 2025 at 10:57</span>
+                        </div>
+                    </div>
+</div></div>
+            <div class="site-section ">
+                <div class="site-header">
+                    <div class="site-icon">T</div>
+                    <h2 class="site-name">🔒 Threatpost</h2>
+                    <div class="article-count">5 articles</div>
+                </div>
+<div class="articles-grid">
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://threatpost.com/student-loan-breach-exposes-2-5m-records/180492/" target="_blank" rel="noopener noreferrer">
+                                Student Loan Breach Exposes 2.5M Records
+                            </a>
+                        </h3>
+                        <div class="article-summary">2.5 million people were affected, in a breach that could spell more trouble down the line.</div>
+                        <div class="article-meta">
+                            <span class="article-author">By byNate Nelson</span>
+                            <span class="article-date">Aug 27, 2025 at 10:57</span>
+                        </div>
+                    </div>
+
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://threatpost.com/watering-hole-attacks-push-scanbox-keylogger/180490/" target="_blank" rel="noopener noreferrer">
+                                Watering Hole Attacks Push ScanBox Keylogger
+                            </a>
+                        </h3>
+                        <div class="article-summary">Researchers uncover a watering hole attack likely carried out by APT TA423, which attempts to plant the ScanBox JavaScript-based reconnaissance tool.</div>
+                        <div class="article-meta">
+                            <span class="article-author">By byNate Nelson</span>
+                            <span class="article-date">Aug 27, 2025 at 10:57</span>
+                        </div>
+                    </div>
+
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://threatpost.com/0ktapus-victimize-130-firms/180487/" target="_blank" rel="noopener noreferrer">
+                                Tentacles of ‘0ktapus’ Threat Group Victimize 130 Firms
+                            </a>
+                        </h3>
+                        <div class="article-summary">Over 130 companies tangled in sprawling phishing campaign that spoofed a multi-factor authentication system.</div>
+                        <div class="article-meta">
+                            <span class="article-author">By byNate Nelson</span>
+                            <span class="article-date">Aug 27, 2025 at 10:57</span>
+                        </div>
+                    </div>
+
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://threatpost.com/ransomware-attacks-are-on-the-rise/180481/" target="_blank" rel="noopener noreferrer">
+                                Ransomware Attacks are on the Rise
+                            </a>
+                        </h3>
+                        <div class="article-summary">Lockbit is by far this summer’s most prolific ransomware group, trailed by two offshoots of the Conti group.</div>
+                        <div class="article-meta">
+                            <span class="article-author">By byNate Nelson</span>
+                            <span class="article-date">Aug 27, 2025 at 10:57</span>
+                        </div>
+                    </div>
+
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://threatpost.com/inside-hackers-toolkit/180360/" target="_blank" rel="noopener noreferrer">
+                                Inside the Hackers’ Toolkit – Podcast
+                            </a>
+                        </h3>
+                        <div class="article-summary">No summary available.</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Aug 27, 2025 at 10:57</span>
+                        </div>
+                    </div>
+</div></div>
+            <div class="site-section ">
+                <div class="site-header">
+                    <div class="site-icon">B</div>
+                    <h2 class="site-name">🔒 Bleepingcomputer</h2>
+                    <div class="article-count">5 articles</div>
+                </div>
+<div class="articles-grid">
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://www.bleepingcomputer.com/news/security/critical-docker-desktop-flaw-lets-attackers-hijack-windows-hosts/" target="_blank" rel="noopener noreferrer">
+                                Critical Docker Desktop flaw lets attackers hijack Windows hosts
+                            </a>
+                        </h3>
+                        <div class="article-summary">No summary available.</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Aug 27, 2025 at 10:57</span>
+                        </div>
+                    </div>
+
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://www.bleepingcomputer.com/news/security/murky-panda-hackers-exploit-cloud-trust-to-hack-downstream-customers/" target="_blank" rel="noopener noreferrer">
+                                Murky Panda hackers exploit cloud trust to hack downstream customers
+                            </a>
+                        </h3>
+                        <div class="article-summary">No summary available.</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Aug 27, 2025 at 10:57</span>
+                        </div>
+                    </div>
+
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://www.bleepingcomputer.com/news/security/elastic-rejects-claims-of-a-zero-day-rce-flaw-in-defend-edr/" target="_blank" rel="noopener noreferrer">
+                                Elastic rejects claims of a zero-day RCE flaw in Defend EDR
+                            </a>
+                        </h3>
+                        <div class="article-summary">No summary available.</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Aug 27, 2025 at 10:57</span>
+                        </div>
+                    </div>
+
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://www.bleepingcomputer.com/news/legal/mozilla-warns-germany-could-soon-declare-ad-blockers-illegal/" target="_blank" rel="noopener noreferrer">
+                                Mozilla warns Germany could soon declare ad blockers illegal
+                            </a>
+                        </h3>
+                        <div class="article-summary">No summary available.</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Aug 27, 2025 at 10:57</span>
+                        </div>
+                    </div>
+
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://www.bleepingcomputer.com/news/security/google-to-verify-all-android-devs-to-block-malware-on-google-play/" target="_blank" rel="noopener noreferrer">
+                                Google to verify all Android devs to block malware on Google Play
+                            </a>
+                        </h3>
+                        <div class="article-summary">No summary available.</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Aug 27, 2025 at 10:57</span>
+                        </div>
+                    </div>
+</div></div>
+            <div class="site-section ">
+                <div class="site-header">
+                    <div class="site-icon">G</div>
+                    <h2 class="site-name">🔒 Grahamcluley</h2>
+                    <div class="article-count">5 articles</div>
+                </div>
+<div class="articles-grid">
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://info.varonis.com/en/varonis-connect-london-2025-06-17" target="_blank" rel="noopener noreferrer">
+                                Varonis Connect!
+                            </a>
+                        </h3>
+                        <div class="article-summary">No summary available.</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Aug 27, 2025 at 10:57</span>
+                        </div>
+                    </div>
+
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://www.infosecurityeurope.com/en-gb.html" target="_blank" rel="noopener noreferrer">
+                                Infosecurity Europe 2025
+                            </a>
+                        </h3>
+                        <div class="article-summary">No summary available.</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Aug 27, 2025 at 10:57</span>
+                        </div>
+                    </div>
+
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://www.infosecurityeurope.com/en-gb.html" target="_blank" rel="noopener noreferrer">
+                                Infosecurity Europe 2025
+                            </a>
+                        </h3>
+                        <div class="article-summary">No summary available.</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Aug 27, 2025 at 10:57</span>
+                        </div>
+                    </div>
+
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://go.dashlane.com/credential-security-age-of-ai.html?utm_medium=partner&utm_source=graham-cluley&utm_campaign=wb_credential-security-ai" target="_blank" rel="noopener noreferrer">
+                                Webinar: “Credential Security in the Age of AI: Insights for IT Leaders”
+                            </a>
+                        </h3>
+                        <div class="article-summary">No summary available.</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Aug 27, 2025 at 10:57</span>
+                        </div>
+                    </div>
+
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://go.sysdig.com/InfluencerNov2024_RegPage.html" target="_blank" rel="noopener noreferrer">
+                                “AI hijacked this webinar”
+                            </a>
+                        </h3>
+                        <div class="article-summary">No summary available.</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Aug 27, 2025 at 10:57</span>
+                        </div>
+                    </div>
+</div></div>
+            <div class="site-section ">
+                <div class="site-header">
+                    <div class="site-icon">S</div>
+                    <h2 class="site-name">🔒 Securitytrails</h2>
+                    <div class="article-count">0 articles</div>
+                </div>
+<div class="no-articles">No articles found for this source.</div></div>
+            <div class="site-section ">
+                <div class="site-header">
+                    <div class="site-icon">N</div>
+                    <h2 class="site-name">🔒 Nakedsecurity Sophos</h2>
+                    <div class="article-count">5 articles</div>
+                </div>
+<div class="articles-grid">
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://news.sophos.com/en-us/2023/09/26/update-on-naked-security/" target="_blank" rel="noopener noreferrer">
+                                Update on Naked Security
+                            </a>
+                        </h3>
+                        <div class="article-summary">No summary available.</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Aug 27, 2025 at 10:57</span>
+                        </div>
+                    </div>
+
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://news.sophos.com/en-us/2023/08/29/moms-meals-issues-notice-of-data-event-what-to-know-and-what-to-do/" target="_blank" rel="noopener noreferrer">
+                                Mom’s Meals issues “Notice of Data Event”: What to know and what to do
+                            </a>
+                        </h3>
+                        <div class="article-summary">No summary available.</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Aug 27, 2025 at 10:57</span>
+                        </div>
+                    </div>
+
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://news.sophos.com/en-us/2023/08/24/s3-ep149-how-many-cryptographers-does-it-take-to-change-a-light-bulb/" target="_blank" rel="noopener noreferrer">
+                                S3 Ep149: How many cryptographers does it take to change a light bulb?
+                            </a>
+                        </h3>
+                        <div class="article-summary">No summary available.</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Aug 27, 2025 at 10:57</span>
+                        </div>
+                    </div>
+
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://news.sophos.com/en-us/2023/08/23/using-winrar-be-sure-to-patch-against-these-code-execution-bugs/" target="_blank" rel="noopener noreferrer">
+                                Using WinRAR? Be sure to patch against these code execution bugs…
+                            </a>
+                        </h3>
+                        <div class="article-summary">No summary available.</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Aug 27, 2025 at 10:57</span>
+                        </div>
+                    </div>
+
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://news.sophos.com/en-us/2023/08/22/smart-light-bulbs-could-give-away-your-password-secrets/" target="_blank" rel="noopener noreferrer">
+                                Smart light bulbs could give away your password secrets
+                            </a>
+                        </h3>
+                        <div class="article-summary">No summary available.</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Aug 27, 2025 at 10:57</span>
+                        </div>
+                    </div>
+</div></div>
+            <div class="site-section ">
+                <div class="site-header">
+                    <div class="site-icon">S</div>
+                    <h2 class="site-name">🔒 Schneier</h2>
+                    <div class="article-count">5 articles</div>
+                </div>
+<div class="articles-grid">
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://www.schneier.com/blog/archives/2025/08/encryption-backdoor-in-military-police-radios.html" target="_blank" rel="noopener noreferrer">
+                                Encryption Backdoor in Military/Police Radios
+                            </a>
+                        </h3>
+                        <div class="article-summary">Iwrote aboutthis in 2023. Here’sthe story:</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Aug 27, 2025 at 10:57</span>
+                        </div>
+                    </div>
+
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://www.schneier.com/blog/archives/2025/08/poor-password-choices.html" target="_blank" rel="noopener noreferrer">
+                                Poor Password Choices
+                            </a>
+                        </h3>
+                        <div class="article-summary">Look atthis: McDonald’s chose the password “123456” for a major corporate system.</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Aug 27, 2025 at 10:57</span>
+                        </div>
+                    </div>
+
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://www.schneier.com/blog/archives/2025/08/friday-squid-blogging-bobtail-squid.html" target="_blank" rel="noopener noreferrer">
+                                Friday Squid Blogging: Bobtail Squid
+                            </a>
+                        </h3>
+                        <div class="article-summary">Niceshort articleon the bobtail squid.</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Aug 27, 2025 at 10:57</span>
+                        </div>
+                    </div>
+
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://www.schneier.com/blog/archives/2025/08/im-spending-the-year-at-the-munk-school.html" target="_blank" rel="noopener noreferrer">
+                                I’m Spending the Year at the Munk School
+                            </a>
+                        </h3>
+                        <div class="article-summary">This academic year, I am taking a sabbatical from the Kennedy School and Harvard University. (It’s not a real sabbatical—I’m just an adjunct—but it’s the same idea.) I will be spending the Fall 2025 a...</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Aug 27, 2025 at 10:57</span>
+                        </div>
+                    </div>
+
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://www.schneier.com/blog/archives/2025/08/ai-agents-need-data-integrity.html" target="_blank" rel="noopener noreferrer">
+                                AI Agents Need Data Integrity
+                            </a>
+                        </h3>
+                        <div class="article-summary">Think of the Web as a digital territory with its own social contract. In 2014,Tim Berners-Leecalled for a“Magna Carta for the Web”to restore the balance of power between individuals and institutions. ...</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Aug 27, 2025 at 10:57</span>
+                        </div>
+                    </div>
+</div></div>
+            <div class="site-section ">
+                <div class="site-header">
+                    <div class="site-icon">T</div>
+                    <h2 class="site-name">🔒 Tripwire</h2>
+                    <div class="article-count">0 articles</div>
+                </div>
+<div class="no-articles">No articles found for this source.</div></div>
+            <div class="site-section ">
+                <div class="site-header">
+                    <div class="site-icon">C</div>
+                    <h2 class="site-name">🔒 Cyberscoop</h2>
+                    <div class="article-count">5 articles</div>
+                </div>
+<div class="articles-grid">
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://cyberscoop.com/epic-google-play-store-amicus-curiae-brief/" target="_blank" rel="noopener noreferrer">
+                                Court ruling in Epic-Google fight could have ‘catastrophic’ cyber consequences, former gov’t officials say
+                            </a>
+                        </h3>
+                        <div class="article-summary">No summary available.</div>
+                        <div class="article-meta">
+                            <span class="article-author">By ByTim Starks</span>
+                            <span class="article-date">Aug 27, 2025 at 10:58</span>
+                        </div>
+                    </div>
+
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://fedscoop.com/doge-social-security-database-whistleblower-cloud-environment-data-vulnerabilities/" target="_blank" rel="noopener noreferrer">
+                                DOGE employees uploaded Social Security database to ‘vulnerable’ cloud, agency whistleblower says
+                            </a>
+                        </h3>
+                        <div class="article-summary">No summary available.</div>
+                        <div class="article-meta">
+                            <span class="article-author">By ByMiranda Nazzaro</span>
+                            <span class="article-date">Aug 27, 2025 at 10:58</span>
+                        </div>
+                    </div>
+
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://cyberscoop.com/prompt-lock-eset-ransomware-research-ai-powered-prompt-injection/" target="_blank" rel="noopener noreferrer">
+                                Researchers flag code that uses AI systems to carry out ransomware attacks
+                            </a>
+                        </h3>
+                        <div class="article-summary">No summary available.</div>
+                        <div class="article-meta">
+                            <span class="article-author">By ByDerek B. Johnson</span>
+                            <span class="article-date">Aug 27, 2025 at 10:58</span>
+                        </div>
+                    </div>
+
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://cyberscoop.com/citrix-netscaler-zero-day-exploited-august-2025/" target="_blank" rel="noopener noreferrer">
+                                Citrix NetScaler customers hit by third actively exploited zero-day vulnerability since June
+                            </a>
+                        </h3>
+                        <div class="article-summary">No summary available.</div>
+                        <div class="article-meta">
+                            <span class="article-author">By ByMatt Kapko</span>
+                            <span class="article-date">Aug 27, 2025 at 10:58</span>
+                        </div>
+                    </div>
+
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://cyberscoop.com/salesforce-salesloft-drift-attack-spree-google/" target="_blank" rel="noopener noreferrer">
+                                Hundreds of Salesforce customers impacted by attack spree linked to third-party AI agent
+                            </a>
+                        </h3>
+                        <div class="article-summary">No summary available.</div>
+                        <div class="article-meta">
+                            <span class="article-author">By ByMatt Kapko</span>
+                            <span class="article-date">Aug 27, 2025 at 10:58</span>
+                        </div>
+                    </div>
+</div></div>
+            <div class="site-section ">
+                <div class="site-header">
+                    <div class="site-icon">H</div>
+                    <h2 class="site-name">🔒 Helpnetsecurity</h2>
+                    <div class="article-count">1 articles</div>
+                </div>
+<div class="articles-grid">
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://www.helpnetsecurity.com/newsletter/" target="_blank" rel="noopener noreferrer">
+                                Newsletters
+                            </a>
+                        </h3>
+                        <div class="article-summary">No summary available.</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Aug 27, 2025 at 10:58</span>
+                        </div>
+                    </div>
+</div></div>
+        </div>
+        
+        <div class="footer">
+            <p>Generated by Tech News Scraper v2.0</p>
+            <p class="timestamp">Created on Wednesday, August 27, 2025 at 10:58:16</p>
+            <p>Click on article titles to read the full stories</p>
+            <p>🔄 Auto-refresh available • 📱 Mobile responsive • 🌙 Dark mode supported</p>
+        </div>
+    </div>
+    
+    <script>
+        // Add some interactivity
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add status indicators to cards
+            const cards = document.querySelectorAll('.article-card');
+            cards.forEach(card => {
+                const indicator = document.createElement('div');
+                indicator.className = 'status-indicator';
+                indicator.title = 'Article available';
+                card.appendChild(indicator);
+            });
+            
+            // Add smooth scrolling for internal links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
