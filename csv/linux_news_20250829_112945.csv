@@ -1,0 +1,59 @@
+Title,URL,Summary,Published Date,Source,Author
+"celebrated its
+28th birthday",https://thisweek.gnome.org/posts/2025/08/twig-212/,Full Story(comments: 11),2025-08-29 11:28:40,lwn.net,
+"blog
+post",https://www.bassi.io/articles/2025/08/03/governance-in-gnome/,Full Story(comments: 11),2025-08-29 11:28:40,lwn.net,
+announced,https://android-developers.googleblog.com/2025/08/elevating-android-security.html,"Starting next year, Android will require all apps to be registered
+	by verified developers in order to be installed by users on
+	certified Android devices. This creates crucial accountability,
+	making...",2025-08-29 11:28:40,lwn.net,
+announced,https://pycon.blogspot.com/2025/08/pycon-us-2025-recap-and-recordings.html,,2025-08-29 11:28:40,lwn.net,
+"Linux 6.17 Showing Off Some Nice Gains For 5th Gen AMD EPYC ""Turin"" Performance",https://www.phoronix.com/news/Linux-6.17-AMD-EPYC-Turin,Earlier this week I provided benchmarks looking at the Linux 5.15 LTS through Linux 6.17 Git kernel performance using the latest stable and development kernels compared to the Long Term Support (LTS) ...,2025-08-29 11:28:48,phoronix.com,
+"TrueNAS 25.10 Beta Brings Installation Improvements, NVIDIA Blackwell Support",https://www.phoronix.com/news/TrueNAS-25.10-Beta,"The engineers over at iXsystems announced today the beta release of TrueNAS 25.10 ""Goldeneye"" as the latest iteration of this formerly BSD-based OS that has transitioned to making use of the Linux ker...",2025-08-29 11:28:48,phoronix.com,
+Apple M2 Pro / Max / Ultra Device Trees Under Review For The Linux Kernel,https://www.phoronix.com/news/Apple-M2-Pro-Max-Ultra-DT,"While the Asahi Linux project has faced some setbacks, such as most recently with Alyssa Rosenzweig leaving the project and still working to bring-up M3/M4 support, the upstreaming effort by Asahi Lin...",2025-08-29 11:28:48,phoronix.com,
+AMD ISP4 Driver Updated As It Nears The Mainline Linux Kernel,https://www.phoronix.com/news/AMD-ISP4-Linux-Driver-v3,Posted today to the Linux kernel mailing list was the patch series for introducing the AMD ISP4 driver to the mainline kernel. This supports the image signal processor IP that to date is found with HP...,2025-08-29 11:28:48,phoronix.com,
+Shotcut 25.08 Video Editor Arrives with Key Fixes,https://www.linuxtoday.com/blog/shotcut-25-08-video-editor-arrives-with-key-fixes/,,2025-08-29 11:28:54,linuxtoday.com,
+How to Use extrepo in Debian to Manage Third-Party Repositories,https://www.linuxtoday.com/blog/how-to-use-extrepo-in-debian-to-manage-third-party-repositories/,,2025-08-29 11:28:54,linuxtoday.com,
+15 Best Free and Open Source Linux Serial Terminals,https://www.linuxtoday.com/blog/15-best-free-and-open-source-linux-serial-terminals/,,2025-08-29 11:28:54,linuxtoday.com,
+15 Best Free and Open Source CLI Data Hashing Tools,https://www.linuxtoday.com/blog/15-best-free-and-open-source-cli-data-hashing-tools/,,2025-08-29 11:28:54,linuxtoday.com,
+Buttercup: Open-source AI-driven system detects and patches vulnerabilities,https://www.linuxtoday.com/blog/buttercup-open-source-ai-driven-system-detects-and-patches-vulnerabilities/,,2025-08-29 11:28:54,linuxtoday.com,"August 28, 2025"
+Containers in 2025: Docker vs. Podman for Modern Developers,https://www.linuxjournal.com/content/containers-2025-docker-vs-podman-modern-developers,,2025-08-29 11:29:02,linuxjournal.com,"George Whittaker- August 26, 2025"
+Rising from the Ashes: How AlmaLinux and Rocky Linux Redefined the Post-CentOS Landscape,https://www.linuxjournal.com/content/rising-ashes-how-almalinux-and-rocky-linux-redefined-post-centos-landscape,,2025-08-29 11:29:02,linuxjournal.com,"George Whittaker- August 21, 2025"
+Why GNOME Replaced Eye of GNOME with Loupe as the Default Image Viewer,https://www.linuxjournal.com/content/why-gnome-replaced-eye-gnome-loupe-default-image-viewer,,2025-08-29 11:29:02,linuxjournal.com,"George Whittaker- August 19, 2025"
+Ptyxis: Ubuntu’s Leap Into GPU-Powered Terminals,https://www.linuxjournal.com/content/ptyxis-ubuntus-leap-gpu-powered-terminals,,2025-08-29 11:29:02,linuxjournal.com,"George Whittaker- August 14, 2025"
+KDE Plasma 6 on Wayland: the Payoff for Years of Plumbing,https://www.linuxjournal.com/content/kde-plasma-6-wayland-payoff-years-plumbing,,2025-08-29 11:29:02,linuxjournal.com,"George Whittaker- August 12, 2025"
+Firefox’s On-Device AI Features Now Up to 10x Faster,https://www.omgubuntu.co.uk/2025/08/firefoxs-on-device-ai-features-are-now-up-to-10x-faster,,2025-08-29 11:29:08,omgubuntu.co.uk,
+Ubuntu 25.10 Snapshot 4 is Available to Download,https://www.omgubuntu.co.uk/2025/08/ubuntu-25-10-snapshot-4-is-available-to-download,,2025-08-29 11:29:08,omgubuntu.co.uk,
+SuperTuxKart Evolution Promises ‘Fresh Experience’,https://www.omgubuntu.co.uk/2025/08/supertuxkarts-stable-release-pitstop-opens-up-potential,,2025-08-29 11:29:08,omgubuntu.co.uk,
+New Apps Arrive in Ubuntu 25.10 Dev Builds,https://www.omgubuntu.co.uk/2025/08/new-apps-arrive-in-ubuntu-25-10-daily-builds,,2025-08-29 11:29:08,omgubuntu.co.uk,
+Thunderbird 142 Lets You Add Signatures to PDFs In-App,https://www.omgubuntu.co.uk/2025/08/thunderbird-142-add-signatures-to-pdf-files,,2025-08-29 11:29:08,omgubuntu.co.uk,
+Q&A,https://www.linux.com/qa/,,2025-08-29 11:29:12,linux.com,
+What is Linux?,https://www.linux.com/what-is-linux/,,2025-08-29 11:29:12,linux.com,
+About Us,https://www.linux.com/about/,,2025-08-29 11:29:12,linux.com,
+Q&A,https://www.linux.com/qa/,,2025-08-29 11:29:12,linux.com,
+What is Linux?,https://www.linux.com/what-is-linux/,,2025-08-29 11:29:12,linux.com,
+Regata OS 25.0.5,https://fossforce.com/2025/08/regata-os-25-gaming-work-and-more-in-one-polished-distro/,,2025-08-29 11:29:17,distrowatch.com,
+487,https://linuxgamecast.com/2025/08/34-candles-for-old-man-penguin/,,2025-08-29 11:29:17,distrowatch.com,
+release announcement,https://br-os.com/2025/08/26/br-os-13-dira-e-lancado-com-polimento-do-visual-e-retorno-de-funcionalidades-consagradas/,"Once the previous version had validated the development method, we could focus on creating new features and remaking old features that had been temporarily left out due to the migration to Plasma 6, w...",2025-08-29 11:29:17,distrowatch.com,
+release announcement,https://besgnulinux.blogspot.com/2025/08/besgnulinux-jwm-3-0-is-ready-to-use.html,Besgnulinux JWM 3-0 release based on Debian 'Trixie' is ready for release. Changes made in this version: the background image changer has been updated; a colour changer feature has been added to the i...,2025-08-29 11:29:17,distrowatch.com,
+release announcement,https://libreelec.tv/2025/08/15/libreelec-omega-12-2-0/,LibreELEC 12.2 with Kodi 21.2 'Omega' is released. The main purpose of the LibreELEC 12.2 release is hardware support - bumping kernels and display components to better handle current and recent Intel...,2025-08-29 11:29:17,distrowatch.com,
+Linux Turns 34,https://linux.slashdot.org/story/25/08/25/2149223/linux-turns-34,,2025-08-29 11:29:24,linux.slashdot.org,
+Arch Linux Faces 'Ongoing' DDoS Attack,https://linux.slashdot.org/story/25/08/23/0513229/arch-linux-faces-ongoing-ddos-attack,,2025-08-29 11:29:24,linux.slashdot.org,
+LibreOffice 25.8 Slams the Door On Windows 7 and 8.x,https://tech.slashdot.org/story/25/08/23/0124202/libreoffice-258-slams-the-door-on-windows-7-and-8x,,2025-08-29 11:29:24,linux.slashdot.org,
+Another Linux Distro Is Shutting Down,https://linux.slashdot.org/story/25/08/15/1536230/another-linux-distro-is-shutting-down,,2025-08-29 11:29:24,linux.slashdot.org,
+The Plan For Linux After Torvalds Has a Kernel of Truth: There Isn't One,https://linux.slashdot.org/story/25/08/15/1549253/the-plan-for-linux-after-torvalds-has-a-kernel-of-truth-there-isnt-one,,2025-08-29 11:29:24,linux.slashdot.org,
+Ebook: Introducing LFCS Certification Preparation eBook,https://www.tecmint.com/lfcs-study-guide/,"For years, certifications in the Information Technology world have helped job candidates demonstrate their skills to potential employers. In the",2025-08-29 11:29:29,tecmint.com,
+Boost Your Career with RHCSA & RHCE Certification eBooks,https://www.tecmint.com/red-hat-rhcsa-rhce-exam-certification-book/,"Dear friends, If you’re looking to advance your Linux career and stand out in the competitive IT job market, we",2025-08-29 11:29:29,tecmint.com,
+Top 7 Free Odoo Apps for Linux Users in 2025,https://www.tecmint.com/odoo-free-apps-for-linux/,"Odoo is the ideal open-source enterprise software for teams and businesses that value flexibility, data privacy, and affordability. Due to",2025-08-29 11:29:29,tecmint.com,
+How to Create Aliases (Shortcuts) for Common Commands in Linux,https://www.tecmint.com/create-alias-in-linux/,Linux users often need to use one command over and over again. Typing or copying the same command over and,2025-08-29 11:29:29,tecmint.com,
+Internxt: Secure Open-Source Cloud Storage for Linux Users (87% Off),https://www.tecmint.com/internxt-cloud-storage/,There are countless cloud storage platforms that provide safe and secure storage space for your files. Popular cloud storage apps,2025-08-29 11:29:29,tecmint.com,
+Home,https://www.unixmen.com/,,2025-08-29 11:29:35,unixmen.com,
+Contact Us,https://www.unixmen.com/contact-us/,,2025-08-29 11:29:35,unixmen.com,
+About Us,https://www.unixmen.com/about-us/,,2025-08-29 11:29:35,unixmen.com,
+Advertising on Unixmen,https://www.unixmen.com/advertising/,,2025-08-29 11:29:35,unixmen.com,
+Become a Contributor,https://www.unixmen.com/work-for-us/,,2025-08-29 11:29:35,unixmen.com,
+"What are useful systemd commandsLast updated on March 17, 2023 by Dan Nanni",https://www.xmodulo.com/useful-systemd-commands.html,,2025-08-29 11:29:40,xmodulo.com,
+"How to include C++ code in C programLast updated on March 2, 2023 by Dan Nanni",https://www.xmodulo.com/include-cpp-code-c-program.html,,2025-08-29 11:29:40,xmodulo.com,
+"In Makefile, what does ""$<"" mean?",https://www.xmodulo.com/makefile-special-variable.html,,2025-08-29 11:29:40,xmodulo.com,
+How to get started with cloud-init,https://www.xmodulo.com/cloud-init.html,,2025-08-29 11:29:40,xmodulo.com,
+How to schedule a periodic task with systemd,https://www.xmodulo.com/schedule-periodic-task-systemd.html,,2025-08-29 11:29:40,xmodulo.com,

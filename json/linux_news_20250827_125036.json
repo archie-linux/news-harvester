@@ -1,0 +1,440 @@
+{
+  "lwn.net": [
+    {
+      "title": "released",
+      "url": "https://www.debian.org/News/2025/20250809",
+      "summary": "",
+      "published_date": "2025-08-27 12:49:27",
+      "source": "lwn.net",
+      "author": null
+    },
+    {
+      "title": "announced",
+      "url": "https://android-developers.googleblog.com/2025/08/elevating-android-security.html",
+      "summary": "Starting next year, Android will require all apps to be registered\n\tby verified developers in order to be installed by users on\n\tcertified Android devices. This creates crucial accountability,\n\tmaking...",
+      "published_date": "2025-08-27 12:49:27",
+      "source": "lwn.net",
+      "author": null
+    },
+    {
+      "title": "announced",
+      "url": "https://pycon.blogspot.com/2025/08/pycon-us-2025-recap-and-recordings.html",
+      "summary": "",
+      "published_date": "2025-08-27 12:49:27",
+      "source": "lwn.net",
+      "author": null
+    }
+  ],
+  "phoronix.com": [
+    {
+      "title": "With Apple M1/M2 Graphics Driver Code Working, Alyssa Rosenzweig Stepping Away From Asahi Linux",
+      "url": "https://www.phoronix.com/news/Rosenzweig-Leaving-Apple-Asahi",
+      "summary": "As another very unfortunate setback for the Asahi Linux project moving forward after Hector Martin left the project as did Asahi Lina pausing work on open-source Apple driver development, Alyssa Rosen...",
+      "published_date": "2025-08-27 12:49:34",
+      "source": "phoronix.com",
+      "author": null
+    },
+    {
+      "title": "A Number Of Fedora 43 Features/Changes Delayed To Fedora 44",
+      "url": "https://www.phoronix.com/news/Fedora-43-Changes-Delayed",
+      "summary": "A number of yet-to-be-completed changes/features have been delayed from Fedora 43 to Fedora 44 while permission is granted for a few features to still land late in the Fedora 43 cycle.",
+      "published_date": "2025-08-27 12:49:34",
+      "source": "phoronix.com",
+      "author": null
+    },
+    {
+      "title": "Rusticl vs. Intel Compute Runtime Performance For OpenCL On Battlemage",
+      "url": "https://www.phoronix.com/review/intel-battlemage-rusticl",
+      "summary": "Earlier this month I ran some benchmarks of Mesa's Rusticl OpenCL driver against AMD ROCm on Strix Halo. Those benchmarks caught many by surprise with how well that Rust-based open-source OpenCL drive...",
+      "published_date": "2025-08-27 12:49:34",
+      "source": "phoronix.com",
+      "author": null
+    },
+    {
+      "title": "Framework Laptop 16 Upgrade Announced With Ryzen AI 300 Series, GeForce RTX 5070",
+      "url": "https://www.phoronix.com/news/Framework-16-2025",
+      "summary": "While the Framework 13 was upgraded earlier this year with a motherboard upgrade for the AMD Ryzen AI 300 series \"Strix Point\", the larger Framework 16 has been stuck in the Zen 4 era. But today Frame...",
+      "published_date": "2025-08-27 12:49:34",
+      "source": "phoronix.com",
+      "author": null
+    }
+  ],
+  "linuxtoday.com": [
+    {
+      "title": "VirtualBox 7.2 Officially Released with Initial Support for Linux Kernel 6.17",
+      "url": "https://www.linuxtoday.com/blog/virtualbox-7-2-officially-released-with-initial-support-for-linux-kernel-6-17/",
+      "summary": "",
+      "published_date": "2025-08-27 12:49:40",
+      "source": "linuxtoday.com",
+      "author": null
+    },
+    {
+      "title": "KDE Gear 25.08 Open-Source Software Suite Released with Many Improvements",
+      "url": "https://www.linuxtoday.com/blog/kde-gear-25-08-open-source-software-suite-released-with-many-improvements/",
+      "summary": "",
+      "published_date": "2025-08-27 12:49:40",
+      "source": "linuxtoday.com",
+      "author": null
+    },
+    {
+      "title": "GNOME 48.4 Finally Improves Update Notifications in GNOME Software",
+      "url": "https://www.linuxtoday.com/blog/gnome-48-4-finally-improves-update-notifications-in-gnome-software/",
+      "summary": "",
+      "published_date": "2025-08-27 12:49:40",
+      "source": "linuxtoday.com",
+      "author": null
+    },
+    {
+      "title": "Let’s Make a Free Software Jubilee Happen",
+      "url": "https://www.linuxtoday.com/blog/lets-make-a-free-software-jubilee-happen/",
+      "summary": "",
+      "published_date": "2025-08-27 12:49:40",
+      "source": "linuxtoday.com",
+      "author": null
+    },
+    {
+      "title": "How to configure a Static IP Address on AlmaLinux 10",
+      "url": "https://www.linuxtoday.com/blog/how-to-configure-a-static-ip-address-on-almalinux-10/",
+      "summary": "",
+      "published_date": "2025-08-27 12:49:40",
+      "source": "linuxtoday.com",
+      "author": "August 26, 2025"
+    }
+  ],
+  "linuxjournal.com": [
+    {
+      "title": "Rising from the Ashes: How AlmaLinux and Rocky Linux Redefined the Post-CentOS Landscape",
+      "url": "https://www.linuxjournal.com/content/rising-ashes-how-almalinux-and-rocky-linux-redefined-post-centos-landscape",
+      "summary": "",
+      "published_date": "2025-08-27 12:49:52",
+      "source": "linuxjournal.com",
+      "author": "George Whittaker- August 21, 2025"
+    },
+    {
+      "title": "Why GNOME Replaced Eye of GNOME with Loupe as the Default Image Viewer",
+      "url": "https://www.linuxjournal.com/content/why-gnome-replaced-eye-gnome-loupe-default-image-viewer",
+      "summary": "",
+      "published_date": "2025-08-27 12:49:52",
+      "source": "linuxjournal.com",
+      "author": "George Whittaker- August 19, 2025"
+    },
+    {
+      "title": "Ptyxis: Ubuntu’s Leap Into GPU-Powered Terminals",
+      "url": "https://www.linuxjournal.com/content/ptyxis-ubuntus-leap-gpu-powered-terminals",
+      "summary": "",
+      "published_date": "2025-08-27 12:49:52",
+      "source": "linuxjournal.com",
+      "author": "George Whittaker- August 14, 2025"
+    },
+    {
+      "title": "KDE Plasma 6 on Wayland: the Payoff for Years of Plumbing",
+      "url": "https://www.linuxjournal.com/content/kde-plasma-6-wayland-payoff-years-plumbing",
+      "summary": "",
+      "published_date": "2025-08-27 12:49:52",
+      "source": "linuxjournal.com",
+      "author": "George Whittaker- August 12, 2025"
+    },
+    {
+      "title": "GNOME 48 Reimagined: Smoother Settings, Glorious HDR, and Precision Scaling",
+      "url": "https://www.linuxjournal.com/content/gnome-48-reimagined-smoother-settings-glorious-hdr-and-precision-scaling",
+      "summary": "",
+      "published_date": "2025-08-27 12:49:52",
+      "source": "linuxjournal.com",
+      "author": "George Whittaker- August 7, 2025"
+    }
+  ],
+  "omgubuntu.co.uk": [
+    {
+      "title": "Thunderbird 142 Lets You Add Signatures to PDFs In-App",
+      "url": "https://www.omgubuntu.co.uk/2025/08/thunderbird-142-add-signatures-to-pdf-files",
+      "summary": "",
+      "published_date": "2025-08-27 12:49:57",
+      "source": "omgubuntu.co.uk",
+      "author": null
+    },
+    {
+      "title": "Bazaar is a Slick New Desktop Flathub Frontend",
+      "url": "https://www.omgubuntu.co.uk/2025/08/bazaar-new-flatpak-app-store-gnome-linux",
+      "summary": "",
+      "published_date": "2025-08-27 12:49:57",
+      "source": "omgubuntu.co.uk",
+      "author": null
+    },
+    {
+      "title": "Parallels Desktop 26 Update Improves Ubuntu VMs on macOS",
+      "url": "https://www.omgubuntu.co.uk/2025/08/parallels-desktop-26-better-ubuntu-vm-macos",
+      "summary": "",
+      "published_date": "2025-08-27 12:49:57",
+      "source": "omgubuntu.co.uk",
+      "author": null
+    },
+    {
+      "title": "Zen Browser — What Mozilla Firefox Should Be?",
+      "url": "https://www.omgubuntu.co.uk/2025/08/zen-browser-is-what-mozilla-firefox-should-be",
+      "summary": "",
+      "published_date": "2025-08-27 12:49:57",
+      "source": "omgubuntu.co.uk",
+      "author": null
+    },
+    {
+      "title": "Firefox Web App Support Available to Test (on Windows, At Least)",
+      "url": "https://www.omgubuntu.co.uk/2025/08/firefox-web-app-support-progress",
+      "summary": "",
+      "published_date": "2025-08-27 12:49:57",
+      "source": "omgubuntu.co.uk",
+      "author": null
+    }
+  ],
+  "linux.com": [
+    {
+      "title": "Q&A",
+      "url": "https://www.linux.com/qa/",
+      "summary": "",
+      "published_date": "2025-08-27 12:50:02",
+      "source": "linux.com",
+      "author": null
+    },
+    {
+      "title": "What is Linux?",
+      "url": "https://www.linux.com/what-is-linux/",
+      "summary": "",
+      "published_date": "2025-08-27 12:50:02",
+      "source": "linux.com",
+      "author": null
+    },
+    {
+      "title": "About Us",
+      "url": "https://www.linux.com/about/",
+      "summary": "",
+      "published_date": "2025-08-27 12:50:02",
+      "source": "linux.com",
+      "author": null
+    },
+    {
+      "title": "Q&A",
+      "url": "https://www.linux.com/qa/",
+      "summary": "",
+      "published_date": "2025-08-27 12:50:02",
+      "source": "linux.com",
+      "author": null
+    },
+    {
+      "title": "What is Linux?",
+      "url": "https://www.linux.com/what-is-linux/",
+      "summary": "",
+      "published_date": "2025-08-27 12:50:02",
+      "source": "linux.com",
+      "author": null
+    }
+  ],
+  "distrowatch.com": [
+    {
+      "title": "PCLinuxOS 2025.07",
+      "url": "https://fossforce.com/2025/08/from-mandrake-to-modern-pclinuxos-stays-strong/",
+      "summary": "",
+      "published_date": "2025-08-27 12:50:08",
+      "source": "distrowatch.com",
+      "author": null
+    },
+    {
+      "title": "486",
+      "url": "https://linuxgamecast.com/2025/08/ripinephone-pro/",
+      "summary": "",
+      "published_date": "2025-08-27 12:50:08",
+      "source": "distrowatch.com",
+      "author": null
+    },
+    {
+      "title": "release announcement",
+      "url": "https://besgnulinux.blogspot.com/2025/08/besgnulinux-jwm-3-0-is-ready-to-use.html",
+      "summary": "Besgnulinux JWM 3-0 release based on Debian 'Trixie' is ready for release. Changes made in this version: the background image changer has been updated; a colour changer feature has been added to the i...",
+      "published_date": "2025-08-27 12:50:08",
+      "source": "distrowatch.com",
+      "author": null
+    },
+    {
+      "title": "release announcement",
+      "url": "https://libreelec.tv/2025/08/15/libreelec-omega-12-2-0/",
+      "summary": "LibreELEC 12.2 with Kodi 21.2 'Omega' is released. The main purpose of the LibreELEC 12.2 release is hardware support - bumping kernels and display components to better handle current and recent Intel...",
+      "published_date": "2025-08-27 12:50:08",
+      "source": "distrowatch.com",
+      "author": null
+    },
+    {
+      "title": "easy-7.0-amd64.img",
+      "url": "https://distro.ibiblio.org/easyos/amd64/releases/excalibur/2025/7.0/easy-7.0-amd64.img",
+      "summary": "Compared with prior releases of EasyOS, the Excalibur-series is a 'whole new ball game'. All prior EasyOSs were built with woofQ; Easy Excalibur is built with woofQ2, that is a redesign of woofQ based...",
+      "published_date": "2025-08-27 12:50:08",
+      "source": "distrowatch.com",
+      "author": null
+    }
+  ],
+  "linux.slashdot.org": [
+    {
+      "title": "Linux Turns 34",
+      "url": "https://linux.slashdot.org/story/25/08/25/2149223/linux-turns-34",
+      "summary": "",
+      "published_date": "2025-08-27 12:50:16",
+      "source": "linux.slashdot.org",
+      "author": null
+    },
+    {
+      "title": "Arch Linux Faces 'Ongoing' DDoS Attack",
+      "url": "https://linux.slashdot.org/story/25/08/23/0513229/arch-linux-faces-ongoing-ddos-attack",
+      "summary": "",
+      "published_date": "2025-08-27 12:50:16",
+      "source": "linux.slashdot.org",
+      "author": null
+    },
+    {
+      "title": "LibreOffice 25.8 Slams the Door On Windows 7 and 8.x",
+      "url": "https://tech.slashdot.org/story/25/08/23/0124202/libreoffice-258-slams-the-door-on-windows-7-and-8x",
+      "summary": "",
+      "published_date": "2025-08-27 12:50:16",
+      "source": "linux.slashdot.org",
+      "author": null
+    },
+    {
+      "title": "Another Linux Distro Is Shutting Down",
+      "url": "https://linux.slashdot.org/story/25/08/15/1536230/another-linux-distro-is-shutting-down",
+      "summary": "",
+      "published_date": "2025-08-27 12:50:16",
+      "source": "linux.slashdot.org",
+      "author": null
+    },
+    {
+      "title": "The Plan For Linux After Torvalds Has a Kernel of Truth: There Isn't One",
+      "url": "https://linux.slashdot.org/story/25/08/15/1549253/the-plan-for-linux-after-torvalds-has-a-kernel-of-truth-there-isnt-one",
+      "summary": "",
+      "published_date": "2025-08-27 12:50:16",
+      "source": "linux.slashdot.org",
+      "author": null
+    }
+  ],
+  "tecmint.com": [
+    {
+      "title": "Ebook: Introducing LFCS Certification Preparation eBook",
+      "url": "https://www.tecmint.com/lfcs-study-guide/",
+      "summary": "For years, certifications in the Information Technology world have helped job candidates demonstrate their skills to potential employers. In the",
+      "published_date": "2025-08-27 12:50:20",
+      "source": "tecmint.com",
+      "author": null
+    },
+    {
+      "title": "Boost Your Career with RHCSA & RHCE Certification eBooks",
+      "url": "https://www.tecmint.com/red-hat-rhcsa-rhce-exam-certification-book/",
+      "summary": "Dear friends, If you’re looking to advance your Linux career and stand out in the competitive IT job market, we",
+      "published_date": "2025-08-27 12:50:20",
+      "source": "tecmint.com",
+      "author": null
+    },
+    {
+      "title": "Top 7 Free Odoo Apps for Linux Users in 2025",
+      "url": "https://www.tecmint.com/odoo-free-apps-for-linux/",
+      "summary": "Odoo is the ideal open-source enterprise software for teams and businesses that value flexibility, data privacy, and affordability. Due to",
+      "published_date": "2025-08-27 12:50:20",
+      "source": "tecmint.com",
+      "author": null
+    },
+    {
+      "title": "How to Create Aliases (Shortcuts) for Common Commands in Linux",
+      "url": "https://www.tecmint.com/create-alias-in-linux/",
+      "summary": "Linux users often need to use one command over and over again. Typing or copying the same command over and",
+      "published_date": "2025-08-27 12:50:20",
+      "source": "tecmint.com",
+      "author": null
+    },
+    {
+      "title": "Internxt: Secure Open-Source Cloud Storage for Linux Users (87% Off)",
+      "url": "https://www.tecmint.com/internxt-cloud-storage/",
+      "summary": "There are countless cloud storage platforms that provide safe and secure storage space for your files. Popular cloud storage apps",
+      "published_date": "2025-08-27 12:50:20",
+      "source": "tecmint.com",
+      "author": null
+    }
+  ],
+  "unixmen.com": [
+    {
+      "title": "Home",
+      "url": "https://www.unixmen.com/",
+      "summary": "",
+      "published_date": "2025-08-27 12:50:26",
+      "source": "unixmen.com",
+      "author": null
+    },
+    {
+      "title": "Contact Us",
+      "url": "https://www.unixmen.com/contact-us/",
+      "summary": "",
+      "published_date": "2025-08-27 12:50:26",
+      "source": "unixmen.com",
+      "author": null
+    },
+    {
+      "title": "About Us",
+      "url": "https://www.unixmen.com/about-us/",
+      "summary": "",
+      "published_date": "2025-08-27 12:50:26",
+      "source": "unixmen.com",
+      "author": null
+    },
+    {
+      "title": "Advertising on Unixmen",
+      "url": "https://www.unixmen.com/advertising/",
+      "summary": "",
+      "published_date": "2025-08-27 12:50:26",
+      "source": "unixmen.com",
+      "author": null
+    },
+    {
+      "title": "Become a Contributor",
+      "url": "https://www.unixmen.com/work-for-us/",
+      "summary": "",
+      "published_date": "2025-08-27 12:50:26",
+      "source": "unixmen.com",
+      "author": null
+    }
+  ],
+  "xmodulo.com": [
+    {
+      "title": "What are useful systemd commandsLast updated on March 17, 2023 by Dan Nanni",
+      "url": "https://www.xmodulo.com/useful-systemd-commands.html",
+      "summary": "",
+      "published_date": "2025-08-27 12:50:32",
+      "source": "xmodulo.com",
+      "author": null
+    },
+    {
+      "title": "How to include C++ code in C programLast updated on March 2, 2023 by Dan Nanni",
+      "url": "https://www.xmodulo.com/include-cpp-code-c-program.html",
+      "summary": "",
+      "published_date": "2025-08-27 12:50:32",
+      "source": "xmodulo.com",
+      "author": null
+    },
+    {
+      "title": "In Makefile, what does \"$<\" mean?",
+      "url": "https://www.xmodulo.com/makefile-special-variable.html",
+      "summary": "",
+      "published_date": "2025-08-27 12:50:32",
+      "source": "xmodulo.com",
+      "author": null
+    },
+    {
+      "title": "How to get started with cloud-init",
+      "url": "https://www.xmodulo.com/cloud-init.html",
+      "summary": "",
+      "published_date": "2025-08-27 12:50:32",
+      "source": "xmodulo.com",
+      "author": null
+    },
+    {
+      "title": "How to schedule a periodic task with systemd",
+      "url": "https://www.xmodulo.com/schedule-periodic-task-systemd.html",
+      "summary": "",
+      "published_date": "2025-08-27 12:50:32",
+      "source": "xmodulo.com",
+      "author": null
+    }
+  ]
+}

@@ -287,7 +287,7 @@ class TechNewsScraper:
 
     def scrape_all_sites(self, max_articles_per_site: int = 5, site_type: str = "tech") -> Dict[str, List[Article]]:
         """
-        Scrape all configured tech news sites
+        Scrape all configured news sites for the specified type
         """
         if site_type == "tech":
             sites = [
@@ -320,8 +320,35 @@ class TechNewsScraper:
                 'https://cyberscoop.com',
                 'https://www.helpnetsecurity.com'
             ]
+        elif site_type == "robotics":
+            sites = [
+                'https://www.therobotreport.com',
+                'https://robohub.org',
+                'https://spectrum.ieee.org',
+                'https://roboticsandautomationnews.com',
+                'https://www.science.org/journal/scirobotics',
+                'https://www.robotics247.com',
+                'https://www.roboticstomorrow.com',
+                'https://news.mit.edu/topic/robotics',
+                'https://www.iotworldtoday.com',
+                'https://www.nasa.gov/news/robotics'
+            ]
+        elif site_type == "linux":
+            sites = [
+                'https://lwn.net',
+                'https://www.phoronix.com',
+                'https://www.linuxtoday.com',
+                'https://www.linuxjournal.com',
+                'https://www.omgubuntu.co.uk',
+                'https://www.linux.com',
+                'https://distrowatch.com',
+                'https://linux.slashdot.org',
+                'https://www.tecmint.com',
+                'https://www.unixmen.com',
+                'https://www.xmodulo.com'
+            ]
         else:
-            raise ValueError(f"Unknown site_type: {site_type}")
+            raise ValueError(f"Unknown site_type: {site_type}. Supported types: tech, security, robotics, linux")
         
         results = {}
         
@@ -370,8 +397,15 @@ class TechNewsScraper:
 
     def save_to_json(self, articles_dict: Dict[str, List[Article]], filename: str = None, file_prefix: str = "tech_news"):
         """Save articles to JSON file"""
+        # Ensure json directory exists
+        os.makedirs('json', exist_ok=True)
+        
         if filename is None:
-            filename = f"{file_prefix}_{datetime.now().strftime('%Y%m%d_%H%M%S')}.json"
+            filename = f"json/{file_prefix}_{datetime.now().strftime('%Y%m%d_%H%M%S')}.json"
+        else:
+            # If filename is provided without path, add json folder
+            if not filename.startswith('json/'):
+                filename = f"json/{filename}"
         
         json_data = {}
         for site, articles in articles_dict.items():
@@ -395,8 +429,15 @@ class TechNewsScraper:
 
     def save_to_csv(self, articles_dict: Dict[str, List[Article]], filename: str = None, file_prefix: str = "tech_news"):
         """Save articles to CSV file"""
+        # Ensure csv directory exists
+        os.makedirs('csv', exist_ok=True)
+        
         if filename is None:
-            filename = f"{file_prefix}_{datetime.now().strftime('%Y%m%d_%H%M%S')}.csv"
+            filename = f"csv/{file_prefix}_{datetime.now().strftime('%Y%m%d_%H%M%S')}.csv"
+        else:
+            # If filename is provided without path, add csv folder
+            if not filename.startswith('csv/'):
+                filename = f"csv/{filename}"
         
         all_articles = []
         for articles in articles_dict.values():
@@ -431,88 +472,113 @@ class TechNewsScraper:
             logger.error(f"Error loading template {template_file}: {e}")
             return self._get_default_html_template()
 
+
     def _get_default_html_template(self):
         """Return default HTML template as fallback"""
         return """<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{title}</title>
-    <style>
-        * {{ margin: 0; padding: 0; box-sizing: border-box; }}
-        body {{ font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; line-height: 1.6; color: #333; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); min-height: 100vh; padding: 20px; }}
-        .container {{ max-width: 1200px; margin: 0 auto; background: white; border-radius: 20px; box-shadow: 0 20px 60px rgba(0,0,0,0.1); overflow: hidden; }}
-        .header {{ background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%); color: white; padding: 40px; text-align: center; }}
-        .header h1 {{ font-size: 2.5rem; margin-bottom: 10px; font-weight: 700; }}
-        .header .subtitle {{ font-size: 1.2rem; opacity: 0.9; margin-bottom: 20px; }}
-        .stats {{ display: flex; justify-content: center; gap: 30px; margin-top: 20px; }}
-        .stat-item {{ text-align: center; }}
-        .stat-number {{ font-size: 2rem; font-weight: bold; display: block; }}
-        .stat-label {{ font-size: 0.9rem; opacity: 0.8; }}
-        .content {{ padding: 40px; }}
-        .site-section {{ margin-bottom: 50px; }}
-        .site-header {{ display: flex; align-items: center; margin-bottom: 25px; padding-bottom: 15px; border-bottom: 3px solid #f0f0f0; }}
-        .site-icon {{ width: 40px; height: 40px; border-radius: 50%; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; margin-right: 15px; font-size: 1.2rem; }}
-        .site-name {{ font-size: 1.8rem; font-weight: 600; color: #2c3e50; flex: 1; }}
-        .article-count {{ background: #e74c3c; color: white; padding: 8px 16px; border-radius: 20px; font-size: 0.9rem; font-weight: 600; }}
-        .articles-grid {{ display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 25px; }}
-        .article-card {{ background: #fff; border: 1px solid #e0e0e0; border-radius: 15px; padding: 25px; transition: all 0.3s ease; position: relative; overflow: hidden; }}
-        .article-card:hover {{ transform: translateY(-5px); box-shadow: 0 15px 40px rgba(0,0,0,0.1); border-color: #667eea; }}
-        .article-card::before {{ content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); }}
-        .article-title {{ font-size: 1.3rem; font-weight: 600; color: #2c3e50; margin-bottom: 12px; line-height: 1.4; }}
-        .article-title a {{ color: inherit; text-decoration: none; transition: color 0.3s ease; }}
-        .article-title a:hover {{ color: #667eea; }}
-        .article-summary {{ color: #666; margin-bottom: 15px; font-size: 0.95rem; line-height: 1.5; }}
-        .article-meta {{ display: flex; justify-content: space-between; align-items: center; font-size: 0.85rem; color: #999; border-top: 1px solid #f0f0f0; padding-top: 15px; }}
-        .article-author {{ font-weight: 500; color: #667eea; }}
-        .article-date {{ opacity: 0.8; }}
-        .no-articles {{ text-align: center; color: #999; font-style: italic; padding: 40px; background: #f9f9f9; border-radius: 10px; }}
-        .footer {{ background: #f8f9fa; padding: 30px; text-align: center; color: #666; border-top: 1px solid #e0e0e0; }}
-        .footer p {{ margin-bottom: 10px; }}
-        .footer .timestamp {{ font-weight: 600; color: #333; }}
-    </style>
-</head>
-<body>
-    <div class="container">
-        <div class="header">
-            <h1>{header_title}</h1>
-            <div class="subtitle">{subtitle}</div>
-            <div class="stats">
-                <div class="stat-item">
-                    <span class="stat-number">{total_articles}</span>
-                    <span class="stat-label">Total Articles</span>
-                </div>
-                <div class="stat-item">
-                    <span class="stat-number">{total_sources}</span>
-                    <span class="stat-label">Sources</span>
-                </div>
-                <div class="stat-item">
-                    <span class="stat-number">{generation_time}</span>
-                    <span class="stat-label">Generated</span>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>{title}</title>
+        <style>
+            * {{ margin: 0; padding: 0; box-sizing: border-box; }}
+            body {{ font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; line-height: 1.6; color: #333; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); min-height: 100vh; padding: 20px; }}
+            .container {{ max-width: 1200px; margin: 0 auto; background: white; border-radius: 20px; box-shadow: 0 20px 60px rgba(0,0,0,0.1); overflow: hidden; }}
+            .header {{ background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%); color: white; padding: 40px; text-align: center; }}
+            .header.robotics-theme {{ background: linear-gradient(135deg, #ff6b6b 0%, #ee5a52 100%); }}
+            .header.linux-theme {{ background: linear-gradient(135deg, #f39c12 0%, #d68910 100%); }}
+            .header.security-theme {{ background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%); }}
+            .header.combined-theme {{ background: linear-gradient(135deg, #9b59b6 0%, #8e44ad 100%); }}
+            .header h1 {{ font-size: 2.5rem; margin-bottom: 10px; font-weight: 700; }}
+            .header .subtitle {{ font-size: 1.2rem; opacity: 0.9; margin-bottom: 20px; }}
+            .stats {{ display: flex; justify-content: center; gap: 30px; margin-top: 20px; }}
+            .stat-item {{ text-align: center; }}
+            .stat-number {{ font-size: 2rem; font-weight: bold; display: block; }}
+            .stat-label {{ font-size: 0.9rem; opacity: 0.8; }}
+            .content {{ padding: 40px; }}
+            .site-section {{ margin-bottom: 50px; }}
+            .site-header {{ display: flex; align-items: center; margin-bottom: 25px; padding-bottom: 15px; border-bottom: 3px solid #f0f0f0; }}
+            .site-icon {{ width: 40px; height: 40px; border-radius: 50%; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; margin-right: 15px; font-size: 1.2rem; }}
+            .robotics-prefix .site-icon {{ background: linear-gradient(135deg, #ff6b6b 0%, #ee5a52 100%); }}
+            .linux-prefix .site-icon {{ background: linear-gradient(135deg, #f39c12 0%, #d68910 100%); }}
+            .security-prefix .site-icon {{ background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%); }}
+            .site-name {{ font-size: 1.8rem; font-weight: 600; color: #2c3e50; flex: 1; }}
+            .article-count {{ background: #e74c3c; color: white; padding: 8px 16px; border-radius: 20px; font-size: 0.9rem; font-weight: 600; }}
+            .articles-grid {{ display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 25px; }}
+            .article-card {{ background: #fff; border: 1px solid #e0e0e0; border-radius: 15px; padding: 25px; transition: all 0.3s ease; position: relative; overflow: hidden; }}
+            .article-card:hover {{ transform: translateY(-5px); box-shadow: 0 15px 40px rgba(0,0,0,0.1); border-color: #667eea; }}
+            .article-card::before {{ content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); }}
+            .robotics-prefix .article-card::before {{ background: linear-gradient(135deg, #ff6b6b 0%, #ee5a52 100%); }}
+            .linux-prefix .article-card::before {{ background: linear-gradient(135deg, #f39c12 0%, #d68910 100%); }}
+            .security-prefix .article-card::before {{ background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%); }}
+            .article-title {{ font-size: 1.3rem; font-weight: 600; color: #2c3e50; margin-bottom: 12px; line-height: 1.4; }}
+            .article-title a {{ color: inherit; text-decoration: none; transition: color 0.3s ease; }}
+            .article-title a:hover {{ color: #667eea; }}
+            .article-summary {{ color: #666; margin-bottom: 15px; font-size: 0.95rem; line-height: 1.5; }}
+            .article-meta {{ display: flex; justify-content: space-between; align-items: center; font-size: 0.85rem; color: #999; border-top: 1px solid #f0f0f0; padding-top: 15px; }}
+            .article-author {{ font-weight: 500; color: #667eea; }}
+            .article-date {{ opacity: 0.8; }}
+            .no-articles {{ text-align: center; color: #999; font-style: italic; padding: 40px; background: #f9f9f9; border-radius: 10px; }}
+            .footer {{ background: #f8f9fa; padding: 30px; text-align: center; color: #666; border-top: 1px solid #e0e0e0; }}
+            .footer p {{ margin-bottom: 10px; }}
+            .footer .timestamp {{ font-weight: 600; color: #333; }}
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="header {theme_class}">
+                <h1>{header_title}</h1>
+                <div class="subtitle">{subtitle}</div>
+                <div class="stats">
+                    <div class="stat-item">
+                        <span class="stat-number">{total_articles}</span>
+                        <span class="stat-label">Total Articles</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">{total_sources}</span>
+                        <span class="stat-label">Sources</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">{generation_time}</span>
+                        <span class="stat-label">Generated</span>
+                    </div>
                 </div>
             </div>
+            
+            <div class="content">
+                {content}
+            </div>
+            
+            <div class="footer">
+                <p>Generated by Enhanced Tech News Harvester</p>
+                <p class="timestamp">Created on {timestamp}</p>
+                <p>Click on article titles to read the full stories</p>
+            </div>
         </div>
-        
-        <div class="content">
-            {content}
-        </div>
-        
-        <div class="footer">
-            <p>Generated by Tech News Scraper</p>
-            <p class="timestamp">Created on {timestamp}</p>
-            <p>Click on article titles to read the full stories</p>
-        </div>
-    </div>
-</body>
-</html>"""
+    </body>
+    </html>"""
+
+    def ensure_output_directories(self):
+        """Create output directories if they don't exist"""
+        directories = ['html', 'json', 'csv']
+        for directory in directories:
+            os.makedirs(directory, exist_ok=True)
+
 
     def save_to_html(self, articles_dict: Dict[str, List[Article]], filename: str = None, 
-                     file_prefix: str = "tech_news", template_file: str = "news_template.html",
-                     site_type: str = "tech"):
+                    file_prefix: str = "tech_news", template_file: str = "news_template.html",
+                    site_type: str = "tech"):
         """Save articles to HTML file with styling using external template"""
+        # Ensure html directory exists
+        os.makedirs('html', exist_ok=True)
+        
         if filename is None:
-            filename = f"{file_prefix}_{datetime.now().strftime('%Y%m%d_%H%M%S')}.html"
+            filename = f"html/{file_prefix}_{datetime.now().strftime('%Y%m%d_%H%M%S')}.html"
+        else:
+            # If filename is provided without path, add html folder
+            if not filename.startswith('html/'):
+                filename = f"html/{filename}"
         
         total_articles = sum(len(articles) for articles in articles_dict.values())
         
@@ -523,22 +589,32 @@ class TechNewsScraper:
         content = ""
         for site, articles in articles_dict.items():
             # Handle prefixed site names for combined reports
-            if site.startswith(('tech_', 'security_')):
+            if site.startswith(('tech_', 'security_', 'robotics_', 'linux_')):
                 prefix, actual_site = site.split('_', 1)
                 site_display = actual_site.replace('.com', '').replace('.', ' ').title()
                 site_class = f"{prefix}-prefix"
-                if prefix == "tech":
-                    site_display = f"🚀 {site_display}"
-                else:
-                    site_display = f"🔒 {site_display}"
+                
+                # Add appropriate emoji based on prefix
+                emoji_map = {
+                    "tech": "🚀",
+                    "security": "🔒", 
+                    "robotics": "🤖",
+                    "linux": "🐧"
+                }
+                site_display = f"{emoji_map.get(prefix, '📰')} {site_display}"
             else:
                 actual_site = site
                 site_display = site.replace('.com', '').replace('.', ' ').title()
                 site_class = ""
-                if site_type == "security":
-                    site_display = f"🔒 {site_display}"
-                elif site_type == "tech":
-                    site_display = f"🚀 {site_display}"
+                
+                # Add emoji based on site type
+                emoji_map = {
+                    "tech": "🚀",
+                    "security": "🔒",
+                    "robotics": "🤖", 
+                    "linux": "🐧"
+                }
+                site_display = f"{emoji_map.get(site_type, '📰')} {site_display}"
             
             site_initial = actual_site[0].upper()
             
@@ -549,7 +625,7 @@ class TechNewsScraper:
                     <h2 class="site-name">{site_display}</h2>
                     <div class="article-count">{len(articles)} articles</div>
                 </div>
-"""
+    """
             
             if articles:
                 content += '<div class="articles-grid">'
@@ -583,7 +659,7 @@ class TechNewsScraper:
                             <span class="article-date">{formatted_date}</span>
                         </div>
                     </div>
-"""
+    """
                 
                 content += '</div>'
             else:
@@ -592,36 +668,54 @@ class TechNewsScraper:
             content += '</div>'
         
         # Set template variables based on site type
-        if site_type == "security":
-            header_title = "🔒 Cybersecurity News Scraping Results"
-            subtitle = "Latest cybersecurity articles from top security news sources"
-            theme_class = "security-theme"
-        elif site_type == "combined":
-            header_title = "🔄 Combined News Report"
-            subtitle = "Latest articles from technology and cybersecurity sources"
-            theme_class = "combined-theme"
-        else:
-            header_title = "🚀 Tech News Scraping Results"
-            subtitle = "Latest articles from top technology news sources"
-            theme_class = "tech-theme"
+        theme_config = {
+            "tech": {
+                "header_title": "🚀 Tech News",
+                "subtitle": "Latest articles from top technology news sources",
+                "theme_class": "tech-theme"
+            },
+            "security": {
+                "header_title": "🔒 Cybersecurity News",
+                "subtitle": "Latest cybersecurity articles from top security news sources",
+                "theme_class": "security-theme"
+            },
+            "robotics": {
+                "header_title": "🤖 Robotics News",
+                "subtitle": "Latest robotics articles from top robotics and automation sources",
+                "theme_class": "robotics-theme"
+            },
+            "linux": {
+                "header_title": "🐧 Linux News",
+                "subtitle": "Latest Linux and open source articles from top Linux news sources",
+                "theme_class": "linux-theme"
+            },
+            "combined": {
+                "header_title": "🔄 Combined News Report",
+                "subtitle": "Latest articles from multiple technology news categories",
+                "theme_class": "combined-theme"
+            }
+        }
+        
+        config = theme_config.get(site_type, theme_config["tech"])
         
         # Fill template using string replacement to avoid curly brace issues
         html_content = template
-        html_content = html_content.replace('{title}', f"{site_type.title()} News Scraping Results - {datetime.now().strftime('%Y-%m-%d %H:%M')}")
-        html_content = html_content.replace('{header_title}', header_title)
-        html_content = html_content.replace('{subtitle}', subtitle)
+        html_content = html_content.replace('{title}', f"{site_type.title()} News - {datetime.now().strftime('%Y-%m-%d %H:%M')}")
+        html_content = html_content.replace('{header_title}', config["header_title"])
+        html_content = html_content.replace('{subtitle}', config["subtitle"])
         html_content = html_content.replace('{total_articles}', str(total_articles))
         html_content = html_content.replace('{total_sources}', str(len(articles_dict)))
         html_content = html_content.replace('{generation_time}', datetime.now().strftime('%H:%M'))
         html_content = html_content.replace('{content}', content)
         html_content = html_content.replace('{timestamp}', datetime.now().strftime('%A, %B %d, %Y at %H:%M:%S'))
-        html_content = html_content.replace('{theme_class}', theme_class)
+        html_content = html_content.replace('{theme_class}', config["theme_class"])
         
         with open(filename, 'w', encoding='utf-8') as f:
             f.write(html_content)
         
         logger.info(f"HTML report saved to {filename}")
         return filename
+
 
 def scrape_tech_news(max_articles_per_site: int = 5):
     """Scrape general tech news"""
@@ -656,12 +750,58 @@ def scrape_security_news(max_articles_per_site: int = 5):
     
     if total_articles > 0:
         # Save results in all formats with security prefix
-        json_file = scraper.save_to_json(all_articles, file_prefix="tech_news_security")
-        csv_file = scraper.save_to_csv(all_articles, file_prefix="tech_news_security")
-        html_file = scraper.save_to_html(all_articles, file_prefix="tech_news_security", 
+        json_file = scraper.save_to_json(all_articles, file_prefix="security_news")
+        csv_file = scraper.save_to_csv(all_articles, file_prefix="security_news")
+        html_file = scraper.save_to_html(all_articles, file_prefix="security_news", 
                                        site_type="security")
         
         print(f"\nCybersecurity News - Files saved:")
+        print(f"- {json_file}")
+        print(f"- {csv_file}")
+        print(f"- {html_file}")
+    
+    return all_articles
+
+def scrape_robotics_news(max_articles_per_site: int = 5):
+    """Scrape robotics news"""
+    scraper = TechNewsScraper(delay=2.0)
+    
+    print("Starting robotics news scraping...")
+    all_articles = scraper.scrape_all_sites(max_articles_per_site, site_type="robotics")
+    
+    total_articles = sum(len(articles) for articles in all_articles.values())
+    
+    if total_articles > 0:
+        # Save results in all formats with robotics prefix
+        json_file = scraper.save_to_json(all_articles, file_prefix="robotics_news")
+        csv_file = scraper.save_to_csv(all_articles, file_prefix="robotics_news")
+        html_file = scraper.save_to_html(all_articles, file_prefix="robotics_news", 
+                                       site_type="robotics")
+        
+        print(f"\nRobotics News - Files saved:")
+        print(f"- {json_file}")
+        print(f"- {csv_file}")
+        print(f"- {html_file}")
+    
+    return all_articles
+
+def scrape_linux_news(max_articles_per_site: int = 5):
+    """Scrape Linux news"""
+    scraper = TechNewsScraper(delay=2.0)
+    
+    print("Starting Linux news scraping...")
+    all_articles = scraper.scrape_all_sites(max_articles_per_site, site_type="linux")
+    
+    total_articles = sum(len(articles) for articles in all_articles.values())
+    
+    if total_articles > 0:
+        # Save results in all formats with Linux prefix
+        json_file = scraper.save_to_json(all_articles, file_prefix="linux_news")
+        csv_file = scraper.save_to_csv(all_articles, file_prefix="linux_news")
+        html_file = scraper.save_to_html(all_articles, file_prefix="linux_news", 
+                                       site_type="linux")
+        
+        print(f"\nLinux News - Files saved:")
         print(f"- {json_file}")
         print(f"- {csv_file}")
         print(f"- {html_file}")
@@ -672,13 +812,16 @@ def main():
     """
     Main function to run the scraper
     """
-    print("Tech News Scraper v2.0")
+    print("Enhanced Tech News Scraper v3.0")
     print("Choose what to scrape:")
     print("1. Tech news only")
     print("2. Cybersecurity news only")
-    print("3. Both tech and cybersecurity news")
+    print("3. Robotics news only")
+    print("4. Linux news only")
+    print("5. All categories (tech + security + robotics + linux)")
+    print("6. Custom selection")
     
-    choice = input("\nEnter choice (1/2/3): ").strip()
+    choice = input("\nEnter choice (1/2/3/4/5/6): ").strip()
     
     if choice == "1":
         tech_articles = scrape_tech_news()
@@ -691,20 +834,122 @@ def main():
         print(f"\n✅ Cybersecurity news scraping completed! Total articles: {total}")
     
     elif choice == "3":
-        print("\nScraping both tech and cybersecurity news...")
+        robotics_articles = scrape_robotics_news()
+        total = sum(len(articles) for articles in robotics_articles.values())
+        print(f"\n✅ Robotics news scraping completed! Total articles: {total}")
+    
+    elif choice == "4":
+        linux_articles = scrape_linux_news()
+        total = sum(len(articles) for articles in linux_articles.values())
+        print(f"\n✅ Linux news scraping completed! Total articles: {total}")
+    
+    elif choice == "5":
+        print("\nScraping all news categories...")
         tech_articles = scrape_tech_news()
         security_articles = scrape_security_news()
+        robotics_articles = scrape_robotics_news()
+        linux_articles = scrape_linux_news()
         
         tech_total = sum(len(articles) for articles in tech_articles.values())
         security_total = sum(len(articles) for articles in security_articles.values())
+        robotics_total = sum(len(articles) for articles in robotics_articles.values())
+        linux_total = sum(len(articles) for articles in linux_articles.values())
+        
+        # Create combined report
+        combined_file = create_combined_report(tech_articles, security_articles, 
+                                             robotics_articles, linux_articles)
         
         print(f"\n✅ All scraping completed!")
         print(f"Tech articles: {tech_total}")
         print(f"Security articles: {security_total}")
-        print(f"Total articles: {tech_total + security_total}")
+        print(f"Robotics articles: {robotics_total}")
+        print(f"Linux articles: {linux_total}")
+        print(f"Total articles: {tech_total + security_total + robotics_total + linux_total}")
+        print(f"Combined report: {combined_file}")
+    
+    elif choice == "6":
+        print("\nCustom selection:")
+        print("Select categories to scrape (separate with commas):")
+        print("t = tech, s = security, r = robotics, l = linux")
+        categories = input("Enter selection (e.g., t,s,r): ").strip().lower().split(',')
+        
+        all_results = {}
+        total_count = 0
+        
+        for cat in categories:
+            cat = cat.strip()
+            if cat == 't':
+                print("\nScraping tech news...")
+                articles = scrape_tech_news()
+                all_results.update({f"tech_{k}": v for k, v in articles.items()})
+                total_count += sum(len(articles) for articles in articles.values())
+            elif cat == 's':
+                print("\nScraping security news...")
+                articles = scrape_security_news()
+                all_results.update({f"security_{k}": v for k, v in articles.items()})
+                total_count += sum(len(articles) for articles in articles.values())
+            elif cat == 'r':
+                print("\nScraping robotics news...")
+                articles = scrape_robotics_news()
+                all_results.update({f"robotics_{k}": v for k, v in articles.items()})
+                total_count += sum(len(articles) for articles in articles.values())
+            elif cat == 'l':
+                print("\nScraping Linux news...")
+                articles = scrape_linux_news()
+                all_results.update({f"linux_{k}": v for k, v in articles.items()})
+                total_count += sum(len(articles) for articles in articles.values())
+        
+        if all_results:
+            # Create custom combined report
+            scraper = TechNewsScraper()
+            custom_file = scraper.save_to_html(
+                all_results,
+                filename=f"custom_news_report_{datetime.now().strftime('%Y%m%d_%H%M%S')}.html",
+                file_prefix="custom_news",
+                site_type="combined"
+            )
+            print(f"\n✅ Custom scraping completed! Total articles: {total_count}")
+            print(f"Custom report: {custom_file}")
+        else:
+            print("No valid categories selected.")
     
     else:
-        print("Invalid choice. Please run again and select 1, 2, or 3.")
+        print("Invalid choice. Please run again and select 1-6.")
+
+def create_combined_report(tech_articles: Dict[str, List[Article]], 
+                          security_articles: Dict[str, List[Article]],
+                          robotics_articles: Dict[str, List[Article]],
+                          linux_articles: Dict[str, List[Article]]):
+    """
+    Create a combined HTML report with all news categories
+    """
+    scraper = TechNewsScraper()
+    
+    # Combine all articles
+    combined_articles = {}
+    
+    # Add articles with prefixes
+    for site, articles in tech_articles.items():
+        combined_articles[f"tech_{site}"] = articles
+    
+    for site, articles in security_articles.items():
+        combined_articles[f"security_{site}"] = articles
+    
+    for site, articles in robotics_articles.items():
+        combined_articles[f"robotics_{site}"] = articles
+    
+    for site, articles in linux_articles.items():
+        combined_articles[f"linux_{site}"] = articles
+    
+    # Save combined report
+    html_file = scraper.save_to_html(
+        combined_articles, 
+        filename=f"combined_news_report_{datetime.now().strftime('%Y%m%d_%H%M%S')}.html",
+        file_prefix="combined_news",
+        site_type="combined"
+    )
+    
+    return html_file
 
 def debug_single_site(site_url: str):
     """
@@ -724,37 +969,10 @@ def debug_single_site(site_url: str):
             print(f"   Summary: {article.summary[:100]}...")
         print()
 
-def create_combined_report(tech_articles: Dict[str, List[Article]], 
-                          security_articles: Dict[str, List[Article]]):
-    """
-    Create a combined HTML report with both tech and security news
-    """
-    scraper = TechNewsScraper()
-    
-    # Combine all articles
-    combined_articles = {}
-    
-    # Add tech articles with prefix
-    for site, articles in tech_articles.items():
-        combined_articles[f"tech_{site}"] = articles
-    
-    # Add security articles with prefix  
-    for site, articles in security_articles.items():
-        combined_articles[f"security_{site}"] = articles
-    
-    # Save combined report
-    html_file = scraper.save_to_html(
-        combined_articles, 
-        filename=f"combined_news_report_{datetime.now().strftime('%Y%m%d_%H%M%S')}.html",
-        file_prefix="combined_news",
-        site_type="combined"
-    )
-    
-    return html_file
-
 if __name__ == "__main__":
     main()
     
     # Uncomment to debug specific sites:
-    # debug_single_site('https://techcrunch.com')
-    # debug_single_site('https://thehackernews.com')
+    # debug_single_site('https://www.therobotreport.com')
+    # debug_single_site('https://lwn.net')
+    # debug_single_site('https://robohub.org')

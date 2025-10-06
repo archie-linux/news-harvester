@@ -1,0 +1,1209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Linux News  - 2025-08-29 11:29</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+        
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+        
+        .header .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            margin-bottom: 20px;
+        }
+        
+        .stats {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 20px;
+        }
+        
+        .stat-item {
+            text-align: center;
+        }
+        
+        .stat-number {
+            font-size: 2rem;
+            font-weight: bold;
+            display: block;
+        }
+        
+        .stat-label {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+        
+        .content {
+            padding: 40px;
+        }
+        
+        .site-section {
+            margin-bottom: 50px;
+        }
+        
+        .site-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid #f0f0f0;
+        }
+        
+        .site-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            margin-right: 15px;
+            font-size: 1.2rem;
+        }
+        
+        .site-name {
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: #2c3e50;
+            flex: 1;
+        }
+        
+        .article-count {
+            background: #e74c3c;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+        
+        .articles-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 25px;
+        }
+        
+        .article-card {
+            background: #fff;
+            border: 1px solid #e0e0e0;
+            border-radius: 15px;
+            padding: 25px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .article-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+            border-color: #667eea;
+        }
+        
+        .article-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        
+        .article-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 12px;
+            line-height: 1.4;
+        }
+        
+        .article-title a {
+            color: inherit;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .article-title a:hover {
+            color: #667eea;
+        }
+        
+        .article-summary {
+            color: #666;
+            margin-bottom: 15px;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+        
+        .article-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.85rem;
+            color: #999;
+            border-top: 1px solid #f0f0f0;
+            padding-top: 15px;
+        }
+        
+        .article-author {
+            font-weight: 500;
+            color: #667eea;
+        }
+        
+        .article-date {
+            opacity: 0.8;
+        }
+        
+        .no-articles {
+            text-align: center;
+            color: #999;
+            font-style: italic;
+            padding: 40px;
+            background: #f9f9f9;
+            border-radius: 10px;
+        }
+        
+        .footer {
+            background: #f8f9fa;
+            padding: 30px;
+            text-align: center;
+            color: #666;
+            border-top: 1px solid #e0e0e0;
+        }
+        
+        .footer p {
+            margin-bottom: 10px;
+        }
+        
+        .footer .timestamp {
+            font-weight: 600;
+            color: #333;
+        }
+        
+        /* Security-specific styling */
+        .security-theme .header {
+            background: linear-gradient(135deg, #c0392b 0%, #8e44ad 100%);
+        }
+        
+        .security-theme .site-icon {
+            background: linear-gradient(135deg, #c0392b 0%, #8e44ad 100%);
+        }
+        
+        .security-theme .article-card::before {
+            background: linear-gradient(135deg, #c0392b 0%, #8e44ad 100%);
+        }
+        
+        .security-theme .article-title a:hover {
+            color: #c0392b;
+        }
+        
+        .security-theme .article-author {
+            color: #c0392b;
+        }
+        
+        /* Combined theme styling */
+        .combined-theme .header {
+            background: linear-gradient(135deg, #2c3e50 0%, #3498db 50%, #9b59b6 100%);
+        }
+        
+        .combined-theme .site-icon {
+            background: linear-gradient(135deg, #2c3e50 0%, #9b59b6 100%);
+        }
+        
+        .tech-prefix .site-icon {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        
+        .security-prefix .site-icon {
+            background: linear-gradient(135deg, #c0392b 0%, #8e44ad 100%);
+        }
+        
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2rem;
+            }
+            
+            .stats {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .content {
+                padding: 20px;
+            }
+            
+            .articles-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .site-header {
+                flex-direction: column;
+                text-align: center;
+                gap: 15px;
+            }
+        }
+        
+        /* Enhanced animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .article-card {
+            animation: fadeInUp 0.6s ease-out;
+        }
+        
+        .article-card:nth-child(even) {
+            animation-delay: 0.1s;
+        }
+        
+        .article-card:nth-child(3n) {
+            animation-delay: 0.2s;
+        }
+        
+        /* Loading state */
+        .loading {
+            text-align: center;
+            padding: 40px;
+            color: #666;
+        }
+        
+        .loading::after {
+            content: '...';
+            animation: dots 2s infinite;
+        }
+        
+        @keyframes dots {
+            0%, 20% { content: '.'; }
+            40% { content: '..'; }
+            60%, 100% { content: '...'; }
+        }
+        
+        /* Enhanced hover effects */
+        .article-card:hover .article-title a {
+            text-shadow: 0 2px 4px rgba(102, 126, 234, 0.3);
+        }
+        
+        /* Status indicators */
+        .status-indicator {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #27ae60;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(39, 174, 96, 0.7); }
+            70% { box-shadow: 0 0 0 10px rgba(39, 174, 96, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(39, 174, 96, 0); }
+        }
+        
+        /* Dark mode support */
+        @media (prefers-color-scheme: dark) {
+            body {
+                background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            }
+            
+            .container {
+                background: #2c3e50;
+                color: #ecf0f1;
+            }
+            
+            .article-card {
+                background: #34495e;
+                border-color: #4a6741;
+                color: #ecf0f1;
+            }
+            
+            .article-title {
+                color: #ecf0f1;
+            }
+            
+            .article-summary {
+                color: #bdc3c7;
+            }
+            
+            .no-articles {
+                background: #34495e;
+                color: #bdc3c7;
+            }
+        }
+    </style>
+</head>
+<body class="linux-theme">
+    <div class="container">
+        <div class="header">
+            <h1>🐧 Linux News </h1>
+            <div class="subtitle">Latest Linux and open source articles from top Linux news sources</div>
+            <div class="stats">
+                <div class="stat-item">
+                    <span class="stat-number">53</span>
+                    <span class="stat-label">Total Articles</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">11</span>
+                    <span class="stat-label">Sources</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">11:29</span>
+                    <span class="stat-label">Generated</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="content">
+            
+            <div class="site-section ">
+                <div class="site-header">
+                    <div class="site-icon">L</div>
+                    <h2 class="site-name">🐧 Lwn Net</h2>
+                    <div class="article-count">4 articles</div>
+                </div>
+<div class="articles-grid">
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://thisweek.gnome.org/posts/2025/08/twig-212/" target="_blank" rel="noopener noreferrer">
+                                celebrated its
+28th birthday
+                            </a>
+                        </h3>
+                        <div class="article-summary">Full Story(comments: 11)</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Aug 29, 2025 at 11:28</span>
+                        </div>
+                    </div>
+
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://www.bassi.io/articles/2025/08/03/governance-in-gnome/" target="_blank" rel="noopener noreferrer">
+                                blog
+post
+                            </a>
+                        </h3>
+                        <div class="article-summary">Full Story(comments: 11)</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Aug 29, 2025 at 11:28</span>
+                        </div>
+                    </div>
+
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://android-developers.googleblog.com/2025/08/elevating-android-security.html" target="_blank" rel="noopener noreferrer">
+                                announced
+                            </a>
+                        </h3>
+                        <div class="article-summary">Starting next year, Android will require all apps to be registered 	by verified developers in order to be installed by users on 	certified Android devices. This creates crucial accountability, 	making...</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Aug 29, 2025 at 11:28</span>
+                        </div>
+                    </div>
+
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://pycon.blogspot.com/2025/08/pycon-us-2025-recap-and-recordings.html" target="_blank" rel="noopener noreferrer">
+                                announced
+                            </a>
+                        </h3>
+                        <div class="article-summary">No summary available.</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Aug 29, 2025 at 11:28</span>
+                        </div>
+                    </div>
+</div></div>
+            <div class="site-section ">
+                <div class="site-header">
+                    <div class="site-icon">P</div>
+                    <h2 class="site-name">🐧 Phoronix</h2>
+                    <div class="article-count">4 articles</div>
+                </div>
+<div class="articles-grid">
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://www.phoronix.com/news/Linux-6.17-AMD-EPYC-Turin" target="_blank" rel="noopener noreferrer">
+                                Linux 6.17 Showing Off Some Nice Gains For 5th Gen AMD EPYC "Turin" Performance
+                            </a>
+                        </h3>
+                        <div class="article-summary">Earlier this week I provided benchmarks looking at the Linux 5.15 LTS through Linux 6.17 Git kernel performance using the latest stable and development kernels compared to the Long Term Support (LTS) ...</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Aug 29, 2025 at 11:28</span>
+                        </div>
+                    </div>
+
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://www.phoronix.com/news/TrueNAS-25.10-Beta" target="_blank" rel="noopener noreferrer">
+                                TrueNAS 25.10 Beta Brings Installation Improvements, NVIDIA Blackwell Support
+                            </a>
+                        </h3>
+                        <div class="article-summary">The engineers over at iXsystems announced today the beta release of TrueNAS 25.10 "Goldeneye" as the latest iteration of this formerly BSD-based OS that has transitioned to making use of the Linux ker...</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Aug 29, 2025 at 11:28</span>
+                        </div>
+                    </div>
+
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://www.phoronix.com/news/Apple-M2-Pro-Max-Ultra-DT" target="_blank" rel="noopener noreferrer">
+                                Apple M2 Pro / Max / Ultra Device Trees Under Review For The Linux Kernel
+                            </a>
+                        </h3>
+                        <div class="article-summary">While the Asahi Linux project has faced some setbacks, such as most recently with Alyssa Rosenzweig leaving the project and still working to bring-up M3/M4 support, the upstreaming effort by Asahi Lin...</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Aug 29, 2025 at 11:28</span>
+                        </div>
+                    </div>
+
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://www.phoronix.com/news/AMD-ISP4-Linux-Driver-v3" target="_blank" rel="noopener noreferrer">
+                                AMD ISP4 Driver Updated As It Nears The Mainline Linux Kernel
+                            </a>
+                        </h3>
+                        <div class="article-summary">Posted today to the Linux kernel mailing list was the patch series for introducing the AMD ISP4 driver to the mainline kernel. This supports the image signal processor IP that to date is found with HP...</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Aug 29, 2025 at 11:28</span>
+                        </div>
+                    </div>
+</div></div>
+            <div class="site-section ">
+                <div class="site-header">
+                    <div class="site-icon">L</div>
+                    <h2 class="site-name">🐧 Linuxtoday</h2>
+                    <div class="article-count">5 articles</div>
+                </div>
+<div class="articles-grid">
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://www.linuxtoday.com/blog/shotcut-25-08-video-editor-arrives-with-key-fixes/" target="_blank" rel="noopener noreferrer">
+                                Shotcut 25.08 Video Editor Arrives with Key Fixes
+                            </a>
+                        </h3>
+                        <div class="article-summary">No summary available.</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Aug 29, 2025 at 11:28</span>
+                        </div>
+                    </div>
+
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://www.linuxtoday.com/blog/how-to-use-extrepo-in-debian-to-manage-third-party-repositories/" target="_blank" rel="noopener noreferrer">
+                                How to Use extrepo in Debian to Manage Third-Party Repositories
+                            </a>
+                        </h3>
+                        <div class="article-summary">No summary available.</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Aug 29, 2025 at 11:28</span>
+                        </div>
+                    </div>
+
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://www.linuxtoday.com/blog/15-best-free-and-open-source-linux-serial-terminals/" target="_blank" rel="noopener noreferrer">
+                                15 Best Free and Open Source Linux Serial Terminals
+                            </a>
+                        </h3>
+                        <div class="article-summary">No summary available.</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Aug 29, 2025 at 11:28</span>
+                        </div>
+                    </div>
+
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://www.linuxtoday.com/blog/15-best-free-and-open-source-cli-data-hashing-tools/" target="_blank" rel="noopener noreferrer">
+                                15 Best Free and Open Source CLI Data Hashing Tools
+                            </a>
+                        </h3>
+                        <div class="article-summary">No summary available.</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Aug 29, 2025 at 11:28</span>
+                        </div>
+                    </div>
+
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://www.linuxtoday.com/blog/buttercup-open-source-ai-driven-system-detects-and-patches-vulnerabilities/" target="_blank" rel="noopener noreferrer">
+                                Buttercup: Open-source AI-driven system detects and patches vulnerabilities
+                            </a>
+                        </h3>
+                        <div class="article-summary">No summary available.</div>
+                        <div class="article-meta">
+                            <span class="article-author">By August 28, 2025</span>
+                            <span class="article-date">Aug 29, 2025 at 11:28</span>
+                        </div>
+                    </div>
+</div></div>
+            <div class="site-section ">
+                <div class="site-header">
+                    <div class="site-icon">L</div>
+                    <h2 class="site-name">🐧 Linuxjournal</h2>
+                    <div class="article-count">5 articles</div>
+                </div>
+<div class="articles-grid">
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://www.linuxjournal.com/content/containers-2025-docker-vs-podman-modern-developers" target="_blank" rel="noopener noreferrer">
+                                Containers in 2025: Docker vs. Podman for Modern Developers
+                            </a>
+                        </h3>
+                        <div class="article-summary">No summary available.</div>
+                        <div class="article-meta">
+                            <span class="article-author">By George Whittaker- August 26, 2025</span>
+                            <span class="article-date">Aug 29, 2025 at 11:29</span>
+                        </div>
+                    </div>
+
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://www.linuxjournal.com/content/rising-ashes-how-almalinux-and-rocky-linux-redefined-post-centos-landscape" target="_blank" rel="noopener noreferrer">
+                                Rising from the Ashes: How AlmaLinux and Rocky Linux Redefined the Post-CentOS Landscape
+                            </a>
+                        </h3>
+                        <div class="article-summary">No summary available.</div>
+                        <div class="article-meta">
+                            <span class="article-author">By George Whittaker- August 21, 2025</span>
+                            <span class="article-date">Aug 29, 2025 at 11:29</span>
+                        </div>
+                    </div>
+
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://www.linuxjournal.com/content/why-gnome-replaced-eye-gnome-loupe-default-image-viewer" target="_blank" rel="noopener noreferrer">
+                                Why GNOME Replaced Eye of GNOME with Loupe as the Default Image Viewer
+                            </a>
+                        </h3>
+                        <div class="article-summary">No summary available.</div>
+                        <div class="article-meta">
+                            <span class="article-author">By George Whittaker- August 19, 2025</span>
+                            <span class="article-date">Aug 29, 2025 at 11:29</span>
+                        </div>
+                    </div>
+
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://www.linuxjournal.com/content/ptyxis-ubuntus-leap-gpu-powered-terminals" target="_blank" rel="noopener noreferrer">
+                                Ptyxis: Ubuntu’s Leap Into GPU-Powered Terminals
+                            </a>
+                        </h3>
+                        <div class="article-summary">No summary available.</div>
+                        <div class="article-meta">
+                            <span class="article-author">By George Whittaker- August 14, 2025</span>
+                            <span class="article-date">Aug 29, 2025 at 11:29</span>
+                        </div>
+                    </div>
+
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://www.linuxjournal.com/content/kde-plasma-6-wayland-payoff-years-plumbing" target="_blank" rel="noopener noreferrer">
+                                KDE Plasma 6 on Wayland: the Payoff for Years of Plumbing
+                            </a>
+                        </h3>
+                        <div class="article-summary">No summary available.</div>
+                        <div class="article-meta">
+                            <span class="article-author">By George Whittaker- August 12, 2025</span>
+                            <span class="article-date">Aug 29, 2025 at 11:29</span>
+                        </div>
+                    </div>
+</div></div>
+            <div class="site-section ">
+                <div class="site-header">
+                    <div class="site-icon">O</div>
+                    <h2 class="site-name">🐧 Omgubuntu Co Uk</h2>
+                    <div class="article-count">5 articles</div>
+                </div>
+<div class="articles-grid">
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://www.omgubuntu.co.uk/2025/08/firefoxs-on-device-ai-features-are-now-up-to-10x-faster" target="_blank" rel="noopener noreferrer">
+                                Firefox’s On-Device AI Features Now Up to 10x Faster
+                            </a>
+                        </h3>
+                        <div class="article-summary">No summary available.</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Aug 29, 2025 at 11:29</span>
+                        </div>
+                    </div>
+
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://www.omgubuntu.co.uk/2025/08/ubuntu-25-10-snapshot-4-is-available-to-download" target="_blank" rel="noopener noreferrer">
+                                Ubuntu 25.10 Snapshot 4 is Available to Download
+                            </a>
+                        </h3>
+                        <div class="article-summary">No summary available.</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Aug 29, 2025 at 11:29</span>
+                        </div>
+                    </div>
+
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://www.omgubuntu.co.uk/2025/08/supertuxkarts-stable-release-pitstop-opens-up-potential" target="_blank" rel="noopener noreferrer">
+                                SuperTuxKart Evolution Promises ‘Fresh Experience’
+                            </a>
+                        </h3>
+                        <div class="article-summary">No summary available.</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Aug 29, 2025 at 11:29</span>
+                        </div>
+                    </div>
+
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://www.omgubuntu.co.uk/2025/08/new-apps-arrive-in-ubuntu-25-10-daily-builds" target="_blank" rel="noopener noreferrer">
+                                New Apps Arrive in Ubuntu 25.10 Dev Builds
+                            </a>
+                        </h3>
+                        <div class="article-summary">No summary available.</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Aug 29, 2025 at 11:29</span>
+                        </div>
+                    </div>
+
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://www.omgubuntu.co.uk/2025/08/thunderbird-142-add-signatures-to-pdf-files" target="_blank" rel="noopener noreferrer">
+                                Thunderbird 142 Lets You Add Signatures to PDFs In-App
+                            </a>
+                        </h3>
+                        <div class="article-summary">No summary available.</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Aug 29, 2025 at 11:29</span>
+                        </div>
+                    </div>
+</div></div>
+            <div class="site-section ">
+                <div class="site-header">
+                    <div class="site-icon">L</div>
+                    <h2 class="site-name">🐧 Linux</h2>
+                    <div class="article-count">5 articles</div>
+                </div>
+<div class="articles-grid">
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://www.linux.com/qa/" target="_blank" rel="noopener noreferrer">
+                                Q&A
+                            </a>
+                        </h3>
+                        <div class="article-summary">No summary available.</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Aug 29, 2025 at 11:29</span>
+                        </div>
+                    </div>
+
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://www.linux.com/what-is-linux/" target="_blank" rel="noopener noreferrer">
+                                What is Linux?
+                            </a>
+                        </h3>
+                        <div class="article-summary">No summary available.</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Aug 29, 2025 at 11:29</span>
+                        </div>
+                    </div>
+
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://www.linux.com/about/" target="_blank" rel="noopener noreferrer">
+                                About Us
+                            </a>
+                        </h3>
+                        <div class="article-summary">No summary available.</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Aug 29, 2025 at 11:29</span>
+                        </div>
+                    </div>
+
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://www.linux.com/qa/" target="_blank" rel="noopener noreferrer">
+                                Q&A
+                            </a>
+                        </h3>
+                        <div class="article-summary">No summary available.</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Aug 29, 2025 at 11:29</span>
+                        </div>
+                    </div>
+
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://www.linux.com/what-is-linux/" target="_blank" rel="noopener noreferrer">
+                                What is Linux?
+                            </a>
+                        </h3>
+                        <div class="article-summary">No summary available.</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Aug 29, 2025 at 11:29</span>
+                        </div>
+                    </div>
+</div></div>
+            <div class="site-section ">
+                <div class="site-header">
+                    <div class="site-icon">D</div>
+                    <h2 class="site-name">🐧 Distrowatch</h2>
+                    <div class="article-count">5 articles</div>
+                </div>
+<div class="articles-grid">
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://fossforce.com/2025/08/regata-os-25-gaming-work-and-more-in-one-polished-distro/" target="_blank" rel="noopener noreferrer">
+                                Regata OS 25.0.5
+                            </a>
+                        </h3>
+                        <div class="article-summary">No summary available.</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Aug 29, 2025 at 11:29</span>
+                        </div>
+                    </div>
+
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://linuxgamecast.com/2025/08/34-candles-for-old-man-penguin/" target="_blank" rel="noopener noreferrer">
+                                487
+                            </a>
+                        </h3>
+                        <div class="article-summary">No summary available.</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Aug 29, 2025 at 11:29</span>
+                        </div>
+                    </div>
+
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://br-os.com/2025/08/26/br-os-13-dira-e-lancado-com-polimento-do-visual-e-retorno-de-funcionalidades-consagradas/" target="_blank" rel="noopener noreferrer">
+                                release announcement
+                            </a>
+                        </h3>
+                        <div class="article-summary">Once the previous version had validated the development method, we could focus on creating new features and remaking old features that had been temporarily left out due to the migration to Plasma 6, w...</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Aug 29, 2025 at 11:29</span>
+                        </div>
+                    </div>
+
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://besgnulinux.blogspot.com/2025/08/besgnulinux-jwm-3-0-is-ready-to-use.html" target="_blank" rel="noopener noreferrer">
+                                release announcement
+                            </a>
+                        </h3>
+                        <div class="article-summary">Besgnulinux JWM 3-0 release based on Debian 'Trixie' is ready for release. Changes made in this version: the background image changer has been updated; a colour changer feature has been added to the i...</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Aug 29, 2025 at 11:29</span>
+                        </div>
+                    </div>
+
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://libreelec.tv/2025/08/15/libreelec-omega-12-2-0/" target="_blank" rel="noopener noreferrer">
+                                release announcement
+                            </a>
+                        </h3>
+                        <div class="article-summary">LibreELEC 12.2 with Kodi 21.2 'Omega' is released. The main purpose of the LibreELEC 12.2 release is hardware support - bumping kernels and display components to better handle current and recent Intel...</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Aug 29, 2025 at 11:29</span>
+                        </div>
+                    </div>
+</div></div>
+            <div class="site-section ">
+                <div class="site-header">
+                    <div class="site-icon">L</div>
+                    <h2 class="site-name">🐧 Linux Slashdot Org</h2>
+                    <div class="article-count">5 articles</div>
+                </div>
+<div class="articles-grid">
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://linux.slashdot.org/story/25/08/25/2149223/linux-turns-34" target="_blank" rel="noopener noreferrer">
+                                Linux Turns 34
+                            </a>
+                        </h3>
+                        <div class="article-summary">No summary available.</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Aug 29, 2025 at 11:29</span>
+                        </div>
+                    </div>
+
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://linux.slashdot.org/story/25/08/23/0513229/arch-linux-faces-ongoing-ddos-attack" target="_blank" rel="noopener noreferrer">
+                                Arch Linux Faces 'Ongoing' DDoS Attack
+                            </a>
+                        </h3>
+                        <div class="article-summary">No summary available.</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Aug 29, 2025 at 11:29</span>
+                        </div>
+                    </div>
+
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://tech.slashdot.org/story/25/08/23/0124202/libreoffice-258-slams-the-door-on-windows-7-and-8x" target="_blank" rel="noopener noreferrer">
+                                LibreOffice 25.8 Slams the Door On Windows 7 and 8.x
+                            </a>
+                        </h3>
+                        <div class="article-summary">No summary available.</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Aug 29, 2025 at 11:29</span>
+                        </div>
+                    </div>
+
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://linux.slashdot.org/story/25/08/15/1536230/another-linux-distro-is-shutting-down" target="_blank" rel="noopener noreferrer">
+                                Another Linux Distro Is Shutting Down
+                            </a>
+                        </h3>
+                        <div class="article-summary">No summary available.</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Aug 29, 2025 at 11:29</span>
+                        </div>
+                    </div>
+
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://linux.slashdot.org/story/25/08/15/1549253/the-plan-for-linux-after-torvalds-has-a-kernel-of-truth-there-isnt-one" target="_blank" rel="noopener noreferrer">
+                                The Plan For Linux After Torvalds Has a Kernel of Truth: There Isn't One
+                            </a>
+                        </h3>
+                        <div class="article-summary">No summary available.</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Aug 29, 2025 at 11:29</span>
+                        </div>
+                    </div>
+</div></div>
+            <div class="site-section ">
+                <div class="site-header">
+                    <div class="site-icon">T</div>
+                    <h2 class="site-name">🐧 Tecmint</h2>
+                    <div class="article-count">5 articles</div>
+                </div>
+<div class="articles-grid">
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://www.tecmint.com/lfcs-study-guide/" target="_blank" rel="noopener noreferrer">
+                                Ebook: Introducing LFCS Certification Preparation eBook
+                            </a>
+                        </h3>
+                        <div class="article-summary">For years, certifications in the Information Technology world have helped job candidates demonstrate their skills to potential employers. In the</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Aug 29, 2025 at 11:29</span>
+                        </div>
+                    </div>
+
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://www.tecmint.com/red-hat-rhcsa-rhce-exam-certification-book/" target="_blank" rel="noopener noreferrer">
+                                Boost Your Career with RHCSA & RHCE Certification eBooks
+                            </a>
+                        </h3>
+                        <div class="article-summary">Dear friends, If you’re looking to advance your Linux career and stand out in the competitive IT job market, we</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Aug 29, 2025 at 11:29</span>
+                        </div>
+                    </div>
+
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://www.tecmint.com/odoo-free-apps-for-linux/" target="_blank" rel="noopener noreferrer">
+                                Top 7 Free Odoo Apps for Linux Users in 2025
+                            </a>
+                        </h3>
+                        <div class="article-summary">Odoo is the ideal open-source enterprise software for teams and businesses that value flexibility, data privacy, and affordability. Due to</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Aug 29, 2025 at 11:29</span>
+                        </div>
+                    </div>
+
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://www.tecmint.com/create-alias-in-linux/" target="_blank" rel="noopener noreferrer">
+                                How to Create Aliases (Shortcuts) for Common Commands in Linux
+                            </a>
+                        </h3>
+                        <div class="article-summary">Linux users often need to use one command over and over again. Typing or copying the same command over and</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Aug 29, 2025 at 11:29</span>
+                        </div>
+                    </div>
+
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://www.tecmint.com/internxt-cloud-storage/" target="_blank" rel="noopener noreferrer">
+                                Internxt: Secure Open-Source Cloud Storage for Linux Users (87% Off)
+                            </a>
+                        </h3>
+                        <div class="article-summary">There are countless cloud storage platforms that provide safe and secure storage space for your files. Popular cloud storage apps</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Aug 29, 2025 at 11:29</span>
+                        </div>
+                    </div>
+</div></div>
+            <div class="site-section ">
+                <div class="site-header">
+                    <div class="site-icon">U</div>
+                    <h2 class="site-name">🐧 Unixmen</h2>
+                    <div class="article-count">5 articles</div>
+                </div>
+<div class="articles-grid">
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://www.unixmen.com/" target="_blank" rel="noopener noreferrer">
+                                Home
+                            </a>
+                        </h3>
+                        <div class="article-summary">No summary available.</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Aug 29, 2025 at 11:29</span>
+                        </div>
+                    </div>
+
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://www.unixmen.com/contact-us/" target="_blank" rel="noopener noreferrer">
+                                Contact Us
+                            </a>
+                        </h3>
+                        <div class="article-summary">No summary available.</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Aug 29, 2025 at 11:29</span>
+                        </div>
+                    </div>
+
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://www.unixmen.com/about-us/" target="_blank" rel="noopener noreferrer">
+                                About Us
+                            </a>
+                        </h3>
+                        <div class="article-summary">No summary available.</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Aug 29, 2025 at 11:29</span>
+                        </div>
+                    </div>
+
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://www.unixmen.com/advertising/" target="_blank" rel="noopener noreferrer">
+                                Advertising on Unixmen
+                            </a>
+                        </h3>
+                        <div class="article-summary">No summary available.</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Aug 29, 2025 at 11:29</span>
+                        </div>
+                    </div>
+
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://www.unixmen.com/work-for-us/" target="_blank" rel="noopener noreferrer">
+                                Become a Contributor
+                            </a>
+                        </h3>
+                        <div class="article-summary">No summary available.</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Aug 29, 2025 at 11:29</span>
+                        </div>
+                    </div>
+</div></div>
+            <div class="site-section ">
+                <div class="site-header">
+                    <div class="site-icon">X</div>
+                    <h2 class="site-name">🐧 Xmodulo</h2>
+                    <div class="article-count">5 articles</div>
+                </div>
+<div class="articles-grid">
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://www.xmodulo.com/useful-systemd-commands.html" target="_blank" rel="noopener noreferrer">
+                                What are useful systemd commandsLast updated on March 17, 2023 by Dan Nanni
+                            </a>
+                        </h3>
+                        <div class="article-summary">No summary available.</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Aug 29, 2025 at 11:29</span>
+                        </div>
+                    </div>
+
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://www.xmodulo.com/include-cpp-code-c-program.html" target="_blank" rel="noopener noreferrer">
+                                How to include C++ code in C programLast updated on March 2, 2023 by Dan Nanni
+                            </a>
+                        </h3>
+                        <div class="article-summary">No summary available.</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Aug 29, 2025 at 11:29</span>
+                        </div>
+                    </div>
+
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://www.xmodulo.com/makefile-special-variable.html" target="_blank" rel="noopener noreferrer">
+                                In Makefile, what does "$<" mean?
+                            </a>
+                        </h3>
+                        <div class="article-summary">No summary available.</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Aug 29, 2025 at 11:29</span>
+                        </div>
+                    </div>
+
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://www.xmodulo.com/cloud-init.html" target="_blank" rel="noopener noreferrer">
+                                How to get started with cloud-init
+                            </a>
+                        </h3>
+                        <div class="article-summary">No summary available.</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Aug 29, 2025 at 11:29</span>
+                        </div>
+                    </div>
+
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://www.xmodulo.com/schedule-periodic-task-systemd.html" target="_blank" rel="noopener noreferrer">
+                                How to schedule a periodic task with systemd
+                            </a>
+                        </h3>
+                        <div class="article-summary">No summary available.</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Aug 29, 2025 at 11:29</span>
+                        </div>
+                    </div>
+</div></div>
+        </div>
+        
+        <div class="footer">
+            <p>Generated by Tech News Harvester v2.0</p>
+            <p class="timestamp">Created on Friday, August 29, 2025 at 11:29:45</p>
+            <p>Click on article titles to read the full stories</p>
+            <p>🔄 Auto-refresh available • 📱 Mobile responsive • 🌙 Dark mode supported</p>
+        </div>
+    </div>
+    
+    <script>
+        // Add some interactivity
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add status indicators to cards
+            const cards = document.querySelectorAll('.article-card');
+            cards.forEach(card => {
+                const indicator = document.createElement('div');
+                indicator.className = 'status-indicator';
+                indicator.title = 'Article available';
+                card.appendChild(indicator);
+            });
+            
+            // Add smooth scrolling for internal links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

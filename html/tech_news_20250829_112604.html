@@ -1,0 +1,966 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tech News  - 2025-08-29 11:26</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+        
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+        
+        .header .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            margin-bottom: 20px;
+        }
+        
+        .stats {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 20px;
+        }
+        
+        .stat-item {
+            text-align: center;
+        }
+        
+        .stat-number {
+            font-size: 2rem;
+            font-weight: bold;
+            display: block;
+        }
+        
+        .stat-label {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+        
+        .content {
+            padding: 40px;
+        }
+        
+        .site-section {
+            margin-bottom: 50px;
+        }
+        
+        .site-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid #f0f0f0;
+        }
+        
+        .site-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            margin-right: 15px;
+            font-size: 1.2rem;
+        }
+        
+        .site-name {
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: #2c3e50;
+            flex: 1;
+        }
+        
+        .article-count {
+            background: #e74c3c;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+        
+        .articles-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 25px;
+        }
+        
+        .article-card {
+            background: #fff;
+            border: 1px solid #e0e0e0;
+            border-radius: 15px;
+            padding: 25px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .article-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+            border-color: #667eea;
+        }
+        
+        .article-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        
+        .article-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 12px;
+            line-height: 1.4;
+        }
+        
+        .article-title a {
+            color: inherit;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .article-title a:hover {
+            color: #667eea;
+        }
+        
+        .article-summary {
+            color: #666;
+            margin-bottom: 15px;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+        
+        .article-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.85rem;
+            color: #999;
+            border-top: 1px solid #f0f0f0;
+            padding-top: 15px;
+        }
+        
+        .article-author {
+            font-weight: 500;
+            color: #667eea;
+        }
+        
+        .article-date {
+            opacity: 0.8;
+        }
+        
+        .no-articles {
+            text-align: center;
+            color: #999;
+            font-style: italic;
+            padding: 40px;
+            background: #f9f9f9;
+            border-radius: 10px;
+        }
+        
+        .footer {
+            background: #f8f9fa;
+            padding: 30px;
+            text-align: center;
+            color: #666;
+            border-top: 1px solid #e0e0e0;
+        }
+        
+        .footer p {
+            margin-bottom: 10px;
+        }
+        
+        .footer .timestamp {
+            font-weight: 600;
+            color: #333;
+        }
+        
+        /* Security-specific styling */
+        .security-theme .header {
+            background: linear-gradient(135deg, #c0392b 0%, #8e44ad 100%);
+        }
+        
+        .security-theme .site-icon {
+            background: linear-gradient(135deg, #c0392b 0%, #8e44ad 100%);
+        }
+        
+        .security-theme .article-card::before {
+            background: linear-gradient(135deg, #c0392b 0%, #8e44ad 100%);
+        }
+        
+        .security-theme .article-title a:hover {
+            color: #c0392b;
+        }
+        
+        .security-theme .article-author {
+            color: #c0392b;
+        }
+        
+        /* Combined theme styling */
+        .combined-theme .header {
+            background: linear-gradient(135deg, #2c3e50 0%, #3498db 50%, #9b59b6 100%);
+        }
+        
+        .combined-theme .site-icon {
+            background: linear-gradient(135deg, #2c3e50 0%, #9b59b6 100%);
+        }
+        
+        .tech-prefix .site-icon {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        
+        .security-prefix .site-icon {
+            background: linear-gradient(135deg, #c0392b 0%, #8e44ad 100%);
+        }
+        
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2rem;
+            }
+            
+            .stats {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .content {
+                padding: 20px;
+            }
+            
+            .articles-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .site-header {
+                flex-direction: column;
+                text-align: center;
+                gap: 15px;
+            }
+        }
+        
+        /* Enhanced animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .article-card {
+            animation: fadeInUp 0.6s ease-out;
+        }
+        
+        .article-card:nth-child(even) {
+            animation-delay: 0.1s;
+        }
+        
+        .article-card:nth-child(3n) {
+            animation-delay: 0.2s;
+        }
+        
+        /* Loading state */
+        .loading {
+            text-align: center;
+            padding: 40px;
+            color: #666;
+        }
+        
+        .loading::after {
+            content: '...';
+            animation: dots 2s infinite;
+        }
+        
+        @keyframes dots {
+            0%, 20% { content: '.'; }
+            40% { content: '..'; }
+            60%, 100% { content: '...'; }
+        }
+        
+        /* Enhanced hover effects */
+        .article-card:hover .article-title a {
+            text-shadow: 0 2px 4px rgba(102, 126, 234, 0.3);
+        }
+        
+        /* Status indicators */
+        .status-indicator {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #27ae60;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(39, 174, 96, 0.7); }
+            70% { box-shadow: 0 0 0 10px rgba(39, 174, 96, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(39, 174, 96, 0); }
+        }
+        
+        /* Dark mode support */
+        @media (prefers-color-scheme: dark) {
+            body {
+                background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            }
+            
+            .container {
+                background: #2c3e50;
+                color: #ecf0f1;
+            }
+            
+            .article-card {
+                background: #34495e;
+                border-color: #4a6741;
+                color: #ecf0f1;
+            }
+            
+            .article-title {
+                color: #ecf0f1;
+            }
+            
+            .article-summary {
+                color: #bdc3c7;
+            }
+            
+            .no-articles {
+                background: #34495e;
+                color: #bdc3c7;
+            }
+        }
+    </style>
+</head>
+<body class="tech-theme">
+    <div class="container">
+        <div class="header">
+            <h1>🚀 Tech News </h1>
+            <div class="subtitle">Latest articles from top technology news sources</div>
+            <div class="stats">
+                <div class="stat-item">
+                    <span class="stat-number">35</span>
+                    <span class="stat-label">Total Articles</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">10</span>
+                    <span class="stat-label">Sources</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">11:26</span>
+                    <span class="stat-label">Generated</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="content">
+            
+            <div class="site-section ">
+                <div class="site-header">
+                    <div class="site-icon">T</div>
+                    <h2 class="site-name">🚀 Techcrunch</h2>
+                    <div class="article-count">5 articles</div>
+                </div>
+<div class="articles-grid">
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://techcrunch.com/2025/08/28/trump-administrations-deal-is-structured-to-prevent-intel-from-selling-foundry-unit/" target="_blank" rel="noopener noreferrer">
+                                Trump administration’s deal is structured to prevent Intel from selling foundry unit
+                            </a>
+                        </h3>
+                        <div class="article-summary">No summary available.</div>
+                        <div class="article-meta">
+                            <span class="article-author">By Rebecca Szkutak</span>
+                            <span class="article-date">Aug 29, 2025 at 11:23</span>
+                        </div>
+                    </div>
+
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://techcrunch.com/2025/08/28/anthropic-users-face-a-new-choice-opt-out-or-share-your-data-for-ai-training/" target="_blank" rel="noopener noreferrer">
+                                Anthropic users face a new choice – opt out or share your chats for AI training
+                            </a>
+                        </h3>
+                        <div class="article-summary">No summary available.</div>
+                        <div class="article-meta">
+                            <span class="article-author">By Connie Loizos</span>
+                            <span class="article-date">Aug 29, 2025 at 11:23</span>
+                        </div>
+                    </div>
+
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://techcrunch.com/2025/08/28/nvidia-google-and-bill-gates-help-commonwealth-fusion-systems-raise-863m/" target="_blank" rel="noopener noreferrer">
+                                Nvidia, Google, and Bill Gates help Commonwealth Fusion Systems raise $863M
+                            </a>
+                        </h3>
+                        <div class="article-summary">No summary available.</div>
+                        <div class="article-meta">
+                            <span class="article-author">By Tim De Chant</span>
+                            <span class="article-date">Aug 29, 2025 at 11:23</span>
+                        </div>
+                    </div>
+
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://techcrunch.com/2025/08/28/ai-or-not-will-smiths-crowd-video-is-fresh-cringe-2/" target="_blank" rel="noopener noreferrer">
+                                AI or not, Will Smith’s crowd video is fresh cringe
+                            </a>
+                        </h3>
+                        <div class="article-summary">No summary available.</div>
+                        <div class="article-meta">
+                            <span class="article-author">By Amanda Silberling</span>
+                            <span class="article-date">Aug 29, 2025 at 11:23</span>
+                        </div>
+                    </div>
+
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://techcrunch.com/2025/08/28/mississippis-age-assurance-law-puts-decentralized-social-networks-to-the-test/" target="_blank" rel="noopener noreferrer">
+                                Mississippi’s age assurance law puts decentralized social networks to the test
+                            </a>
+                        </h3>
+                        <div class="article-summary">No summary available.</div>
+                        <div class="article-meta">
+                            <span class="article-author">By Sarah Perez</span>
+                            <span class="article-date">Aug 29, 2025 at 11:23</span>
+                        </div>
+                    </div>
+</div></div>
+            <div class="site-section ">
+                <div class="site-header">
+                    <div class="site-icon">T</div>
+                    <h2 class="site-name">🚀 Theverge</h2>
+                    <div class="article-count">1 articles</div>
+                </div>
+<div class="articles-grid">
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://www.theverge.com/news/760479/nvidia-rtx-hair-indiana-jones-game" target="_blank" rel="noopener noreferrer">
+                                Nvidia gives fake Harrison Ford better hair using spheres
+                            </a>
+                        </h3>
+                        <div class="article-summary">Nvidia has released anew Game Ready driver(581.15) today that’s optimized for the upcomingIndiana Jones and the Great Circleupdate that will introduce RTX Hair. It’s the first game to use spheres to i...</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Aug 29, 2025 at 11:23</span>
+                        </div>
+                    </div>
+</div></div>
+            <div class="site-section ">
+                <div class="site-header">
+                    <div class="site-icon">W</div>
+                    <h2 class="site-name">🚀 Wired</h2>
+                    <div class="article-count">3 articles</div>
+                </div>
+<div class="articles-grid">
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://www.wired.com/most-recent/" target="_blank" rel="noopener noreferrer">
+                                Most Recent
+                            </a>
+                        </h3>
+                        <div class="article-summary">No summary available.</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Aug 29, 2025 at 11:23</span>
+                        </div>
+                    </div>
+
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://www.wired.com/v2/offers/wir_edit_hardcoded?source=Site_0_HCL_WIR_EDIT_HARDCODED_HOMEPAGE_MODULE_0_GLOBAL_JULY_2025_NEW_OFFER_ZZ" target="_blank" rel="noopener noreferrer">
+                                Subscriber Exclusives
+                            </a>
+                        </h3>
+                        <div class="article-summary">No summary available.</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Aug 29, 2025 at 11:23</span>
+                        </div>
+                    </div>
+
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://www.wired.com/newsletter/classics" target="_blank" rel="noopener noreferrer">
+                                WIRED Classics
+                            </a>
+                        </h3>
+                        <div class="article-summary">No summary available.</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Aug 29, 2025 at 11:23</span>
+                        </div>
+                    </div>
+</div></div>
+            <div class="site-section ">
+                <div class="site-header">
+                    <div class="site-icon">A</div>
+                    <h2 class="site-name">🚀 Arstechnica</h2>
+                    <div class="article-count">5 articles</div>
+                </div>
+<div class="articles-grid">
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://arstechnica.com/information-technology/2025/08/the-personhood-trap-how-ai-fakes-human-personality/" target="_blank" rel="noopener noreferrer">
+                                The personhood trap: How AI fakes human personality
+                            </a>
+                        </h3>
+                        <div class="article-summary">AI assistants don't have fixed personalities—just patterns of output guided by humans.</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Aug 29, 2025 at 11:23</span>
+                        </div>
+                    </div>
+
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://arstechnica.com/science/2025/08/genetically-central-american-mammoths-were-weird/" target="_blank" rel="noopener noreferrer">
+                                Genetically, Central American mammoths were weird
+                            </a>
+                        </h3>
+                        <div class="article-summary">The species's boundaries in North America seem to have been fairly fluid.</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Aug 29, 2025 at 11:23</span>
+                        </div>
+                    </div>
+
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://arstechnica.com/gadgets/2025/08/video-player-looks-like-a-1-inch-tv-from-the-60s-and-is-wondrous-pointless-fun/" target="_blank" rel="noopener noreferrer">
+                                Video player looks like a 1-inch TV from the ’60s and is wondrous, pointless fun
+                            </a>
+                        </h3>
+                        <div class="article-summary">TV static and remote included.</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Aug 29, 2025 at 11:23</span>
+                        </div>
+                    </div>
+
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://arstechnica.com/security/2025/08/high-severity-vulnerability-in-passwordstate-credential-manager-patch-now/" target="_blank" rel="noopener noreferrer">
+                                High-severity vulnerability in Passwordstate credential manager. Patch now.
+                            </a>
+                        </h3>
+                        <div class="article-summary">Vulnerability can be exploited to gain access to customers' crown jewels.</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Aug 29, 2025 at 11:23</span>
+                        </div>
+                    </div>
+
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://arstechnica.com/science/2025/08/trump-admin-dismisses-endangered-species-list-as-hotel-california/" target="_blank" rel="noopener noreferrer">
+                                Trump admin dismisses Endangered Species List as “Hotel California”
+                            </a>
+                        </h3>
+                        <div class="article-summary">"Once a species enters, they never leave," interior secretary says. But there's more to the story.</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Aug 29, 2025 at 11:23</span>
+                        </div>
+                    </div>
+</div></div>
+            <div class="site-section ">
+                <div class="site-header">
+                    <div class="site-icon">Z</div>
+                    <h2 class="site-name">🚀 Zdnet</h2>
+                    <div class="article-count">0 articles</div>
+                </div>
+<div class="no-articles">No articles found for this source.</div></div>
+            <div class="site-section ">
+                <div class="site-header">
+                    <div class="site-icon">T</div>
+                    <h2 class="site-name">🚀 Thenextweb</h2>
+                    <div class="article-count">4 articles</div>
+                </div>
+<div class="articles-grid">
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://thenextweb.com/news/hot-crazy-matrix-investors-tech-startups" target="_blank" rel="noopener noreferrer">
+                                The Hot Crazy Matrix explains why investors get tech deals wrong
+                            </a>
+                        </h3>
+                        <div class="article-summary">No summary available.</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Aug 29, 2025 at 11:24</span>
+                        </div>
+                    </div>
+
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://thenextweb.com/news/trusting-unverified-ai-agents" target="_blank" rel="noopener noreferrer">
+                                Opinion: Trusting an unverified AI agent is like handing your keys to a drunk graduate
+                            </a>
+                        </h3>
+                        <div class="article-summary">No summary available.</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Aug 29, 2025 at 11:24</span>
+                        </div>
+                    </div>
+
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://thenextweb.com/news/bananas-champagne-robots-why-automation-needs-humans" target="_blank" rel="noopener noreferrer">
+                                Bananas, champagne, and robots: Why automation still needs humans
+                            </a>
+                        </h3>
+                        <div class="article-summary">No summary available.</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Aug 29, 2025 at 11:24</span>
+                        </div>
+                    </div>
+
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://thenextweb.com/news/how-vibe-coding-will-transform-enterprise" target="_blank" rel="noopener noreferrer">
+                                Vibe coding is transforming software. Enterprise is the next frontier
+                            </a>
+                        </h3>
+                        <div class="article-summary">No summary available.</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Aug 29, 2025 at 11:24</span>
+                        </div>
+                    </div>
+</div></div>
+            <div class="site-section ">
+                <div class="site-header">
+                    <div class="site-icon">G</div>
+                    <h2 class="site-name">🚀 Gizmodo</h2>
+                    <div class="article-count">5 articles</div>
+                </div>
+<div class="articles-grid">
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://gizmodo.com/dont-worry-wednesday-fans-the-coma-is-almost-over-2000650157" target="_blank" rel="noopener noreferrer">
+                                Aug 28Don’t Worry, ‘Wednesday’ Fans, the Coma Is Almost OverSabina Graves
+                            </a>
+                        </h3>
+                        <div class="article-summary">Sabina Graves</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Aug 29, 2025 at 11:24</span>
+                        </div>
+                    </div>
+
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://gizmodo.com/the-wizard-of-oz-at-the-sphere-has-a-shocking-2-second-cameo-david-zaslav-2000650163" target="_blank" rel="noopener noreferrer">
+                                Aug 28‘The Wizard of Oz’ at the Sphere Has a Shocking 2-Second Cameo: David ZaslavSabina Graves
+                            </a>
+                        </h3>
+                        <div class="article-summary">Sabina Graves</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Aug 29, 2025 at 11:24</span>
+                        </div>
+                    </div>
+
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://gizmodo.com/bella-ramsey-tells-the-last-of-us-haters-to-go-play-their-video-games-2000650109" target="_blank" rel="noopener noreferrer">
+                                Aug 28Bella Ramsey Tells ‘The Last of Us’ Haters to Go Play Their Video GamesSabina Graves
+                            </a>
+                        </h3>
+                        <div class="article-summary">Sabina Graves</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Aug 29, 2025 at 11:24</span>
+                        </div>
+                    </div>
+
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://gizmodo.com/the-best-headphones-1851271449" target="_blank" rel="noopener noreferrer">
+                                5:31 pmThe Best Headphones of 2025James Pero, Dua Rashid, and Andrew Liszewski
+                            </a>
+                        </h3>
+                        <div class="article-summary">James Pero, Dua Rashid, and Andrew Liszewski</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Aug 29, 2025 at 11:24</span>
+                        </div>
+                    </div>
+
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://gizmodo.com/meet-freddy-fazbear-five-nights-at-freddys-halloween-horror-nights-2000649820" target="_blank" rel="noopener noreferrer">
+                                Aug 28Meet Freddy Fazbear and Friends at Halloween Horror Nights’ ‘Five Nights at Freddy’s’ HouseSabina Graves
+                            </a>
+                        </h3>
+                        <div class="article-summary">Sabina Graves</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Aug 29, 2025 at 11:24</span>
+                        </div>
+                    </div>
+</div></div>
+            <div class="site-section ">
+                <div class="site-header">
+                    <div class="site-icon">C</div>
+                    <h2 class="site-name">🚀 Cnet</h2>
+                    <div class="article-count">5 articles</div>
+                </div>
+<div class="articles-grid">
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://www.cnet.com/tech/services-and-software/best-vpn/" target="_blank" rel="noopener noreferrer">
+                                Here Are the 5 Best VPNs in 2025
+                            </a>
+                        </h3>
+                        <div class="article-summary">No summary available.</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Aug 29, 2025 at 11:25</span>
+                        </div>
+                    </div>
+
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://www.cnet.com/tech/computing/best-laptop/" target="_blank" rel="noopener noreferrer">
+                                Best Laptops for 2025
+                            </a>
+                        </h3>
+                        <div class="article-summary">No summary available.</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Aug 29, 2025 at 11:25</span>
+                        </div>
+                    </div>
+
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://www.cnet.com/tech/home-entertainment/best-tv/" target="_blank" rel="noopener noreferrer">
+                                These Are the Best TVs in 2025
+                            </a>
+                        </h3>
+                        <div class="article-summary">No summary available.</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Aug 29, 2025 at 11:25</span>
+                        </div>
+                    </div>
+
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://www.cnet.com/health/sleep/best-mattresses/" target="_blank" rel="noopener noreferrer">
+                                Best Mattresses You Can Buy in 2025
+                            </a>
+                        </h3>
+                        <div class="article-summary">No summary available.</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Aug 29, 2025 at 11:25</span>
+                        </div>
+                    </div>
+
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://www.cnet.com/health/nutrition/best-meal-kit-delivery-service/" target="_blank" rel="noopener noreferrer">
+                                Best Meal Delivery Services of 2025
+                            </a>
+                        </h3>
+                        <div class="article-summary">No summary available.</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Aug 29, 2025 at 11:25</span>
+                        </div>
+                    </div>
+</div></div>
+            <div class="site-section ">
+                <div class="site-header">
+                    <div class="site-icon">T</div>
+                    <h2 class="site-name">🚀 Techradar</h2>
+                    <div class="article-count">4 articles</div>
+                </div>
+<div class="articles-grid">
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://www.techradar.com/coupons" target="_blank" rel="noopener noreferrer">
+                                Coupons
+                            </a>
+                        </h3>
+                        <div class="article-summary">I'm rounding up today's best Labor Day OLED TVs, which include record-low prices on best-rated Samsung, LG, and Sony displays, with prices starting at $699.99.</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Aug 29, 2025 at 11:25</span>
+                        </div>
+                    </div>
+
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://www.techradar.com/news/how-we-test" target="_blank" rel="noopener noreferrer">
+                                More about how we test
+                            </a>
+                        </h3>
+                        <div class="article-summary">You need to know that the device or service you’re about to spend money on works as advertised - and that it works in the real world.</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Aug 29, 2025 at 11:25</span>
+                        </div>
+                    </div>
+
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://www.techradar.com/how-to/contact-us" target="_blank" rel="noopener noreferrer">
+                                Meet the TechRadar team
+                            </a>
+                        </h3>
+                        <div class="article-summary">The TechRadar team has a life-long passion for the latest innovations – over 300 years of experience between us, in fact – and we’ve made it our mission to share that combined knowledge and expertise ...</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Aug 29, 2025 at 11:25</span>
+                        </div>
+                    </div>
+
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://www.techradar.com/news/about-us" target="_blank" rel="noopener noreferrer">
+                                More about TechRadar
+                            </a>
+                        </h3>
+                        <div class="article-summary">TechRadar was launched in January 2008 with the goal of helping regular people navigate the world of technology. It quickly grew to become the UK's biggest consumer technology site.</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Aug 29, 2025 at 11:25</span>
+                        </div>
+                    </div>
+</div></div>
+            <div class="site-section ">
+                <div class="site-header">
+                    <div class="site-icon">D</div>
+                    <h2 class="site-name">🚀 Digitaltrends</h2>
+                    <div class="article-count">3 articles</div>
+                </div>
+<div class="articles-grid">
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://www.digitaltrends.com/phones/mayor-calls-for-smartphone-limit/" target="_blank" rel="noopener noreferrer">
+                                Mayor wants to limit residents’ smartphone use to two hours a day
+                            </a>
+                        </h3>
+                        <div class="article-summary">No summary available.</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Aug 29, 2025 at 11:26</span>
+                        </div>
+                    </div>
+
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://www.digitaltrends.com/phones/mayor-calls-for-smartphone-limit/" target="_blank" rel="noopener noreferrer">
+                                Mayor wants to limit residents’ smartphone use to two hours a day
+                            </a>
+                        </h3>
+                        <div class="article-summary">No summary available.</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Aug 29, 2025 at 11:26</span>
+                        </div>
+                    </div>
+
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://www.digitaltrends.com/phones/mayor-calls-for-smartphone-limit/" target="_blank" rel="noopener noreferrer">
+                                Mayor wants to limit residents’ smartphone use to two hours a day
+                            </a>
+                        </h3>
+                        <div class="article-summary">No summary available.</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Aug 29, 2025 at 11:26</span>
+                        </div>
+                    </div>
+</div></div>
+        </div>
+        
+        <div class="footer">
+            <p>Generated by Tech News Harvester v2.0</p>
+            <p class="timestamp">Created on Friday, August 29, 2025 at 11:26:04</p>
+            <p>Click on article titles to read the full stories</p>
+            <p>🔄 Auto-refresh available • 📱 Mobile responsive • 🌙 Dark mode supported</p>
+        </div>
+    </div>
+    
+    <script>
+        // Add some interactivity
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add status indicators to cards
+            const cards = document.querySelectorAll('.article-card');
+            cards.forEach(card => {
+                const indicator = document.createElement('div');
+                indicator.className = 'status-indicator';
+                indicator.title = 'Article available';
+                card.appendChild(indicator);
+            });
+            
+            // Add smooth scrolling for internal links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

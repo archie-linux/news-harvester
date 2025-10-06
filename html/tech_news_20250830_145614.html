@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tech News  - 2025-08-30 14:56</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+        
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+        
+        .header .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            margin-bottom: 20px;
+        }
+        
+        .stats {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 20px;
+        }
+        
+        .stat-item {
+            text-align: center;
+        }
+        
+        .stat-number {
+            font-size: 2rem;
+            font-weight: bold;
+            display: block;
+        }
+        
+        .stat-label {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+        
+        .content {
+            padding: 40px;
+        }
+        
+        .site-section {
+            margin-bottom: 50px;
+        }
+        
+        .site-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid #f0f0f0;
+        }
+        
+        .site-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            margin-right: 15px;
+            font-size: 1.2rem;
+        }
+        
+        .site-name {
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: #2c3e50;
+            flex: 1;
+        }
+        
+        .article-count {
+            background: #e74c3c;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+        
+        .articles-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 25px;
+        }
+        
+        .article-card {
+            background: #fff;
+            border: 1px solid #e0e0e0;
+            border-radius: 15px;
+            padding: 25px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .article-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+            border-color: #667eea;
+        }
+        
+        .article-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        
+        .article-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 12px;
+            line-height: 1.4;
+        }
+        
+        .article-title a {
+            color: inherit;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .article-title a:hover {
+            color: #667eea;
+        }
+        
+        .article-summary {
+            color: #666;
+            margin-bottom: 15px;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+        
+        .article-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.85rem;
+            color: #999;
+            border-top: 1px solid #f0f0f0;
+            padding-top: 15px;
+        }
+        
+        .article-author {
+            font-weight: 500;
+            color: #667eea;
+        }
+        
+        .article-date {
+            opacity: 0.8;
+        }
+        
+        .no-articles {
+            text-align: center;
+            color: #999;
+            font-style: italic;
+            padding: 40px;
+            background: #f9f9f9;
+            border-radius: 10px;
+        }
+        
+        .footer {
+            background: #f8f9fa;
+            padding: 30px;
+            text-align: center;
+            color: #666;
+            border-top: 1px solid #e0e0e0;
+        }
+        
+        .footer p {
+            margin-bottom: 10px;
+        }
+        
+        .footer .timestamp {
+            font-weight: 600;
+            color: #333;
+        }
+        
+        /* Security-specific styling */
+        .security-theme .header {
+            background: linear-gradient(135deg, #c0392b 0%, #8e44ad 100%);
+        }
+        
+        .security-theme .site-icon {
+            background: linear-gradient(135deg, #c0392b 0%, #8e44ad 100%);
+        }
+        
+        .security-theme .article-card::before {
+            background: linear-gradient(135deg, #c0392b 0%, #8e44ad 100%);
+        }
+        
+        .security-theme .article-title a:hover {
+            color: #c0392b;
+        }
+        
+        .security-theme .article-author {
+            color: #c0392b;
+        }
+        
+        /* Combined theme styling */
+        .combined-theme .header {
+            background: linear-gradient(135deg, #2c3e50 0%, #3498db 50%, #9b59b6 100%);
+        }
+        
+        .combined-theme .site-icon {
+            background: linear-gradient(135deg, #2c3e50 0%, #9b59b6 100%);
+        }
+        
+        .tech-prefix .site-icon {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        
+        .security-prefix .site-icon {
+            background: linear-gradient(135deg, #c0392b 0%, #8e44ad 100%);
+        }
+        
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2rem;
+            }
+            
+            .stats {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .content {
+                padding: 20px;
+            }
+            
+            .articles-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .site-header {
+                flex-direction: column;
+                text-align: center;
+                gap: 15px;
+            }
+        }
+        
+        /* Enhanced animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .article-card {
+            animation: fadeInUp 0.6s ease-out;
+        }
+        
+        .article-card:nth-child(even) {
+            animation-delay: 0.1s;
+        }
+        
+        .article-card:nth-child(3n) {
+            animation-delay: 0.2s;
+        }
+        
+        /* Loading state */
+        .loading {
+            text-align: center;
+            padding: 40px;
+            color: #666;
+        }
+        
+        .loading::after {
+            content: '...';
+            animation: dots 2s infinite;
+        }
+        
+        @keyframes dots {
+            0%, 20% { content: '.'; }
+            40% { content: '..'; }
+            60%, 100% { content: '...'; }
+        }
+        
+        /* Enhanced hover effects */
+        .article-card:hover .article-title a {
+            text-shadow: 0 2px 4px rgba(102, 126, 234, 0.3);
+        }
+        
+        /* Status indicators */
+        .status-indicator {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #27ae60;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(39, 174, 96, 0.7); }
+            70% { box-shadow: 0 0 0 10px rgba(39, 174, 96, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(39, 174, 96, 0); }
+        }
+        
+        /* Dark mode support */
+        @media (prefers-color-scheme: dark) {
+            body {
+                background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            }
+            
+            .container {
+                background: #2c3e50;
+                color: #ecf0f1;
+            }
+            
+            .article-card {
+                background: #34495e;
+                border-color: #4a6741;
+                color: #ecf0f1;
+            }
+            
+            .article-title {
+                color: #ecf0f1;
+            }
+            
+            .article-summary {
+                color: #bdc3c7;
+            }
+            
+            .no-articles {
+                background: #34495e;
+                color: #bdc3c7;
+            }
+        }
+    </style>
+</head>
+<body class="tech-theme">
+    <div class="container">
+        <div class="header">
+            <h1>🚀 Tech News </h1>
+            <div class="subtitle">Latest articles from top technology news sources</div>
+            <div class="stats">
+                <div class="stat-item">
+                    <span class="stat-number">16</span>
+                    <span class="stat-label">Total Articles</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">10</span>
+                    <span class="stat-label">Sources</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">14:56</span>
+                    <span class="stat-label">Generated</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="content">
+            
+            <div class="site-section ">
+                <div class="site-header">
+                    <div class="site-icon">T</div>
+                    <h2 class="site-name">🚀 Techcrunch</h2>
+                    <div class="article-count">5 articles</div>
+                </div>
+    <div class="articles-grid">
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://techcrunch.com/2025/08/29/cracks-are-forming-in-metas-partnership-with-scale-ai/" target="_blank" rel="noopener noreferrer">
+                                Cracks are forming in Meta’s partnership with Scale AI
+                            </a>
+                        </h3>
+                        <div class="article-summary">No summary available.</div>
+                        <div class="article-meta">
+                            <span class="article-author">By Maxwell ZeffMarina Temkin</span>
+                            <span class="article-date">Aug 30, 2025 at 14:51</span>
+                        </div>
+                    </div>
+    
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://techcrunch.com/2025/08/29/spotlight-on-ai-at-techcrunch-disrupt-dont-miss-these-sessions-backed-by-jetbrains-and-greenfield/" target="_blank" rel="noopener noreferrer">
+                                Spotlight on AI at TechCrunch Disrupt: Don’t miss these sessions backed by JetBrains and Greenfield
+                            </a>
+                        </h3>
+                        <div class="article-summary">No summary available.</div>
+                        <div class="article-meta">
+                            <span class="article-author">By Cindy Zackney</span>
+                            <span class="article-date">Aug 30, 2025 at 14:51</span>
+                        </div>
+                    </div>
+    
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://techcrunch.com/2025/08/29/tiktok-now-lets-users-send-voice-notes-and-images-in-dms/" target="_blank" rel="noopener noreferrer">
+                                TikTok now lets users send voice notes and images in DMs
+                            </a>
+                        </h3>
+                        <div class="article-summary">No summary available.</div>
+                        <div class="article-meta">
+                            <span class="article-author">By Aisha Malik</span>
+                            <span class="article-date">Aug 30, 2025 at 14:51</span>
+                        </div>
+                    </div>
+    
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://techcrunch.com/2025/08/29/uber-and-lyft-drivers-in-california-win-a-path-to-unionization/" target="_blank" rel="noopener noreferrer">
+                                Uber and Lyft drivers in California win a path to unionization
+                            </a>
+                        </h3>
+                        <div class="article-summary">No summary available.</div>
+                        <div class="article-meta">
+                            <span class="article-author">By Rebecca Bellan</span>
+                            <span class="article-date">Aug 30, 2025 at 14:51</span>
+                        </div>
+                    </div>
+    
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://techcrunch.com/2025/08/29/tesla-challenges-243-million-verdict-in-autopilot-death-trial/" target="_blank" rel="noopener noreferrer">
+                                Tesla challenges $243 million verdict in Autopilot death trial
+                            </a>
+                        </h3>
+                        <div class="article-summary">No summary available.</div>
+                        <div class="article-meta">
+                            <span class="article-author">By Sean O'Kane</span>
+                            <span class="article-date">Aug 30, 2025 at 14:51</span>
+                        </div>
+                    </div>
+    </div></div>
+            <div class="site-section ">
+                <div class="site-header">
+                    <div class="site-icon">T</div>
+                    <h2 class="site-name">🚀 Theverge</h2>
+                    <div class="article-count">3 articles</div>
+                </div>
+    <div class="articles-grid">
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://www.theverge.com/2024/9/20/24249294/verge-deals-newsletter-subscribe-tech-discounts" target="_blank" rel="noopener noreferrer">
+                                Verge Deals
+                            </a>
+                        </h3>
+                        <div class="article-summary">No summary available.</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Aug 30, 2025 at 14:52</span>
+                        </div>
+                    </div>
+    
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://www.theverge.com/2024/12/5/24313346/waymo-miami-robotaxi-moove-2026" target="_blank" rel="noopener noreferrer">
+                                Miami
+                            </a>
+                        </h3>
+                        <div class="article-summary">No summary available.</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Aug 30, 2025 at 14:52</span>
+                        </div>
+                    </div>
+    
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://www.theverge.com/2024/12/16/24322769/waymo-japan-robotaxi-test-nihon-kotsu-go" target="_blank" rel="noopener noreferrer">
+                                even Japan
+                            </a>
+                        </h3>
+                        <div class="article-summary">No summary available.</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Aug 30, 2025 at 14:52</span>
+                        </div>
+                    </div>
+    </div></div>
+            <div class="site-section ">
+                <div class="site-header">
+                    <div class="site-icon">W</div>
+                    <h2 class="site-name">🚀 Wired</h2>
+                    <div class="article-count">3 articles</div>
+                </div>
+    <div class="articles-grid">
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://www.wired.com/most-recent/" target="_blank" rel="noopener noreferrer">
+                                Most Recent
+                            </a>
+                        </h3>
+                        <div class="article-summary">No summary available.</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Aug 30, 2025 at 14:52</span>
+                        </div>
+                    </div>
+    
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://www.wired.com/v2/offers/wir_edit_hardcoded?source=Site_0_HCL_WIR_EDIT_HARDCODED_HOMEPAGE_MODULE_0_GLOBAL_JULY_2025_NEW_OFFER_ZZ" target="_blank" rel="noopener noreferrer">
+                                Subscriber Exclusives
+                            </a>
+                        </h3>
+                        <div class="article-summary">No summary available.</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Aug 30, 2025 at 14:52</span>
+                        </div>
+                    </div>
+    
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://www.wired.com/newsletter/classics" target="_blank" rel="noopener noreferrer">
+                                WIRED Classics
+                            </a>
+                        </h3>
+                        <div class="article-summary">No summary available.</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Aug 30, 2025 at 14:52</span>
+                        </div>
+                    </div>
+    </div></div>
+            <div class="site-section ">
+                <div class="site-header">
+                    <div class="site-icon">A</div>
+                    <h2 class="site-name">🚀 Arstechnica</h2>
+                    <div class="article-count">5 articles</div>
+                </div>
+    <div class="articles-grid">
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://arstechnica.com/gadgets/2025/08/google-pixel-10-series-review-dont-call-it-an-android/" target="_blank" rel="noopener noreferrer">
+                                Google Pixel 10 series review: Don’t call it an Android
+                            </a>
+                        </h3>
+                        <div class="article-summary">Google's new Pixel phones are better, but only a little.</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Aug 30, 2025 at 14:52</span>
+                        </div>
+                    </div>
+    
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://arstechnica.com/gadgets/2025/08/i-like-plaintiffs-chances-prime-video-back-in-court-over-using-the-word-buy/" target="_blank" rel="noopener noreferrer">
+                                The fight against labeling long-term streaming rentals as “purchases” you “buy”
+                            </a>
+                        </h3>
+                        <div class="article-summary">New law emboldens complaints against digital content rentals labled as purchases.</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Aug 30, 2025 at 14:52</span>
+                        </div>
+                    </div>
+    
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://arstechnica.com/health/2025/08/cdc-spiraled-into-chaos-this-week-heres-where-things-stand/" target="_blank" rel="noopener noreferrer">
+                                CDC spiraled into chaos this week. Here’s where things stand.
+                            </a>
+                        </h3>
+                        <div class="article-summary">CDC is in crisis amid an ouster, resignations, defiance, and outraged lawmakers.</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Aug 30, 2025 at 14:52</span>
+                        </div>
+                    </div>
+    
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://arstechnica.com/ai/2025/08/with-new-in-house-models-microsoft-lays-the-groundwork-for-independence-from-openai/" target="_blank" rel="noopener noreferrer">
+                                With new in-house models, Microsoft lays the groundwork for independence from OpenAI
+                            </a>
+                        </h3>
+                        <div class="article-summary">Microsoft is still deeply tied to OpenAI, but who knows what the future holds.</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Aug 30, 2025 at 14:52</span>
+                        </div>
+                    </div>
+    
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://arstechnica.com/gadgets/2025/08/windows-11-25h2-update-hits-its-last-stop-before-release-to-the-general-public/" target="_blank" rel="noopener noreferrer">
+                                Windows 11 25H2 update hits its last stop before release to the general public
+                            </a>
+                        </h3>
+                        <div class="article-summary">The 25H2 update will be a quiet one, after 24H2's under-the-hood overhauls.</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Aug 30, 2025 at 14:52</span>
+                        </div>
+                    </div>
+    </div></div>
+            <div class="site-section ">
+                <div class="site-header">
+                    <div class="site-icon">Z</div>
+                    <h2 class="site-name">🚀 Zdnet</h2>
+                    <div class="article-count">0 articles</div>
+                </div>
+    <div class="no-articles">No articles found for this source.</div></div>
+            <div class="site-section ">
+                <div class="site-header">
+                    <div class="site-icon">T</div>
+                    <h2 class="site-name">🚀 Thenextweb</h2>
+                    <div class="article-count">0 articles</div>
+                </div>
+    <div class="no-articles">No articles found for this source.</div></div>
+            <div class="site-section ">
+                <div class="site-header">
+                    <div class="site-icon">G</div>
+                    <h2 class="site-name">🚀 Gizmodo</h2>
+                    <div class="article-count">0 articles</div>
+                </div>
+    <div class="no-articles">No articles found for this source.</div></div>
+            <div class="site-section ">
+                <div class="site-header">
+                    <div class="site-icon">C</div>
+                    <h2 class="site-name">🚀 Cnet</h2>
+                    <div class="article-count">0 articles</div>
+                </div>
+    <div class="no-articles">No articles found for this source.</div></div>
+            <div class="site-section ">
+                <div class="site-header">
+                    <div class="site-icon">T</div>
+                    <h2 class="site-name">🚀 Techradar</h2>
+                    <div class="article-count">0 articles</div>
+                </div>
+    <div class="no-articles">No articles found for this source.</div></div>
+            <div class="site-section ">
+                <div class="site-header">
+                    <div class="site-icon">D</div>
+                    <h2 class="site-name">🚀 Digitaltrends</h2>
+                    <div class="article-count">0 articles</div>
+                </div>
+    <div class="no-articles">No articles found for this source.</div></div>
+        </div>
+        
+        <div class="footer">
+            <p>Generated by Tech News Harvester v2.0</p>
+            <p class="timestamp">Created on Saturday, August 30, 2025 at 14:56:14</p>
+            <p>Click on article titles to read the full stories</p>
+            <p>🔄 Auto-refresh available • 📱 Mobile responsive • 🌙 Dark mode supported</p>
+        </div>
+    </div>
+    
+    <script>
+        // Add some interactivity
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add status indicators to cards
+            const cards = document.querySelectorAll('.article-card');
+            cards.forEach(card => {
+                const indicator = document.createElement('div');
+                indicator.className = 'status-indicator';
+                indicator.title = 'Article available';
+                card.appendChild(indicator);
+            });
+            
+            // Add smooth scrolling for internal links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

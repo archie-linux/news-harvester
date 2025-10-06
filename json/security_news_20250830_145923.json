@@ -1,0 +1,272 @@
+{
+  "thehackernews.com": [],
+  "csoonline.com": [],
+  "darkreading.com": [],
+  "securityweek.com": [],
+  "infosecurity-magazine.com": [
+    {
+      "title": "North Korean Hackers Weaponize Seoul Intelligence Files to Target South Koreans",
+      "url": "https://www.infosecurity-magazine.com/news/north-korea-apt37-spear-phishing/",
+      "summary": "Pyongyang-backed hacking group APT37 leveraged an internal South Korean intelligence briefing in a spear phishing campaign",
+      "published_date": "2025-08-30 14:58:03",
+      "source": "infosecurity-magazine.com",
+      "author": null
+    },
+    {
+      "title": "Winning the AI Arms Race in Financial Services Cybersecurity",
+      "url": "https://www.infosecurity-magazine.com/opinions/ai-arms-race-financial/",
+      "summary": "",
+      "published_date": "2025-08-30 14:58:03",
+      "source": "infosecurity-magazine.com",
+      "author": null
+    },
+    {
+      "title": "Npm Package Hijacked to Steal Data and Crypto via AI-Powered Malware",
+      "url": "https://www.infosecurity-magazine.com/news/npm-package-hijacked-ai-malware/",
+      "summary": "A software supply chain attack targeting Nx marks the first known case where attackers have leveraged developer AI assistants, according to StepSecurity",
+      "published_date": "2025-08-30 14:58:03",
+      "source": "infosecurity-magazine.com",
+      "author": null
+    },
+    {
+      "title": "State-Sponsored Hackers Behind Majority of Vulnerability Exploits",
+      "url": "https://www.infosecurity-magazine.com/news/state-hackers-majority/",
+      "summary": "",
+      "published_date": "2025-08-30 14:58:03",
+      "source": "infosecurity-magazine.com",
+      "author": null
+    },
+    {
+      "title": "TransUnion Data Breach Impacts 4.5 Million US Customers",
+      "url": "https://www.infosecurity-magazine.com/news/transunion-data-breach-us-customers/",
+      "summary": "",
+      "published_date": "2025-08-30 14:58:03",
+      "source": "infosecurity-magazine.com",
+      "author": null
+    }
+  ],
+  "krebsonsecurity.com": [],
+  "threatpost.com": [],
+  "bleepingcomputer.com": [
+    {
+      "title": "TransUnion suffers data breach impacting over 4.4 million people",
+      "url": "https://www.bleepingcomputer.com/news/security/transunion-suffers-data-breach-impacting-over-44-million-people/",
+      "summary": "",
+      "published_date": "2025-08-30 14:58:39",
+      "source": "bleepingcomputer.com",
+      "author": null
+    },
+    {
+      "title": "Storm-0501 hackers shift to ransomware attacks in the cloud",
+      "url": "https://www.bleepingcomputer.com/news/security/storm-0501-hackers-shift-to-ransomware-attacks-in-the-cloud/",
+      "summary": "",
+      "published_date": "2025-08-30 14:58:39",
+      "source": "bleepingcomputer.com",
+      "author": null
+    },
+    {
+      "title": "FreePBX servers hacked via zero-day, emergency fix released",
+      "url": "https://www.bleepingcomputer.com/news/security/freepbx-servers-hacked-via-zero-day-emergency-fix-released/",
+      "summary": "",
+      "published_date": "2025-08-30 14:58:39",
+      "source": "bleepingcomputer.com",
+      "author": null
+    },
+    {
+      "title": "Over 28,000 Citrix devices vulnerable to new exploited RCE flaw",
+      "url": "https://www.bleepingcomputer.com/news/security/over-28-200-citrix-instances-vulnerable-to-actively-exploited-rce-bug/",
+      "summary": "",
+      "published_date": "2025-08-30 14:58:39",
+      "source": "bleepingcomputer.com",
+      "author": null
+    },
+    {
+      "title": "Windows 11 KB5064081 update clears up CPU usage metrics in Task Manager",
+      "url": "https://www.bleepingcomputer.com/news/microsoft/windows-11-kb5064081-update-clears-up-cpu-usage-metrics-in-task-manager/",
+      "summary": "",
+      "published_date": "2025-08-30 14:58:39",
+      "source": "bleepingcomputer.com",
+      "author": null
+    }
+  ],
+  "grahamcluley.com": [
+    {
+      "title": "Varonis Connect!",
+      "url": "https://info.varonis.com/en/varonis-connect-london-2025-06-17",
+      "summary": "",
+      "published_date": "2025-08-30 14:58:45",
+      "source": "grahamcluley.com",
+      "author": null
+    },
+    {
+      "title": "Infosecurity Europe 2025",
+      "url": "https://www.infosecurityeurope.com/en-gb.html",
+      "summary": "",
+      "published_date": "2025-08-30 14:58:45",
+      "source": "grahamcluley.com",
+      "author": null
+    },
+    {
+      "title": "Infosecurity Europe 2025",
+      "url": "https://www.infosecurityeurope.com/en-gb.html",
+      "summary": "",
+      "published_date": "2025-08-30 14:58:45",
+      "source": "grahamcluley.com",
+      "author": null
+    },
+    {
+      "title": "Webinar: “Credential Security in the Age of AI: Insights for IT Leaders”",
+      "url": "https://go.dashlane.com/credential-security-age-of-ai.html?utm_medium=partner&utm_source=graham-cluley&utm_campaign=wb_credential-security-ai",
+      "summary": "",
+      "published_date": "2025-08-30 14:58:45",
+      "source": "grahamcluley.com",
+      "author": null
+    },
+    {
+      "title": "“AI hijacked this webinar”",
+      "url": "https://go.sysdig.com/InfluencerNov2024_RegPage.html",
+      "summary": "",
+      "published_date": "2025-08-30 14:58:45",
+      "source": "grahamcluley.com",
+      "author": null
+    }
+  ],
+  "securitytrails.com": [],
+  "nakedsecurity.sophos.com": [
+    {
+      "title": "Update on Naked Security",
+      "url": "https://news.sophos.com/en-us/2023/09/26/update-on-naked-security/",
+      "summary": "",
+      "published_date": "2025-08-30 14:58:57",
+      "source": "nakedsecurity.sophos.com",
+      "author": ""
+    },
+    {
+      "title": "Mom’s Meals issues “Notice of Data Event”: What to know and what to do",
+      "url": "https://news.sophos.com/en-us/2023/08/29/moms-meals-issues-notice-of-data-event-what-to-know-and-what-to-do/",
+      "summary": "",
+      "published_date": "2025-08-30 14:58:57",
+      "source": "nakedsecurity.sophos.com",
+      "author": ""
+    },
+    {
+      "title": "S3 Ep149: How many cryptographers does it take to change a light bulb?",
+      "url": "https://news.sophos.com/en-us/2023/08/24/s3-ep149-how-many-cryptographers-does-it-take-to-change-a-light-bulb/",
+      "summary": "",
+      "published_date": "2025-08-30 14:58:57",
+      "source": "nakedsecurity.sophos.com",
+      "author": ""
+    },
+    {
+      "title": "Using WinRAR? Be sure to patch against these code execution bugs…",
+      "url": "https://news.sophos.com/en-us/2023/08/23/using-winrar-be-sure-to-patch-against-these-code-execution-bugs/",
+      "summary": "",
+      "published_date": "2025-08-30 14:58:57",
+      "source": "nakedsecurity.sophos.com",
+      "author": ""
+    },
+    {
+      "title": "Smart light bulbs could give away your password secrets",
+      "url": "https://news.sophos.com/en-us/2023/08/22/smart-light-bulbs-could-give-away-your-password-secrets/",
+      "summary": "",
+      "published_date": "2025-08-30 14:58:57",
+      "source": "nakedsecurity.sophos.com",
+      "author": ""
+    }
+  ],
+  "schneier.com": [
+    {
+      "title": "Friday Squid Blogging: Catching Humboldt Squid",
+      "url": "https://www.schneier.com/blog/archives/2025/08/friday-squid-blogging-catching-humboldt-squid.html",
+      "summary": "First-personaccountof someone accidentally catching several Humboldt squid on a fishing line. No photos, though.",
+      "published_date": "2025-08-30 14:59:02",
+      "source": "schneier.com",
+      "author": null
+    },
+    {
+      "title": "Baggage Tag Scam",
+      "url": "https://www.schneier.com/blog/archives/2025/08/baggage-tag-scam.html",
+      "summary": "I just heard aboutthis:",
+      "published_date": "2025-08-30 14:59:02",
+      "source": "schneier.com",
+      "author": null
+    },
+    {
+      "title": "The UK May Be Dropping Its Backdoor Mandate",
+      "url": "https://www.schneier.com/blog/archives/2025/08/the-uk-may-be-dropping-its-backdoor-mandate.html",
+      "summary": "The US Director of National Intelligence isreportingthat the UK government is dropping its backdoor mandate against the Apple iPhone. For now, at least, assuming that Tulsi Gabbard is reporting this a...",
+      "published_date": "2025-08-30 14:59:02",
+      "source": "schneier.com",
+      "author": null
+    },
+    {
+      "title": "We Are Still Unable to Secure LLMs from Malicious Inputs",
+      "url": "https://www.schneier.com/blog/archives/2025/08/we-are-still-unable-to-secure-llms-from-malicious-inputs.html",
+      "summary": "Niceindirect prompt injection attack:",
+      "published_date": "2025-08-30 14:59:02",
+      "source": "schneier.com",
+      "author": null
+    },
+    {
+      "title": "Encryption Backdoor in Military/Police Radios",
+      "url": "https://www.schneier.com/blog/archives/2025/08/encryption-backdoor-in-military-police-radios.html",
+      "summary": "Iwrote aboutthis in 2023. Here’sthe story:",
+      "published_date": "2025-08-30 14:59:02",
+      "source": "schneier.com",
+      "author": null
+    }
+  ],
+  "tripwire.com": [],
+  "cyberscoop.com": [
+    {
+      "title": "Top FBI official says Chinese reliance on domestic firms for hacking is a weakness",
+      "url": "https://cyberscoop.com/china-domestic-tech-company-hacking-weakness-ccp-fbi/",
+      "summary": "",
+      "published_date": "2025-08-30 14:59:12",
+      "source": "cyberscoop.com",
+      "author": "ByTim Starks"
+    },
+    {
+      "title": "Salesloft Drift compromised en masse, impacting all third-party integrations",
+      "url": "https://cyberscoop.com/salesloft-drift-compromise-scope-expands/",
+      "summary": "",
+      "published_date": "2025-08-30 14:59:12",
+      "source": "cyberscoop.com",
+      "author": "ByMatt Kapko"
+    },
+    {
+      "title": "Workado settles with FTC over allegations it inflated its AI detectors’ capabilities",
+      "url": "https://cyberscoop.com/ftc-workado-settlement-ai-detector-false-and-misleading-claims/",
+      "summary": "",
+      "published_date": "2025-08-30 14:59:12",
+      "source": "cyberscoop.com",
+      "author": "ByDerek B. Johnson"
+    },
+    {
+      "title": "Trump administration setting the stage for elections power grab, voting rights group warns",
+      "url": "https://cyberscoop.com/trump-administration-power-grab-elections-voting-rights-group-warns/",
+      "summary": "",
+      "published_date": "2025-08-30 14:59:12",
+      "source": "cyberscoop.com",
+      "author": "ByDerek B. Johnson"
+    },
+    {
+      "title": "Treasury sanctions North Korea IT worker scheme facilitators and front organizations",
+      "url": "https://cyberscoop.com/treasury-department-sanctions-north-korea-worker-scheme/",
+      "summary": "",
+      "published_date": "2025-08-30 14:59:12",
+      "source": "cyberscoop.com",
+      "author": "ByMatt Kapko"
+    }
+  ],
+  "helpnetsecurity.com": [
+    {
+      "title": "Newsletters",
+      "url": "https://www.helpnetsecurity.com/newsletter/",
+      "summary": "",
+      "published_date": "2025-08-30 14:59:18",
+      "source": "helpnetsecurity.com",
+      "author": null
+    }
+  ]
+}

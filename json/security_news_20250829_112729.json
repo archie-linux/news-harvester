@@ -1,0 +1,430 @@
+{
+  "thehackernews.com": [
+    {
+      "title": "FREE GRC Maturity Assessment in 15 MinutesUnlock Your GRC Maturity Score. Get Expert Insights and Peer Benchmark Report.",
+      "url": "https://thehackernews.uk/grc-maturity-assessment-3",
+      "summary": "",
+      "published_date": "2025-08-29 11:26:05",
+      "source": "thehackernews.com",
+      "author": null
+    },
+    {
+      "title": "Cyber Training That Pays Off — In Speed and SavingsSANS-trained teams detect threats 4.2x faster and save millions.",
+      "url": "https://thehackernews.uk/sans-business-value",
+      "summary": "",
+      "published_date": "2025-08-29 11:26:05",
+      "source": "thehackernews.com",
+      "author": null
+    },
+    {
+      "title": "A Practical Guide to Maturing Your PAM ProgramTake a PAM Maturity Test and gain expert guidance for your journey to reduce risk.",
+      "url": "https://thehackernews.uk/5-reasons-remote-support",
+      "summary": "",
+      "published_date": "2025-08-29 11:26:05",
+      "source": "thehackernews.com",
+      "author": null
+    },
+    {
+      "title": "Discover How to Make CTEM a Reality in 2025: Download Your Guide Now!Ensure CTEM success! Download our ebook for practical tips on using XM Cyber to implement your exposure management strategy.",
+      "url": "https://thehackernews.uk/ctem-5-stages-guide-native",
+      "summary": "",
+      "published_date": "2025-08-29 11:26:05",
+      "source": "thehackernews.com",
+      "author": null
+    }
+  ],
+  "csoonline.com": [
+    {
+      "title": "newsLLMs easily exploited using run-on sentences, bad grammar, image scalingResearchers continue to find vulnerabilities that dupe models into revealing sensitive information, indicating that security measures are still being bolted onto AI.By Taryn Plumb27 Aug 20257 minsArtificial IntelligenceGenerative AIVulnerabilities",
+      "url": "https://www.csoonline.com/article/4046511/llms-easily-exploited-using-run-on-sentences-bad-grammar-image-scaling.html",
+      "summary": "Researchers continue to find vulnerabilities that dupe models into revealing sensitive information, indicating that security measures are still being bolted onto AI.",
+      "published_date": "2025-08-29 11:26:11",
+      "source": "csoonline.com",
+      "author": null
+    },
+    {
+      "title": "newsLLMs easily exploited using run-on sentences, bad grammar, image scalingResearchers continue to find vulnerabilities that dupe models into revealing sensitive information, indicating that security measures are still being bolted onto AI.By Taryn Plumb27 Aug 20257 minsArtificial IntelligenceGenerative AIVulnerabilities",
+      "url": "https://www.csoonline.com/article/4046511/llms-easily-exploited-using-run-on-sentences-bad-grammar-image-scaling.html",
+      "summary": "Researchers continue to find vulnerabilities that dupe models into revealing sensitive information, indicating that security measures are still being bolted onto AI.",
+      "published_date": "2025-08-29 11:26:11",
+      "source": "csoonline.com",
+      "author": null
+    },
+    {
+      "title": "newsLLMs easily exploited using run-on sentences, bad grammar, image scalingResearchers continue to find vulnerabilities that dupe models into revealing sensitive information, indicating that security measures are still being bolted onto AI.By Taryn Plumb27 Aug 20257 minsArtificial IntelligenceGenerative AIVulnerabilities",
+      "url": "https://www.csoonline.com/article/4046511/llms-easily-exploited-using-run-on-sentences-bad-grammar-image-scaling.html",
+      "summary": "Researchers continue to find vulnerabilities that dupe models into revealing sensitive information, indicating that security measures are still being bolted onto AI.",
+      "published_date": "2025-08-29 11:26:11",
+      "source": "csoonline.com",
+      "author": null
+    }
+  ],
+  "darkreading.com": [
+    {
+      "title": "Interpol Arrests Over 1K Cybercriminals in 'Operation Serengeti 2.0'",
+      "url": "https://www.darkreading.com/cyberattacks-data-breaches/interpol-operation-serengeti-2-0",
+      "summary": "",
+      "published_date": "2025-08-29 11:26:15",
+      "source": "darkreading.com",
+      "author": null
+    }
+  ],
+  "securityweek.com": [
+    {
+      "title": "China’s Salt Typhoon Hacked Critical Infrastructure Globally for Years",
+      "url": "https://www.securityweek.com/chinas-salt-typhoon-hacked-critical-infrastructure-globally-for-years/",
+      "summary": "China-linked APT ‘Salt Typhoon’ exploited known router flaws to maintain persistent access across telecom, government, and military networks, giving Beijing’s intelligence services global surveillance...",
+      "published_date": "2025-08-29 11:26:21",
+      "source": "securityweek.com",
+      "author": null
+    }
+  ],
+  "infosecurity-magazine.com": [
+    {
+      "title": "Fake IT Support Attacks Hit Microsoft Teams",
+      "url": "https://www.infosecurity-magazine.com/news/fake-support-attacks-hit-microsoft/",
+      "summary": "",
+      "published_date": "2025-08-29 11:26:26",
+      "source": "infosecurity-magazine.com",
+      "author": null
+    },
+    {
+      "title": "Netherlands Confirms China's Salt Typhoon Targeted Small Dutch Telcos",
+      "url": "https://www.infosecurity-magazine.com/news/china-salt-typhoon-dutch-telcos/",
+      "summary": "",
+      "published_date": "2025-08-29 11:26:26",
+      "source": "infosecurity-magazine.com",
+      "author": null
+    },
+    {
+      "title": "Malicious VS Code Extensions Exploit Name Reuse Loophole",
+      "url": "https://www.infosecurity-magazine.com/news/vs-code-extensions-exploit-name/",
+      "summary": "Visual Studio Code extensions have been identified exploiting a loophole that allows reuse of names from removed packages",
+      "published_date": "2025-08-29 11:26:26",
+      "source": "infosecurity-magazine.com",
+      "author": null
+    },
+    {
+      "title": "Nevada Confirms Ransomware Attack, State Data Stolen",
+      "url": "https://www.infosecurity-magazine.com/news/nevada-ransomware-attack-data/",
+      "summary": "",
+      "published_date": "2025-08-29 11:26:26",
+      "source": "infosecurity-magazine.com",
+      "author": null
+    },
+    {
+      "title": "Chinese Tech Firms Linked to Salt Typhoon Espionage Campaigns",
+      "url": "https://www.infosecurity-magazine.com/news/chinese-tech-firms-salt-typhoon/",
+      "summary": "The US, UK and allies have called out China’s “commercial cyber ecosystem” for enabling large-scale Salt Typhoon campaigns",
+      "published_date": "2025-08-29 11:26:26",
+      "source": "infosecurity-magazine.com",
+      "author": null
+    }
+  ],
+  "krebsonsecurity.com": [
+    {
+      "title": "Affiliates Flock to ‘Soulless’ Scam Gambling Machine",
+      "url": "https://krebsonsecurity.com/2025/08/affiliates-flock-to-soulless-scam-gambling-machine/",
+      "summary": "Last month, KrebsOnSecurity tracked the sudden emergence of hundreds of polished online gaming and wagering websites that lure people with free credits and eventuallyabscond with any cryptocurrency fu...",
+      "published_date": "2025-08-29 11:26:32",
+      "source": "krebsonsecurity.com",
+      "author": null
+    },
+    {
+      "title": "DSLRoot, Proxies, and the Threat of ‘Legal Botnets’",
+      "url": "https://krebsonsecurity.com/2025/08/dslroot-proxies-and-the-threat-of-legal-botnets/",
+      "summary": "The cybersecurity community onRedditresponded in disbelief this month when a self-described Air National Guard member with top secret security clearance began questioning the arrangement they’d made w...",
+      "published_date": "2025-08-29 11:26:32",
+      "source": "krebsonsecurity.com",
+      "author": null
+    },
+    {
+      "title": "SIM-Swapper, Scattered Spider Hacker Gets 10 Years",
+      "url": "https://krebsonsecurity.com/2025/08/sim-swapper-scattered-spider-hacker-gets-10-years/",
+      "summary": "A 20-year-old Florida man at the center of a prolific cybercrime group known as “Scattered Spider” was sentenced to 10 years in federal prison today, and ordered to pay roughly $13 million in restitut...",
+      "published_date": "2025-08-29 11:26:32",
+      "source": "krebsonsecurity.com",
+      "author": null
+    },
+    {
+      "title": "Oregon Man Charged in ‘Rapper Bot’ DDoS Service",
+      "url": "https://krebsonsecurity.com/2025/08/oregon-man-charged-in-rapper-bot-ddos-service/",
+      "summary": "A 22-year-old Oregon man has been arrested on suspicion of operating “Rapper Bot,” a massive botnet used to power a service for launching distributed denial-of-service (DDoS) attacks against targets —...",
+      "published_date": "2025-08-29 11:26:32",
+      "source": "krebsonsecurity.com",
+      "author": null
+    },
+    {
+      "title": "Mobile Phishers Target Brokerage Accounts in ‘Ramp and Dump’ Cashout Scheme",
+      "url": "https://krebsonsecurity.com/2025/08/mobile-phishers-target-brokerage-accounts-in-ramp-and-dump-cashout-scheme/",
+      "summary": "Cybercriminal groups peddling sophisticated phishing kits that convert stolen card data into mobile wallets have recently shifted their focus to targeting customers of brokerage services, new research...",
+      "published_date": "2025-08-29 11:26:32",
+      "source": "krebsonsecurity.com",
+      "author": null
+    }
+  ],
+  "threatpost.com": [
+    {
+      "title": "Student Loan Breach Exposes 2.5M Records",
+      "url": "https://threatpost.com/student-loan-breach-exposes-2-5m-records/180492/",
+      "summary": "2.5 million people were affected, in a breach that could spell more trouble down the line.",
+      "published_date": "2025-08-29 11:26:39",
+      "source": "threatpost.com",
+      "author": "byNate Nelson"
+    },
+    {
+      "title": "Watering Hole Attacks Push ScanBox Keylogger",
+      "url": "https://threatpost.com/watering-hole-attacks-push-scanbox-keylogger/180490/",
+      "summary": "Researchers uncover a watering hole attack likely carried out by APT TA423, which attempts to plant the ScanBox JavaScript-based reconnaissance tool.",
+      "published_date": "2025-08-29 11:26:39",
+      "source": "threatpost.com",
+      "author": "byNate Nelson"
+    },
+    {
+      "title": "Tentacles of ‘0ktapus’ Threat Group Victimize 130 Firms",
+      "url": "https://threatpost.com/0ktapus-victimize-130-firms/180487/",
+      "summary": "Over 130 companies tangled in sprawling phishing campaign that spoofed a multi-factor authentication system.",
+      "published_date": "2025-08-29 11:26:39",
+      "source": "threatpost.com",
+      "author": "byNate Nelson"
+    },
+    {
+      "title": "Ransomware Attacks are on the Rise",
+      "url": "https://threatpost.com/ransomware-attacks-are-on-the-rise/180481/",
+      "summary": "Lockbit is by far this summer’s most prolific ransomware group, trailed by two offshoots of the Conti group.",
+      "published_date": "2025-08-29 11:26:39",
+      "source": "threatpost.com",
+      "author": "byNate Nelson"
+    },
+    {
+      "title": "Inside the Hackers’ Toolkit – Podcast",
+      "url": "https://threatpost.com/inside-hackers-toolkit/180360/",
+      "summary": "",
+      "published_date": "2025-08-29 11:26:39",
+      "source": "threatpost.com",
+      "author": null
+    }
+  ],
+  "bleepingcomputer.com": [
+    {
+      "title": "TransUnion suffers data breach impacting over 4.4 million people",
+      "url": "https://www.bleepingcomputer.com/news/security/transunion-suffers-data-breach-impacting-over-44-million-people/",
+      "summary": "",
+      "published_date": "2025-08-29 11:26:47",
+      "source": "bleepingcomputer.com",
+      "author": null
+    },
+    {
+      "title": "Storm-0501 hackers shift to ransomware attacks in the cloud",
+      "url": "https://www.bleepingcomputer.com/news/security/storm-0501-hackers-shift-to-ransomware-attacks-in-the-cloud/",
+      "summary": "",
+      "published_date": "2025-08-29 11:26:47",
+      "source": "bleepingcomputer.com",
+      "author": null
+    },
+    {
+      "title": "FreePBX servers hacked via zero-day, emergency fix released",
+      "url": "https://www.bleepingcomputer.com/news/security/freepbx-servers-hacked-via-zero-day-emergency-fix-released/",
+      "summary": "",
+      "published_date": "2025-08-29 11:26:47",
+      "source": "bleepingcomputer.com",
+      "author": null
+    },
+    {
+      "title": "Over 28,000 Citrix devices vulnerable to new exploited RCE flaw",
+      "url": "https://www.bleepingcomputer.com/news/security/over-28-200-citrix-instances-vulnerable-to-actively-exploited-rce-bug/",
+      "summary": "",
+      "published_date": "2025-08-29 11:26:47",
+      "source": "bleepingcomputer.com",
+      "author": null
+    },
+    {
+      "title": "Google warns Salesloft breach impacted some Workspace accounts",
+      "url": "https://www.bleepingcomputer.com/news/security/google-warns-salesloft-breach-impacted-some-workspace-accounts/",
+      "summary": "",
+      "published_date": "2025-08-29 11:26:47",
+      "source": "bleepingcomputer.com",
+      "author": null
+    }
+  ],
+  "grahamcluley.com": [
+    {
+      "title": "Varonis Connect!",
+      "url": "https://info.varonis.com/en/varonis-connect-london-2025-06-17",
+      "summary": "",
+      "published_date": "2025-08-29 11:26:52",
+      "source": "grahamcluley.com",
+      "author": null
+    },
+    {
+      "title": "Infosecurity Europe 2025",
+      "url": "https://www.infosecurityeurope.com/en-gb.html",
+      "summary": "",
+      "published_date": "2025-08-29 11:26:52",
+      "source": "grahamcluley.com",
+      "author": null
+    },
+    {
+      "title": "Infosecurity Europe 2025",
+      "url": "https://www.infosecurityeurope.com/en-gb.html",
+      "summary": "",
+      "published_date": "2025-08-29 11:26:52",
+      "source": "grahamcluley.com",
+      "author": null
+    },
+    {
+      "title": "Webinar: “Credential Security in the Age of AI: Insights for IT Leaders”",
+      "url": "https://go.dashlane.com/credential-security-age-of-ai.html?utm_medium=partner&utm_source=graham-cluley&utm_campaign=wb_credential-security-ai",
+      "summary": "",
+      "published_date": "2025-08-29 11:26:52",
+      "source": "grahamcluley.com",
+      "author": null
+    },
+    {
+      "title": "“AI hijacked this webinar”",
+      "url": "https://go.sysdig.com/InfluencerNov2024_RegPage.html",
+      "summary": "",
+      "published_date": "2025-08-29 11:26:52",
+      "source": "grahamcluley.com",
+      "author": null
+    }
+  ],
+  "securitytrails.com": [],
+  "nakedsecurity.sophos.com": [
+    {
+      "title": "Update on Naked Security",
+      "url": "https://news.sophos.com/en-us/2023/09/26/update-on-naked-security/",
+      "summary": "",
+      "published_date": "2025-08-29 11:27:03",
+      "source": "nakedsecurity.sophos.com",
+      "author": ""
+    },
+    {
+      "title": "Mom’s Meals issues “Notice of Data Event”: What to know and what to do",
+      "url": "https://news.sophos.com/en-us/2023/08/29/moms-meals-issues-notice-of-data-event-what-to-know-and-what-to-do/",
+      "summary": "",
+      "published_date": "2025-08-29 11:27:03",
+      "source": "nakedsecurity.sophos.com",
+      "author": ""
+    },
+    {
+      "title": "S3 Ep149: How many cryptographers does it take to change a light bulb?",
+      "url": "https://news.sophos.com/en-us/2023/08/24/s3-ep149-how-many-cryptographers-does-it-take-to-change-a-light-bulb/",
+      "summary": "",
+      "published_date": "2025-08-29 11:27:03",
+      "source": "nakedsecurity.sophos.com",
+      "author": ""
+    },
+    {
+      "title": "Using WinRAR? Be sure to patch against these code execution bugs…",
+      "url": "https://news.sophos.com/en-us/2023/08/23/using-winrar-be-sure-to-patch-against-these-code-execution-bugs/",
+      "summary": "",
+      "published_date": "2025-08-29 11:27:03",
+      "source": "nakedsecurity.sophos.com",
+      "author": ""
+    },
+    {
+      "title": "Smart light bulbs could give away your password secrets",
+      "url": "https://news.sophos.com/en-us/2023/08/22/smart-light-bulbs-could-give-away-your-password-secrets/",
+      "summary": "",
+      "published_date": "2025-08-29 11:27:03",
+      "source": "nakedsecurity.sophos.com",
+      "author": ""
+    }
+  ],
+  "schneier.com": [
+    {
+      "title": "The UK May Be Dropping Its Backdoor Mandate",
+      "url": "https://www.schneier.com/blog/archives/2025/08/the-uk-may-be-dropping-its-backdoor-mandate.html",
+      "summary": "The US Director of National Intelligence isreportingthat the UK government is dropping its backdoor mandate against the Apple iPhone. For now, at least, assuming that Tulsi Gabbard is reporting this a...",
+      "published_date": "2025-08-29 11:27:07",
+      "source": "schneier.com",
+      "author": null
+    },
+    {
+      "title": "We Are Still Unable to Secure LLMs from Malicious Inputs",
+      "url": "https://www.schneier.com/blog/archives/2025/08/we-are-still-unable-to-secure-llms-from-malicious-inputs.html",
+      "summary": "Niceindirect prompt injection attack:",
+      "published_date": "2025-08-29 11:27:07",
+      "source": "schneier.com",
+      "author": null
+    },
+    {
+      "title": "Encryption Backdoor in Military/Police Radios",
+      "url": "https://www.schneier.com/blog/archives/2025/08/encryption-backdoor-in-military-police-radios.html",
+      "summary": "Iwrote aboutthis in 2023. Here’sthe story:",
+      "published_date": "2025-08-29 11:27:07",
+      "source": "schneier.com",
+      "author": null
+    },
+    {
+      "title": "Poor Password Choices",
+      "url": "https://www.schneier.com/blog/archives/2025/08/poor-password-choices.html",
+      "summary": "Look atthis: McDonald’s chose the password “123456” for a major corporate system.",
+      "published_date": "2025-08-29 11:27:07",
+      "source": "schneier.com",
+      "author": null
+    },
+    {
+      "title": "Friday Squid Blogging: Bobtail Squid",
+      "url": "https://www.schneier.com/blog/archives/2025/08/friday-squid-blogging-bobtail-squid.html",
+      "summary": "Niceshort articleon the bobtail squid.",
+      "published_date": "2025-08-29 11:27:07",
+      "source": "schneier.com",
+      "author": null
+    }
+  ],
+  "tripwire.com": [],
+  "cyberscoop.com": [
+    {
+      "title": "Salesloft Drift compromised en masse, impacting all third-party integrations",
+      "url": "https://cyberscoop.com/salesloft-drift-compromise-scope-expands/",
+      "summary": "",
+      "published_date": "2025-08-29 11:27:18",
+      "source": "cyberscoop.com",
+      "author": "ByMatt Kapko"
+    },
+    {
+      "title": "Trump administration setting the stage for elections power grab, voting rights group warns",
+      "url": "https://cyberscoop.com/trump-administration-power-grab-elections-voting-rights-group-warns/",
+      "summary": "",
+      "published_date": "2025-08-29 11:27:18",
+      "source": "cyberscoop.com",
+      "author": "ByDerek B. Johnson"
+    },
+    {
+      "title": "Google previews cyber ‘disruption unit’ as U.S. government, industry weigh going heavier on offense",
+      "url": "https://cyberscoop.com/google-cybersecurity-disruption-unit-active-defense-hack-back/",
+      "summary": "",
+      "published_date": "2025-08-29 11:27:18",
+      "source": "cyberscoop.com",
+      "author": "ByTim Starks"
+    },
+    {
+      "title": "Treasury sanctions North Korea IT worker scheme facilitators and front organizations",
+      "url": "https://cyberscoop.com/treasury-department-sanctions-north-korea-worker-scheme/",
+      "summary": "",
+      "published_date": "2025-08-29 11:27:18",
+      "source": "cyberscoop.com",
+      "author": "ByMatt Kapko"
+    },
+    {
+      "title": "Salt Typhoon hacking campaign goes beyond previously disclosed targets, world cyber agencies say",
+      "url": "https://cyberscoop.com/salt-typhoon-hacking-campaign-goes-beyond-previously-disclosed-targets-world-cyber-agencies-say/",
+      "summary": "",
+      "published_date": "2025-08-29 11:27:18",
+      "source": "cyberscoop.com",
+      "author": "ByTim Starks"
+    }
+  ],
+  "helpnetsecurity.com": [
+    {
+      "title": "Newsletters",
+      "url": "https://www.helpnetsecurity.com/newsletter/",
+      "summary": "",
+      "published_date": "2025-08-29 11:27:25",
+      "source": "helpnetsecurity.com",
+      "author": null
+    }
+  ]
+}
