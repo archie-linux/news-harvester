@@ -397,6 +397,354 @@ class TechNewsScraper:
         logger.info(f"Articles saved to {filename}")
         return filename
 
+    def save_to_html(self, articles_dict: Dict[str, List[Article]], filename: str = None):
+        """Save articles to HTML file with styling"""
+        if filename is None:
+            filename = f"tech_news_{datetime.now().strftime('%Y%m%d_%H%M%S')}.html"
+        
+        total_articles = sum(len(articles) for articles in articles_dict.items())
+        
+        html_content = f"""<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tech News Scraping Results - {datetime.now().strftime('%Y-%m-%d %H:%M')}</title>
+    <style>
+        * {{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }}
+        
+        body {{
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }}
+        
+        .container {{
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }}
+        
+        .header {{
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }}
+        
+        .header h1 {{
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }}
+        
+        .header .subtitle {{
+            font-size: 1.2rem;
+            opacity: 0.9;
+            margin-bottom: 20px;
+        }}
+        
+        .stats {{
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 20px;
+        }}
+        
+        .stat-item {{
+            text-align: center;
+        }}
+        
+        .stat-number {{
+            font-size: 2rem;
+            font-weight: bold;
+            display: block;
+        }}
+        
+        .stat-label {{
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }}
+        
+        .content {{
+            padding: 40px;
+        }}
+        
+        .site-section {{
+            margin-bottom: 50px;
+        }}
+        
+        .site-header {{
+            display: flex;
+            align-items: center;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid #f0f0f0;
+        }}
+        
+        .site-icon {{
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            margin-right: 15px;
+            font-size: 1.2rem;
+        }}
+        
+        .site-name {{
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: #2c3e50;
+            flex: 1;
+        }}
+        
+        .article-count {{
+            background: #e74c3c;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }}
+        
+        .articles-grid {{
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 25px;
+        }}
+        
+        .article-card {{
+            background: #fff;
+            border: 1px solid #e0e0e0;
+            border-radius: 15px;
+            padding: 25px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }}
+        
+        .article-card:hover {{
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+            border-color: #667eea;
+        }}
+        
+        .article-card::before {{
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }}
+        
+        .article-title {{
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 12px;
+            line-height: 1.4;
+        }}
+        
+        .article-title a {{
+            color: inherit;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }}
+        
+        .article-title a:hover {{
+            color: #667eea;
+        }}
+        
+        .article-summary {{
+            color: #666;
+            margin-bottom: 15px;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }}
+        
+        .article-meta {{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.85rem;
+            color: #999;
+            border-top: 1px solid #f0f0f0;
+            padding-top: 15px;
+        }}
+        
+        .article-author {{
+            font-weight: 500;
+            color: #667eea;
+        }}
+        
+        .article-date {{
+            opacity: 0.8;
+        }}
+        
+        .no-articles {{
+            text-align: center;
+            color: #999;
+            font-style: italic;
+            padding: 40px;
+            background: #f9f9f9;
+            border-radius: 10px;
+        }}
+        
+        .footer {{
+            background: #f8f9fa;
+            padding: 30px;
+            text-align: center;
+            color: #666;
+            border-top: 1px solid #e0e0e0;
+        }}
+        
+        .footer p {{
+            margin-bottom: 10px;
+        }}
+        
+        .footer .timestamp {{
+            font-weight: 600;
+            color: #333;
+        }}
+        
+        @media (max-width: 768px) {{
+            .header h1 {{
+                font-size: 2rem;
+            }}
+            
+            .stats {{
+                flex-direction: column;
+                gap: 15px;
+            }}
+            
+            .content {{
+                padding: 20px;
+            }}
+            
+            .articles-grid {{
+                grid-template-columns: 1fr;
+            }}
+            
+            .site-header {{
+                flex-direction: column;
+                text-align: center;
+                gap: 15px;
+            }}
+        }}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🚀 Tech News Scraping Results</h1>
+            <div class="subtitle">Latest articles from top technology news sources</div>
+            <div class="stats">
+                <div class="stat-item">
+                    <span class="stat-number">{total_articles}</span>
+                    <span class="stat-label">Total Articles</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">{len(articles_dict)}</span>
+                    <span class="stat-label">Sources</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">{datetime.now().strftime('%H:%M')}</span>
+                    <span class="stat-label">Generated</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="content">
+"""
+
+        for site, articles in articles_dict.items():
+            site_display = site.replace('.com', '').replace('.', ' ').title()
+            site_initial = site[0].upper()
+            
+            html_content += f"""
+            <div class="site-section">
+                <div class="site-header">
+                    <div class="site-icon">{site_initial}</div>
+                    <h2 class="site-name">{site_display}</h2>
+                    <div class="article-count">{len(articles)} articles</div>
+                </div>
+"""
+            
+            if articles:
+                html_content += '<div class="articles-grid">'
+                
+                for article in articles:
+                    # Clean and truncate summary
+                    summary = article.summary.replace('\n', ' ').strip()
+                    if not summary:
+                        summary = "No summary available."
+                    
+                    # Format author display
+                    author_display = f'By {article.author}' if article.author else 'Unknown Author'
+                    
+                    # Format date
+                    try:
+                        date_obj = datetime.strptime(article.published_date, '%Y-%m-%d %H:%M:%S')
+                        formatted_date = date_obj.strftime('%b %d, %Y at %H:%M')
+                    except:
+                        formatted_date = article.published_date
+                    
+                    html_content += f"""
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="{article.url}" target="_blank" rel="noopener noreferrer">
+                                {article.title}
+                            </a>
+                        </h3>
+                        <div class="article-summary">{summary}</div>
+                        <div class="article-meta">
+                            <span class="article-author">{author_display}</span>
+                            <span class="article-date">{formatted_date}</span>
+                        </div>
+                    </div>
+"""
+                
+                html_content += '</div>'
+            else:
+                html_content += '<div class="no-articles">No articles found for this source.</div>'
+            
+            html_content += '</div>'
+        
+        html_content += f"""
+        </div>
+        
+        <div class="footer">
+            <p>Generated by Tech News Scraper</p>
+            <p class="timestamp">Created on {datetime.now().strftime('%A, %B %d, %Y at %H:%M:%S')}</p>
+            <p>Click on article titles to read the full stories</p>
+        </div>
+    </div>
+</body>
+</html>"""
+        
+        with open(filename, 'w', encoding='utf-8') as f:
+            f.write(html_content)
+        
+        logger.info(f"HTML report saved to {filename}")
+        return filename
+
 def main():
     """
     Main function to run the scraper
@@ -425,13 +773,16 @@ def main():
                 print(f"     Summary: {article.summary[:100]}...")
     
     if total_articles > 0:
-        # Save results
+        # Save results in all formats
         json_file = scraper.save_to_json(all_articles)
         csv_file = scraper.save_to_csv(all_articles)
+        html_file = scraper.save_to_html(all_articles)
         
         print(f"\nFiles saved:")
         print(f"- {json_file}")
         print(f"- {csv_file}")
+        print(f"- {html_file}")
+        print(f"\n📱 Open {html_file} in your browser to view the styled report!")
     else:
         print("\nNo articles were scraped. Sites may be blocking requests or have changed structure.")
         print("Try running the debug function on individual sites:")

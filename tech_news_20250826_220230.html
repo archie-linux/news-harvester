@@ -1,0 +1,895 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tech News Scraping Results - 2025-08-26 22:02</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+        
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+        
+        .header .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            margin-bottom: 20px;
+        }
+        
+        .stats {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 20px;
+        }
+        
+        .stat-item {
+            text-align: center;
+        }
+        
+        .stat-number {
+            font-size: 2rem;
+            font-weight: bold;
+            display: block;
+        }
+        
+        .stat-label {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+        
+        .content {
+            padding: 40px;
+        }
+        
+        .site-section {
+            margin-bottom: 50px;
+        }
+        
+        .site-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid #f0f0f0;
+        }
+        
+        .site-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            margin-right: 15px;
+            font-size: 1.2rem;
+        }
+        
+        .site-name {
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: #2c3e50;
+            flex: 1;
+        }
+        
+        .article-count {
+            background: #e74c3c;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+        
+        .articles-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 25px;
+        }
+        
+        .article-card {
+            background: #fff;
+            border: 1px solid #e0e0e0;
+            border-radius: 15px;
+            padding: 25px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .article-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+            border-color: #667eea;
+        }
+        
+        .article-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        
+        .article-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 12px;
+            line-height: 1.4;
+        }
+        
+        .article-title a {
+            color: inherit;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .article-title a:hover {
+            color: #667eea;
+        }
+        
+        .article-summary {
+            color: #666;
+            margin-bottom: 15px;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+        
+        .article-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.85rem;
+            color: #999;
+            border-top: 1px solid #f0f0f0;
+            padding-top: 15px;
+        }
+        
+        .article-author {
+            font-weight: 500;
+            color: #667eea;
+        }
+        
+        .article-date {
+            opacity: 0.8;
+        }
+        
+        .no-articles {
+            text-align: center;
+            color: #999;
+            font-style: italic;
+            padding: 40px;
+            background: #f9f9f9;
+            border-radius: 10px;
+        }
+        
+        .footer {
+            background: #f8f9fa;
+            padding: 30px;
+            text-align: center;
+            color: #666;
+            border-top: 1px solid #e0e0e0;
+        }
+        
+        .footer p {
+            margin-bottom: 10px;
+        }
+        
+        .footer .timestamp {
+            font-weight: 600;
+            color: #333;
+        }
+        
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2rem;
+            }
+            
+            .stats {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .content {
+                padding: 20px;
+            }
+            
+            .articles-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .site-header {
+                flex-direction: column;
+                text-align: center;
+                gap: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🚀 Tech News Scraping Results</h1>
+            <div class="subtitle">Latest articles from top technology news sources</div>
+            <div class="stats">
+                <div class="stat-item">
+                    <span class="stat-number">20</span>
+                    <span class="stat-label">Total Articles</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">10</span>
+                    <span class="stat-label">Sources</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">22:02</span>
+                    <span class="stat-label">Generated</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="content">
+
+            <div class="site-section">
+                <div class="site-header">
+                    <div class="site-icon">T</div>
+                    <h2 class="site-name">Techcrunch</h2>
+                    <div class="article-count">5 articles</div>
+                </div>
+<div class="articles-grid">
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://techcrunch.com/2025/08/26/the-wait-is-almost-over-the-2025-startup-battlefield-200-list-drops-tomorrow/" target="_blank" rel="noopener noreferrer">
+                                The wait is almost over: The 2025 Startup Battlefield 200 list drops tomorrow
+                            </a>
+                        </h3>
+                        <div class="article-summary">No summary available.</div>
+                        <div class="article-meta">
+                            <span class="article-author">By Isabelle Johannessen</span>
+                            <span class="article-date">Aug 26, 2025 at 22:01</span>
+                        </div>
+                    </div>
+
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://techcrunch.com/2025/08/26/apple-is-holding-its-iphone-17-event-on-september-9/" target="_blank" rel="noopener noreferrer">
+                                Apple is holding its iPhone 17 event on September 9
+                            </a>
+                        </h3>
+                        <div class="article-summary">No summary available.</div>
+                        <div class="article-meta">
+                            <span class="article-author">By Ivan Mehta</span>
+                            <span class="article-date">Aug 26, 2025 at 22:01</span>
+                        </div>
+                    </div>
+
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://techcrunch.com/2025/08/26/after-falling-behind-in-generative-ai-ibm-and-amd-look-to-quantum-for-an-edge/" target="_blank" rel="noopener noreferrer">
+                                After falling behind in generative AI, IBM and AMD look to quantum for an edge
+                            </a>
+                        </h3>
+                        <div class="article-summary">No summary available.</div>
+                        <div class="article-meta">
+                            <span class="article-author">By Rebecca Bellan</span>
+                            <span class="article-date">Aug 26, 2025 at 22:01</span>
+                        </div>
+                    </div>
+
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://techcrunch.com/2025/08/26/google-translate-takes-on-duolingo-with-new-language-learning-tools/" target="_blank" rel="noopener noreferrer">
+                                Google Translate takes on Duolingo with new language learning tools
+                            </a>
+                        </h3>
+                        <div class="article-summary">No summary available.</div>
+                        <div class="article-meta">
+                            <span class="article-author">By Aisha Malik</span>
+                            <span class="article-date">Aug 26, 2025 at 22:01</span>
+                        </div>
+                    </div>
+
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://techcrunch.com/2025/08/26/youtubes-hype-feature-that-boosts-smaller-creators-launches-globally/" target="_blank" rel="noopener noreferrer">
+                                YouTube’s ‘Hype’ feature that boosts smaller creators launches globally
+                            </a>
+                        </h3>
+                        <div class="article-summary">No summary available.</div>
+                        <div class="article-meta">
+                            <span class="article-author">By Sarah Perez</span>
+                            <span class="article-date">Aug 26, 2025 at 22:01</span>
+                        </div>
+                    </div>
+</div></div>
+            <div class="site-section">
+                <div class="site-header">
+                    <div class="site-icon">T</div>
+                    <h2 class="site-name">Theverge</h2>
+                    <div class="article-count">3 articles</div>
+                </div>
+<div class="articles-grid">
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://www.theverge.com/2024/9/20/24249294/verge-deals-newsletter-subscribe-tech-discounts" target="_blank" rel="noopener noreferrer">
+                                Verge Deals
+                            </a>
+                        </h3>
+                        <div class="article-summary">No summary available.</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Aug 26, 2025 at 22:01</span>
+                        </div>
+                    </div>
+
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://www.cnbc.com/2024/07/30/perplexity-ai-to-share-revenue-with-publishers-after-plagiarism-accusations.html" target="_blank" rel="noopener noreferrer">
+                                July 2024
+                            </a>
+                        </h3>
+                        <div class="article-summary">No summary available.</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Aug 26, 2025 at 22:01</span>
+                        </div>
+                    </div>
+
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://www.theverge.com/2024/11/4/24288014/fortnite-chapter-2-remix-snoop-dogg-times-square-music" target="_blank" rel="noopener noreferrer">
+                                the latest musical act to joinFortnite’s battle royale
+                            </a>
+                        </h3>
+                        <div class="article-summary">No summary available.</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Aug 26, 2025 at 22:01</span>
+                        </div>
+                    </div>
+</div></div>
+            <div class="site-section">
+                <div class="site-header">
+                    <div class="site-icon">W</div>
+                    <h2 class="site-name">Wired</h2>
+                    <div class="article-count">3 articles</div>
+                </div>
+<div class="articles-grid">
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://www.wired.com/most-recent/" target="_blank" rel="noopener noreferrer">
+                                Most Recent
+                            </a>
+                        </h3>
+                        <div class="article-summary">No summary available.</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Aug 26, 2025 at 22:01</span>
+                        </div>
+                    </div>
+
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://www.wired.com/v2/offers/wir_edit_hardcoded?source=Site_0_HCL_WIR_EDIT_HARDCODED_HOMEPAGE_MODULE_0_GLOBAL_JULY_2025_NEW_OFFER_ZZ" target="_blank" rel="noopener noreferrer">
+                                Subscriber Exclusives
+                            </a>
+                        </h3>
+                        <div class="article-summary">No summary available.</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Aug 26, 2025 at 22:01</span>
+                        </div>
+                    </div>
+
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://www.wired.com/newsletter/classics" target="_blank" rel="noopener noreferrer">
+                                WIRED Classics
+                            </a>
+                        </h3>
+                        <div class="article-summary">No summary available.</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Aug 26, 2025 at 22:01</span>
+                        </div>
+                    </div>
+</div></div>
+            <div class="site-section">
+                <div class="site-header">
+                    <div class="site-icon">A</div>
+                    <h2 class="site-name">Arstechnica</h2>
+                    <div class="article-count">5 articles</div>
+                </div>
+<div class="articles-grid">
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://arstechnica.com/information-technology/2025/08/with-ai-chatbots-big-tech-is-moving-fast-and-breaking-people/" target="_blank" rel="noopener noreferrer">
+                                With AI chatbots, Big Tech is moving fast and breaking people
+                            </a>
+                        </h3>
+                        <div class="article-summary">Why AI chatbots validate grandiose fantasies about revolutionary discoveries that don't exist.</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Aug 26, 2025 at 22:01</span>
+                        </div>
+                    </div>
+
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://arstechnica.com/ai/2025/08/google-improves-gemini-ai-image-editing-with-nano-banana-model/" target="_blank" rel="noopener noreferrer">
+                                Google improves Gemini AI image editing with “nano banana” model
+                            </a>
+                        </h3>
+                        <div class="article-summary">Gemini 2.5 Flash Image is currently atop LMArena's image editing leaderboard.</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Aug 26, 2025 at 22:01</span>
+                        </div>
+                    </div>
+
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://arstechnica.com/gadgets/2025/08/framework-laptop-16-update-brings-nvidia-geforce-to-the-modular-gaming-laptop/" target="_blank" rel="noopener noreferrer">
+                                Framework Laptop 16 update brings Nvidia GeForce to the modular gaming laptop
+                            </a>
+                        </h3>
+                        <div class="article-summary">Older Ryzen 7040-based model will stick around at $1,299 as a lower-end option.</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Aug 26, 2025 at 22:01</span>
+                        </div>
+                    </div>
+
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://arstechnica.com/science/2025/08/physics-of-why-belgian-beer-foam-is-so-stable/" target="_blank" rel="noopener noreferrer">
+                                Scientists unlock secret to thick, stable beer foams
+                            </a>
+                        </h3>
+                        <div class="article-summary">Triple-fermented Belgian beers have the longest-lasting foam; single-fermented lagers have the shortest.</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Aug 26, 2025 at 22:01</span>
+                        </div>
+                    </div>
+
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://arstechnica.com/science/2025/08/googles-ai-model-just-nailed-the-forecast-for-the-strongest-atlantic-storm-this-year/" target="_blank" rel="noopener noreferrer">
+                                Google’s AI model just nailed the forecast for the strongest Atlantic storm this year
+                            </a>
+                        </h3>
+                        <div class="article-summary">If they improve further, AI weather models may very well become the gold standard.</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Aug 26, 2025 at 22:01</span>
+                        </div>
+                    </div>
+</div></div>
+            <div class="site-section">
+                <div class="site-header">
+                    <div class="site-icon">Z</div>
+                    <h2 class="site-name">Zdnet</h2>
+                    <div class="article-count">5 articles</div>
+                </div>
+<div class="articles-grid">
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://www.zdnet.com/article/everything-announced-at-made-by-google-2025-pixel-10-pro-fold-watch-4-and-more/" target="_blank" rel="noopener noreferrer">
+                                Everything announced at Made by Google 2025
+                            </a>
+                        </h3>
+                        <div class="article-summary">No summary available.</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Aug 26, 2025 at 22:01</span>
+                        </div>
+                    </div>
+
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://www.zdnet.com/article/5-ai-features-on-the-pixel-10-that-google-thinks-will-win-you-over-including-the-fold/" target="_blank" rel="noopener noreferrer">
+                                5 AI Features on the Pixel 10 that Google thinks will win you over
+                            </a>
+                        </h3>
+                        <div class="article-summary">No summary available.</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Aug 26, 2025 at 22:01</span>
+                        </div>
+                    </div>
+
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://www.zdnet.com/article/should-you-upgrade-to-pixel-10-pro-heres-how-it-compares-to-older-google-flagships/" target="_blank" rel="noopener noreferrer">
+                                Google Pixel 10 Pro vs. every older model
+                            </a>
+                        </h3>
+                        <div class="article-summary">No summary available.</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Aug 26, 2025 at 22:01</span>
+                        </div>
+                    </div>
+
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://www.zdnet.com/article/google-pixel-10-pro-vs-iphone-16-pro-ive-tried-both-handsets-and-its-pretty-dang-close/" target="_blank" rel="noopener noreferrer">
+                                Google Pixel 10 Pro vs. iPhone 16 Pro
+                            </a>
+                        </h3>
+                        <div class="article-summary">No summary available.</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Aug 26, 2025 at 22:01</span>
+                        </div>
+                    </div>
+
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://www.zdnet.com/article/pixel-watch-4-vs-apple-watch-series-10-i-tested-both-and-heres-how-google-wins/" target="_blank" rel="noopener noreferrer">
+                                Google Pixel Watch 4 vs. Apple Watch Series 10
+                            </a>
+                        </h3>
+                        <div class="article-summary">No summary available.</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Aug 26, 2025 at 22:01</span>
+                        </div>
+                    </div>
+</div></div>
+            <div class="site-section">
+                <div class="site-header">
+                    <div class="site-icon">T</div>
+                    <h2 class="site-name">Thenextweb</h2>
+                    <div class="article-count">4 articles</div>
+                </div>
+<div class="articles-grid">
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://thenextweb.com/news/hot-crazy-matrix-investors-tech-startups" target="_blank" rel="noopener noreferrer">
+                                The Hot Crazy Matrix explains why investors get tech deals wrong
+                            </a>
+                        </h3>
+                        <div class="article-summary">No summary available.</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Aug 26, 2025 at 22:01</span>
+                        </div>
+                    </div>
+
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://thenextweb.com/news/how-vibe-coding-will-transform-enterprise" target="_blank" rel="noopener noreferrer">
+                                Vibe coding is transforming software. Enterprise is the next frontier
+                            </a>
+                        </h3>
+                        <div class="article-summary">No summary available.</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Aug 26, 2025 at 22:01</span>
+                        </div>
+                    </div>
+
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://thenextweb.com/news/europe-space-tech-data-buyers" target="_blank" rel="noopener noreferrer">
+                                European space tech has data to sell — but where are the buyers?
+                            </a>
+                        </h3>
+                        <div class="article-summary">No summary available.</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Aug 26, 2025 at 22:01</span>
+                        </div>
+                    </div>
+
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://thenextweb.com/news/swedish-starlink-alternative-ru1-military-communications" target="_blank" rel="noopener noreferrer">
+                                Swedish startup unveils Starlink alternative — that Musk can’t switch off
+                            </a>
+                        </h3>
+                        <div class="article-summary">No summary available.</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Aug 26, 2025 at 22:01</span>
+                        </div>
+                    </div>
+</div></div>
+            <div class="site-section">
+                <div class="site-header">
+                    <div class="site-icon">G</div>
+                    <h2 class="site-name">Gizmodo</h2>
+                    <div class="article-count">5 articles</div>
+                </div>
+<div class="articles-grid">
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://gizmodo.com/openai-makes-a-play-for-healthcare-2000648210" target="_blank" rel="noopener noreferrer">
+                                12:14 PMOpenAI Makes a Play for HealthcareEce Yildirim
+                            </a>
+                        </h3>
+                        <div class="article-summary">Ece Yildirim</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Aug 26, 2025 at 22:02</span>
+                        </div>
+                    </div>
+
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://gizmodo.com/heres-when-you-can-skip-work-for-the-iphone-17-launch-event-2000647461" target="_blank" rel="noopener noreferrer">
+                                12:05 PMHere’s When You Can Skip Work for the iPhone 17 Launch EventRaymond Wong
+                            </a>
+                        </h3>
+                        <div class="article-summary">Raymond Wong</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Aug 26, 2025 at 22:02</span>
+                        </div>
+                    </div>
+
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://gizmodo.com/baahubali-rerelease-ss-rajamouli-rrr-trailer-release-date-2000647912" target="_blank" rel="noopener noreferrer">
+                                12:00 PMThe Director of ‘RRR’ Is Pulling a ‘Kill Bill’ With Another Fantasy EpicGermain Lussier
+                            </a>
+                        </h3>
+                        <div class="article-summary">Germain Lussier</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Aug 26, 2025 at 22:02</span>
+                        </div>
+                    </div>
+
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://gizmodo.com/apple-may-take-airpods-pro-3-beyond-audio-2000648180" target="_blank" rel="noopener noreferrer">
+                                11:45 AMApple May Take AirPods Pro 3 Beyond AudioJames Pero
+                            </a>
+                        </h3>
+                        <div class="article-summary">James Pero</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Aug 26, 2025 at 22:02</span>
+                        </div>
+                    </div>
+
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://gizmodo.com/study-sex-education-in-the-u-s-is-a-complete-joke-2000648182" target="_blank" rel="noopener noreferrer">
+                                11:40 AMStudy: Sex Education in the U.S. Is a Complete JokeEd Cara
+                            </a>
+                        </h3>
+                        <div class="article-summary">Ed Cara</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Aug 26, 2025 at 22:02</span>
+                        </div>
+                    </div>
+</div></div>
+            <div class="site-section">
+                <div class="site-header">
+                    <div class="site-icon">C</div>
+                    <h2 class="site-name">Cnet</h2>
+                    <div class="article-count">5 articles</div>
+                </div>
+<div class="articles-grid">
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://www.cnet.com/tech/services-and-software/best-vpn/" target="_blank" rel="noopener noreferrer">
+                                Here Are the 5 Best VPNs in 2025
+                            </a>
+                        </h3>
+                        <div class="article-summary">No summary available.</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Aug 26, 2025 at 22:02</span>
+                        </div>
+                    </div>
+
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://www.cnet.com/tech/computing/best-laptop/" target="_blank" rel="noopener noreferrer">
+                                Best Laptops for 2025
+                            </a>
+                        </h3>
+                        <div class="article-summary">No summary available.</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Aug 26, 2025 at 22:02</span>
+                        </div>
+                    </div>
+
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://www.cnet.com/tech/home-entertainment/best-tv/" target="_blank" rel="noopener noreferrer">
+                                These Are the Best TVs in 2025
+                            </a>
+                        </h3>
+                        <div class="article-summary">No summary available.</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Aug 26, 2025 at 22:02</span>
+                        </div>
+                    </div>
+
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://www.cnet.com/health/sleep/best-mattresses/" target="_blank" rel="noopener noreferrer">
+                                Best Mattresses You Can Buy in 2025
+                            </a>
+                        </h3>
+                        <div class="article-summary">No summary available.</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Aug 26, 2025 at 22:02</span>
+                        </div>
+                    </div>
+
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://www.cnet.com/health/nutrition/best-meal-kit-delivery-service/" target="_blank" rel="noopener noreferrer">
+                                Best Meal Delivery Services of 2025
+                            </a>
+                        </h3>
+                        <div class="article-summary">No summary available.</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Aug 26, 2025 at 22:02</span>
+                        </div>
+                    </div>
+</div></div>
+            <div class="site-section">
+                <div class="site-header">
+                    <div class="site-icon">T</div>
+                    <h2 class="site-name">Techradar</h2>
+                    <div class="article-count">4 articles</div>
+                </div>
+<div class="articles-grid">
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://www.techradar.com/coupons" target="_blank" rel="noopener noreferrer">
+                                Coupons
+                            </a>
+                        </h3>
+                        <div class="article-summary">Sign up for breaking news, reviews, opinion, top tech deals, and more.</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Aug 26, 2025 at 22:02</span>
+                        </div>
+                    </div>
+
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://www.techradar.com/news/how-we-test" target="_blank" rel="noopener noreferrer">
+                                More about how we test
+                            </a>
+                        </h3>
+                        <div class="article-summary">You need to know that the device or service you’re about to spend money on works as advertised - and that it works in the real world.</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Aug 26, 2025 at 22:02</span>
+                        </div>
+                    </div>
+
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://www.techradar.com/how-to/contact-us" target="_blank" rel="noopener noreferrer">
+                                Meet the TechRadar team
+                            </a>
+                        </h3>
+                        <div class="article-summary">The TechRadar team has a life-long passion for the latest innovations – over 300 years of experience between us, in fact – and we’ve made it our mission to share that combined knowledge and expertise ...</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Aug 26, 2025 at 22:02</span>
+                        </div>
+                    </div>
+
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://www.techradar.com/news/about-us" target="_blank" rel="noopener noreferrer">
+                                More about TechRadar
+                            </a>
+                        </h3>
+                        <div class="article-summary">TechRadar was launched in January 2008 with the goal of helping regular people navigate the world of technology. It quickly grew to become the UK's biggest consumer technology site.</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Aug 26, 2025 at 22:02</span>
+                        </div>
+                    </div>
+</div></div>
+            <div class="site-section">
+                <div class="site-header">
+                    <div class="site-icon">D</div>
+                    <h2 class="site-name">Digitaltrends</h2>
+                    <div class="article-count">3 articles</div>
+                </div>
+<div class="articles-grid">
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://www.digitaltrends.com/movies/the-woman-in-cabin-10-trailer-netflix-movie-keira-knightley/" target="_blank" rel="noopener noreferrer">
+                                This thrilling Netflix movie enlists Keira Knightley to investigate a horrible tragedy
+                            </a>
+                        </h3>
+                        <div class="article-summary">No summary available.</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Aug 26, 2025 at 22:02</span>
+                        </div>
+                    </div>
+
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://www.digitaltrends.com/movies/the-woman-in-cabin-10-trailer-netflix-movie-keira-knightley/" target="_blank" rel="noopener noreferrer">
+                                This thrilling Netflix movie enlists Keira Knightley to investigate a horrible tragedy
+                            </a>
+                        </h3>
+                        <div class="article-summary">No summary available.</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Aug 26, 2025 at 22:02</span>
+                        </div>
+                    </div>
+
+                    <div class="article-card">
+                        <h3 class="article-title">
+                            <a href="https://www.digitaltrends.com/movies/the-woman-in-cabin-10-trailer-netflix-movie-keira-knightley/" target="_blank" rel="noopener noreferrer">
+                                This thrilling Netflix movie enlists Keira Knightley to investigate a horrible tragedy
+                            </a>
+                        </h3>
+                        <div class="article-summary">No summary available.</div>
+                        <div class="article-meta">
+                            <span class="article-author">Unknown Author</span>
+                            <span class="article-date">Aug 26, 2025 at 22:02</span>
+                        </div>
+                    </div>
+</div></div>
+        </div>
+        
+        <div class="footer">
+            <p>Generated by Tech News Scraper</p>
+            <p class="timestamp">Created on Tuesday, August 26, 2025 at 22:02:30</p>
+            <p>Click on article titles to read the full stories</p>
+        </div>
+    </div>
+</body>
+</html>
