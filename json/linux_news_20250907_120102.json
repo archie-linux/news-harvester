@@ -1,0 +1,448 @@
+{
+  "lwn.net": [
+    {
+      "title": "celebrated its\n28th birthday",
+      "url": "https://thisweek.gnome.org/posts/2025/08/twig-212/",
+      "summary": "Full Story(comments: 28)",
+      "published_date": "2025-09-07 11:58:00",
+      "source": "lwn.net",
+      "author": null
+    },
+    {
+      "title": "blog\npost",
+      "url": "https://www.bassi.io/articles/2025/08/03/governance-in-gnome/",
+      "summary": "Full Story(comments: 28)",
+      "published_date": "2025-09-07 11:58:00",
+      "source": "lwn.net",
+      "author": null
+    },
+    {
+      "title": "announced",
+      "url": "https://blog.mozilla.org/futurereleases/2025/09/05/firefox-32-bit-linux-support-to-end-in-2026/",
+      "summary": "",
+      "published_date": "2025-09-07 11:58:00",
+      "source": "lwn.net",
+      "author": null
+    },
+    {
+      "title": "Version\n2025.9",
+      "url": "https://www.home-assistant.io/blog/2025/09/03/release-20259/",
+      "summary": "Comments (none posted)",
+      "published_date": "2025-09-07 11:58:00",
+      "source": "lwn.net",
+      "author": null
+    }
+  ],
+  "phoronix.com": [
+    {
+      "title": "Linux 6.17 Lands Fixes For Upcoming Rust 1.91",
+      "url": "https://www.phoronix.com/news/Linux-6.17-Rust-1.91",
+      "summary": "Coming in today as the Rust \"fixes\" ahead of tomorrow's Linux 6.17-rc5 release is adjusting support for the upcoming Rust 1.91 compiler release.",
+      "published_date": "2025-09-07 11:58:05",
+      "source": "phoronix.com",
+      "author": null
+    },
+    {
+      "title": "Debian 13.1 Released With An Initial Batch Of Fixes",
+      "url": "https://www.phoronix.com/news/Debian-13.1-Released",
+      "summary": "Following the release of Debian 13.0 \"Trixie\" nearly one month ago to the day, Debian 13.1 is out today with an initial batch of bug fixes and security updates.",
+      "published_date": "2025-09-07 11:58:05",
+      "source": "phoronix.com",
+      "author": null
+    },
+    {
+      "title": "Rust Coreutils 0.2 Released With \"Massive\" Performance Gains, Production-Ready Ubuntu Support",
+      "url": "https://www.phoronix.com/news/Rust-Coreutils-0.2",
+      "summary": "The uutils project today released version 0.2 of the Rust Coreutils as their alternative to GNU Coreutils written in the Rust programming language. This release comes as Ubuntu 25.10 prepares to make ...",
+      "published_date": "2025-09-07 11:58:05",
+      "source": "phoronix.com",
+      "author": null
+    },
+    {
+      "title": "KDE Linux Enters Alpha As Reference Linux Distribution For The KDE Desktop",
+      "url": "https://www.phoronix.com/news/KDE-Linux-Alpha",
+      "summary": "As an exciting announcement out of the KDE Akademy 2025 conference kicking off in Berlin, Germany... The KDE Linux distribution is now in alpha! This is their in-house reference Linux distribution for...",
+      "published_date": "2025-09-07 11:58:05",
+      "source": "phoronix.com",
+      "author": null
+    }
+  ],
+  "linuxtoday.com": [
+    {
+      "title": "Komodo 1.19 Build and Deploy Tool Brings New CLI, Action Arguments",
+      "url": "https://www.linuxtoday.com/blog/komodo-1-19-build-and-deploy-tool-brings-new-cli-action-arguments/",
+      "summary": "",
+      "published_date": "2025-09-07 11:58:12",
+      "source": "linuxtoday.com",
+      "author": null
+    },
+    {
+      "title": "HTTP 308 Error – What It Is and How to Fix It",
+      "url": "https://www.linuxtoday.com/blog/http-308-error-what-it-is-and-how-to-fix-it/",
+      "summary": "",
+      "published_date": "2025-09-07 11:58:12",
+      "source": "linuxtoday.com",
+      "author": null
+    },
+    {
+      "title": "Portainer 2.33 LTS: New Branding, Helm Overhaul, and Observability Preview",
+      "url": "https://www.linuxtoday.com/blog/portainer-2-33-lts-new-branding-helm-overhaul-and-observability-preview/",
+      "summary": "",
+      "published_date": "2025-09-07 11:58:12",
+      "source": "linuxtoday.com",
+      "author": null
+    },
+    {
+      "title": "Volla Phone Quintus Running Ubuntu Touch: Introduction to the Series",
+      "url": "https://www.linuxtoday.com/blog/volla-phone-quintus-running-ubuntu-touch-introduction-to-the-series/",
+      "summary": "",
+      "published_date": "2025-09-07 11:58:12",
+      "source": "linuxtoday.com",
+      "author": null
+    },
+    {
+      "title": "Linuxiac Weekly Wrap-Up: Week 34 (Aug 18 – 24, 2025)",
+      "url": "https://www.linuxtoday.com/blog/linuxiac-weekly-wrap-up-week-34-aug-18-24-2025/",
+      "summary": "",
+      "published_date": "2025-09-07 11:58:12",
+      "source": "linuxtoday.com",
+      "author": "September 5, 2025"
+    }
+  ],
+  "linuxjournal.com": [
+    {
+      "title": "Harnessing GitOps on Linux for Seamless, Git-First Infrastructure Management",
+      "url": "https://www.linuxjournal.com/content/harnessing-gitops-linux-seamless-git-first-infrastructure-management",
+      "summary": "",
+      "published_date": "2025-09-07 11:58:22",
+      "source": "linuxjournal.com",
+      "author": "George Whittaker- September 4, 2025"
+    },
+    {
+      "title": "How DevOps Teams Are Redefining Reliability with NixOS and OSTree-Powered Linux",
+      "url": "https://www.linuxjournal.com/content/how-devops-teams-are-redefining-reliability-nixos-and-ostree-powered-linux",
+      "summary": "",
+      "published_date": "2025-09-07 11:58:22",
+      "source": "linuxjournal.com",
+      "author": "George Whittaker- September 2, 2025"
+    },
+    {
+      "title": "From Novice to Pro: Mastering Lightweight Linux for Your Kubernetes Projects",
+      "url": "https://www.linuxjournal.com/content/novice-pro-mastering-lightweight-linux-your-kubernetes-projects",
+      "summary": "",
+      "published_date": "2025-09-07 11:58:22",
+      "source": "linuxjournal.com",
+      "author": "George Whittaker- August 28, 2025"
+    },
+    {
+      "title": "Containers in 2025: Docker vs. Podman for Modern Developers",
+      "url": "https://www.linuxjournal.com/content/containers-2025-docker-vs-podman-modern-developers",
+      "summary": "",
+      "published_date": "2025-09-07 11:58:22",
+      "source": "linuxjournal.com",
+      "author": "George Whittaker- August 26, 2025"
+    },
+    {
+      "title": "Rising from the Ashes: How AlmaLinux and Rocky Linux Redefined the Post-CentOS Landscape",
+      "url": "https://www.linuxjournal.com/content/rising-ashes-how-almalinux-and-rocky-linux-redefined-post-centos-landscape",
+      "summary": "",
+      "published_date": "2025-09-07 11:58:22",
+      "source": "linuxjournal.com",
+      "author": "George Whittaker- August 21, 2025"
+    }
+  ],
+  "omgubuntu.co.uk": [
+    {
+      "title": "KDE Release First Alpha of its New Linux Distribution",
+      "url": "https://www.omgubuntu.co.uk/2025/09/kde-linux-immutable-distro-alpha-released",
+      "summary": "",
+      "published_date": "2025-09-07 11:58:27",
+      "source": "omgubuntu.co.uk",
+      "author": null
+    },
+    {
+      "title": "Raspberry Pi Launches Own-Brand 1TB SSD for $70/£67",
+      "url": "https://www.omgubuntu.co.uk/2025/09/raspberry-pi-1tb-official-m2-ssd",
+      "summary": "",
+      "published_date": "2025-09-07 11:58:27",
+      "source": "omgubuntu.co.uk",
+      "author": null
+    },
+    {
+      "title": "Firefox Adds CoPilot Chatbot, New Tab Widgets in Nightly Builds",
+      "url": "https://www.omgubuntu.co.uk/2025/09/firefox-adding-copilot-chatbot-features",
+      "summary": "",
+      "published_date": "2025-09-07 11:58:27",
+      "source": "omgubuntu.co.uk",
+      "author": null
+    },
+    {
+      "title": "Miracle-wm 0.7 Released, Completes IPC Implementation",
+      "url": "https://www.omgubuntu.co.uk/2025/09/miracle-wm-0-7-ipc-complete",
+      "summary": "",
+      "published_date": "2025-09-07 11:58:27",
+      "source": "omgubuntu.co.uk",
+      "author": null
+    },
+    {
+      "title": "GNOME 49 Restores Ability to Launch X11 Desktop Sessions",
+      "url": "https://www.omgubuntu.co.uk/2025/09/gnome-49-reenables-x11-session-support-in-gdm",
+      "summary": "",
+      "published_date": "2025-09-07 11:58:27",
+      "source": "omgubuntu.co.uk",
+      "author": null
+    }
+  ],
+  "linux.com": [
+    {
+      "title": "Q&A",
+      "url": "https://www.linux.com/qa/",
+      "summary": "",
+      "published_date": "2025-09-07 11:58:31",
+      "source": "linux.com",
+      "author": null
+    },
+    {
+      "title": "What is Linux?",
+      "url": "https://www.linux.com/what-is-linux/",
+      "summary": "",
+      "published_date": "2025-09-07 11:58:31",
+      "source": "linux.com",
+      "author": null
+    },
+    {
+      "title": "About Us",
+      "url": "https://www.linux.com/about/",
+      "summary": "",
+      "published_date": "2025-09-07 11:58:31",
+      "source": "linux.com",
+      "author": null
+    },
+    {
+      "title": "Q&A",
+      "url": "https://www.linux.com/qa/",
+      "summary": "",
+      "published_date": "2025-09-07 11:58:31",
+      "source": "linux.com",
+      "author": null
+    },
+    {
+      "title": "What is Linux?",
+      "url": "https://www.linux.com/what-is-linux/",
+      "summary": "",
+      "published_date": "2025-09-07 11:58:31",
+      "source": "linux.com",
+      "author": null
+    }
+  ],
+  "distrowatch.com": [
+    {
+      "title": "7.0.6",
+      "url": "https://distro.ibiblio.org/easyos/amd64/releases/excalibur/2025/7.0.6/easy-7.0.6-amd64.img",
+      "summary": "",
+      "published_date": "2025-09-07 11:58:47",
+      "source": "distrowatch.com",
+      "author": null
+    },
+    {
+      "title": "Besgnulinux 3-0",
+      "url": "https://fossforce.com/2025/09/besgnulinux-a-lightweight-fast-furious-and-stable-distro/",
+      "summary": "",
+      "published_date": "2025-09-07 11:58:47",
+      "source": "distrowatch.com",
+      "author": null
+    },
+    {
+      "title": "Tumbleweed Monthly Update - August 2025",
+      "url": "https://news.opensuse.org/2025/09/02/tw-monthly-update-august/",
+      "summary": "",
+      "published_date": "2025-09-07 11:58:47",
+      "source": "distrowatch.com",
+      "author": null
+    },
+    {
+      "title": "488",
+      "url": "https://linuxgamecast.com/2025/09/heavy-xfce-vibes/",
+      "summary": "",
+      "published_date": "2025-09-07 11:58:47",
+      "source": "distrowatch.com",
+      "author": null
+    },
+    {
+      "title": "release announcement",
+      "url": "https://pointieststick.com/2025/09/06/announcing-the-alpha-release-of-kde-linux/",
+      "summary": "Today I have something very exciting to share - the alpha release of KDE Linux, KDE's new operating system. KDE Linux is a new operating system intended for daily driving that showcases Plasma and KDE...",
+      "published_date": "2025-09-07 11:58:47",
+      "source": "distrowatch.com",
+      "author": null
+    }
+  ],
+  "linux.slashdot.org": [
+    {
+      "title": "Firefox Ending 32-bit Linux Support Next Year",
+      "url": "https://news.slashdot.org/story/25/09/05/199223/firefox-ending-32-bit-linux-support-next-year",
+      "summary": "",
+      "published_date": "2025-09-07 11:58:53",
+      "source": "linux.slashdot.org",
+      "author": null
+    },
+    {
+      "title": "Linus Torvalds Marks Bcachefs as Now 'Externally Maintained'",
+      "url": "https://linux.slashdot.org/story/25/08/29/2033242/linus-torvalds-marks-bcachefs-as-now-externally-maintained",
+      "summary": "",
+      "published_date": "2025-09-07 11:58:53",
+      "source": "linux.slashdot.org",
+      "author": null
+    },
+    {
+      "title": "Linux Turns 34",
+      "url": "https://linux.slashdot.org/story/25/08/25/2149223/linux-turns-34",
+      "summary": "",
+      "published_date": "2025-09-07 11:58:53",
+      "source": "linux.slashdot.org",
+      "author": null
+    },
+    {
+      "title": "Arch Linux Faces 'Ongoing' DDoS Attack",
+      "url": "https://linux.slashdot.org/story/25/08/23/0513229/arch-linux-faces-ongoing-ddos-attack",
+      "summary": "",
+      "published_date": "2025-09-07 11:58:53",
+      "source": "linux.slashdot.org",
+      "author": null
+    },
+    {
+      "title": "LibreOffice 25.8 Slams the Door On Windows 7 and 8.x",
+      "url": "https://tech.slashdot.org/story/25/08/23/0124202/libreoffice-258-slams-the-door-on-windows-7-and-8x",
+      "summary": "",
+      "published_date": "2025-09-07 11:58:53",
+      "source": "linux.slashdot.org",
+      "author": null
+    }
+  ],
+  "tecmint.com": [
+    {
+      "title": "Ebook: Introducing LFCS Certification Preparation eBook",
+      "url": "https://www.tecmint.com/lfcs-study-guide/",
+      "summary": "For years, certifications in the Information Technology world have helped job candidates demonstrate their skills to potential employers. In the",
+      "published_date": "2025-09-07 12:00:45",
+      "source": "tecmint.com",
+      "author": null
+    },
+    {
+      "title": "Boost Your Career with RHCSA & RHCE Certification eBooks",
+      "url": "https://www.tecmint.com/red-hat-rhcsa-rhce-exam-certification-book/",
+      "summary": "Dear friends, If you’re looking to advance your Linux career and stand out in the competitive IT job market, we",
+      "published_date": "2025-09-07 12:00:45",
+      "source": "tecmint.com",
+      "author": null
+    },
+    {
+      "title": "Asciinema – Record and Share Your Terminal Sessions in Linux",
+      "url": "https://www.tecmint.com/asciinema-record-terminal-sessions-in-linux/",
+      "summary": "Asciinema is an open-source terminal recording tool that makes it super easy to share your command-line work with others. Unlike",
+      "published_date": "2025-09-07 12:00:45",
+      "source": "tecmint.com",
+      "author": null
+    },
+    {
+      "title": "Internxt Lifetime Plan – Pay Once, Get Storage, VPN & Antivirus Forever (87% Off)",
+      "url": "https://www.tecmint.com/internxt-cloud-storage/",
+      "summary": "There are countless cloud storage platforms that provide safe and secure storage space for your files. Popular cloud storage apps",
+      "published_date": "2025-09-07 12:00:45",
+      "source": "tecmint.com",
+      "author": null
+    },
+    {
+      "title": "How to Check Exit Status for Command in Linux",
+      "url": "https://www.tecmint.com/check-command-exit-status-in-linux/",
+      "summary": "When working on a Linux system, every command you run returns a status code (also called an exit status or",
+      "published_date": "2025-09-07 12:00:45",
+      "source": "tecmint.com",
+      "author": null
+    }
+  ],
+  "unixmen.com": [
+    {
+      "title": "Home",
+      "url": "https://www.unixmen.com/",
+      "summary": "",
+      "published_date": "2025-09-07 12:00:50",
+      "source": "unixmen.com",
+      "author": null
+    },
+    {
+      "title": "Contact Us",
+      "url": "https://www.unixmen.com/contact-us/",
+      "summary": "",
+      "published_date": "2025-09-07 12:00:50",
+      "source": "unixmen.com",
+      "author": null
+    },
+    {
+      "title": "About Us",
+      "url": "https://www.unixmen.com/about-us/",
+      "summary": "",
+      "published_date": "2025-09-07 12:00:50",
+      "source": "unixmen.com",
+      "author": null
+    },
+    {
+      "title": "Advertising on Unixmen",
+      "url": "https://www.unixmen.com/advertising/",
+      "summary": "",
+      "published_date": "2025-09-07 12:00:50",
+      "source": "unixmen.com",
+      "author": null
+    },
+    {
+      "title": "Become a Contributor",
+      "url": "https://www.unixmen.com/work-for-us/",
+      "summary": "",
+      "published_date": "2025-09-07 12:00:50",
+      "source": "unixmen.com",
+      "author": null
+    }
+  ],
+  "xmodulo.com": [
+    {
+      "title": "What are useful systemd commandsLast updated on March 17, 2023 by Dan Nanni",
+      "url": "https://www.xmodulo.com/useful-systemd-commands.html",
+      "summary": "",
+      "published_date": "2025-09-07 12:00:57",
+      "source": "xmodulo.com",
+      "author": null
+    },
+    {
+      "title": "How to include C++ code in C programLast updated on March 2, 2023 by Dan Nanni",
+      "url": "https://www.xmodulo.com/include-cpp-code-c-program.html",
+      "summary": "",
+      "published_date": "2025-09-07 12:00:57",
+      "source": "xmodulo.com",
+      "author": null
+    },
+    {
+      "title": "In Makefile, what does \"$<\" mean?",
+      "url": "https://www.xmodulo.com/makefile-special-variable.html",
+      "summary": "",
+      "published_date": "2025-09-07 12:00:57",
+      "source": "xmodulo.com",
+      "author": null
+    },
+    {
+      "title": "How to get started with cloud-init",
+      "url": "https://www.xmodulo.com/cloud-init.html",
+      "summary": "",
+      "published_date": "2025-09-07 12:00:57",
+      "source": "xmodulo.com",
+      "author": null
+    },
+    {
+      "title": "How to schedule a periodic task with systemd",
+      "url": "https://www.xmodulo.com/schedule-periodic-task-systemd.html",
+      "summary": "",
+      "published_date": "2025-09-07 12:00:57",
+      "source": "xmodulo.com",
+      "author": null
+    }
+  ]
+}

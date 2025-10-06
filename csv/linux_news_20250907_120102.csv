@@ -1,0 +1,57 @@
+Title,URL,Summary,Published Date,Source,Author
+"celebrated its
+28th birthday",https://thisweek.gnome.org/posts/2025/08/twig-212/,Full Story(comments: 28),2025-09-07 11:58:00,lwn.net,
+"blog
+post",https://www.bassi.io/articles/2025/08/03/governance-in-gnome/,Full Story(comments: 28),2025-09-07 11:58:00,lwn.net,
+announced,https://blog.mozilla.org/futurereleases/2025/09/05/firefox-32-bit-linux-support-to-end-in-2026/,,2025-09-07 11:58:00,lwn.net,
+"Version
+2025.9",https://www.home-assistant.io/blog/2025/09/03/release-20259/,Comments (none posted),2025-09-07 11:58:00,lwn.net,
+Linux 6.17 Lands Fixes For Upcoming Rust 1.91,https://www.phoronix.com/news/Linux-6.17-Rust-1.91,"Coming in today as the Rust ""fixes"" ahead of tomorrow's Linux 6.17-rc5 release is adjusting support for the upcoming Rust 1.91 compiler release.",2025-09-07 11:58:05,phoronix.com,
+Debian 13.1 Released With An Initial Batch Of Fixes,https://www.phoronix.com/news/Debian-13.1-Released,"Following the release of Debian 13.0 ""Trixie"" nearly one month ago to the day, Debian 13.1 is out today with an initial batch of bug fixes and security updates.",2025-09-07 11:58:05,phoronix.com,
+"Rust Coreutils 0.2 Released With ""Massive"" Performance Gains, Production-Ready Ubuntu Support",https://www.phoronix.com/news/Rust-Coreutils-0.2,The uutils project today released version 0.2 of the Rust Coreutils as their alternative to GNU Coreutils written in the Rust programming language. This release comes as Ubuntu 25.10 prepares to make ...,2025-09-07 11:58:05,phoronix.com,
+KDE Linux Enters Alpha As Reference Linux Distribution For The KDE Desktop,https://www.phoronix.com/news/KDE-Linux-Alpha,"As an exciting announcement out of the KDE Akademy 2025 conference kicking off in Berlin, Germany... The KDE Linux distribution is now in alpha! This is their in-house reference Linux distribution for...",2025-09-07 11:58:05,phoronix.com,
+"Komodo 1.19 Build and Deploy Tool Brings New CLI, Action Arguments",https://www.linuxtoday.com/blog/komodo-1-19-build-and-deploy-tool-brings-new-cli-action-arguments/,,2025-09-07 11:58:12,linuxtoday.com,
+HTTP 308 Error – What It Is and How to Fix It,https://www.linuxtoday.com/blog/http-308-error-what-it-is-and-how-to-fix-it/,,2025-09-07 11:58:12,linuxtoday.com,
+"Portainer 2.33 LTS: New Branding, Helm Overhaul, and Observability Preview",https://www.linuxtoday.com/blog/portainer-2-33-lts-new-branding-helm-overhaul-and-observability-preview/,,2025-09-07 11:58:12,linuxtoday.com,
+Volla Phone Quintus Running Ubuntu Touch: Introduction to the Series,https://www.linuxtoday.com/blog/volla-phone-quintus-running-ubuntu-touch-introduction-to-the-series/,,2025-09-07 11:58:12,linuxtoday.com,
+"Linuxiac Weekly Wrap-Up: Week 34 (Aug 18 – 24, 2025)",https://www.linuxtoday.com/blog/linuxiac-weekly-wrap-up-week-34-aug-18-24-2025/,,2025-09-07 11:58:12,linuxtoday.com,"September 5, 2025"
+"Harnessing GitOps on Linux for Seamless, Git-First Infrastructure Management",https://www.linuxjournal.com/content/harnessing-gitops-linux-seamless-git-first-infrastructure-management,,2025-09-07 11:58:22,linuxjournal.com,"George Whittaker- September 4, 2025"
+How DevOps Teams Are Redefining Reliability with NixOS and OSTree-Powered Linux,https://www.linuxjournal.com/content/how-devops-teams-are-redefining-reliability-nixos-and-ostree-powered-linux,,2025-09-07 11:58:22,linuxjournal.com,"George Whittaker- September 2, 2025"
+From Novice to Pro: Mastering Lightweight Linux for Your Kubernetes Projects,https://www.linuxjournal.com/content/novice-pro-mastering-lightweight-linux-your-kubernetes-projects,,2025-09-07 11:58:22,linuxjournal.com,"George Whittaker- August 28, 2025"
+Containers in 2025: Docker vs. Podman for Modern Developers,https://www.linuxjournal.com/content/containers-2025-docker-vs-podman-modern-developers,,2025-09-07 11:58:22,linuxjournal.com,"George Whittaker- August 26, 2025"
+Rising from the Ashes: How AlmaLinux and Rocky Linux Redefined the Post-CentOS Landscape,https://www.linuxjournal.com/content/rising-ashes-how-almalinux-and-rocky-linux-redefined-post-centos-landscape,,2025-09-07 11:58:22,linuxjournal.com,"George Whittaker- August 21, 2025"
+KDE Release First Alpha of its New Linux Distribution,https://www.omgubuntu.co.uk/2025/09/kde-linux-immutable-distro-alpha-released,,2025-09-07 11:58:27,omgubuntu.co.uk,
+Raspberry Pi Launches Own-Brand 1TB SSD for $70/£67,https://www.omgubuntu.co.uk/2025/09/raspberry-pi-1tb-official-m2-ssd,,2025-09-07 11:58:27,omgubuntu.co.uk,
+"Firefox Adds CoPilot Chatbot, New Tab Widgets in Nightly Builds",https://www.omgubuntu.co.uk/2025/09/firefox-adding-copilot-chatbot-features,,2025-09-07 11:58:27,omgubuntu.co.uk,
+"Miracle-wm 0.7 Released, Completes IPC Implementation",https://www.omgubuntu.co.uk/2025/09/miracle-wm-0-7-ipc-complete,,2025-09-07 11:58:27,omgubuntu.co.uk,
+GNOME 49 Restores Ability to Launch X11 Desktop Sessions,https://www.omgubuntu.co.uk/2025/09/gnome-49-reenables-x11-session-support-in-gdm,,2025-09-07 11:58:27,omgubuntu.co.uk,
+Q&A,https://www.linux.com/qa/,,2025-09-07 11:58:31,linux.com,
+What is Linux?,https://www.linux.com/what-is-linux/,,2025-09-07 11:58:31,linux.com,
+About Us,https://www.linux.com/about/,,2025-09-07 11:58:31,linux.com,
+Q&A,https://www.linux.com/qa/,,2025-09-07 11:58:31,linux.com,
+What is Linux?,https://www.linux.com/what-is-linux/,,2025-09-07 11:58:31,linux.com,
+7.0.6,https://distro.ibiblio.org/easyos/amd64/releases/excalibur/2025/7.0.6/easy-7.0.6-amd64.img,,2025-09-07 11:58:47,distrowatch.com,
+Besgnulinux 3-0,https://fossforce.com/2025/09/besgnulinux-a-lightweight-fast-furious-and-stable-distro/,,2025-09-07 11:58:47,distrowatch.com,
+Tumbleweed Monthly Update - August 2025,https://news.opensuse.org/2025/09/02/tw-monthly-update-august/,,2025-09-07 11:58:47,distrowatch.com,
+488,https://linuxgamecast.com/2025/09/heavy-xfce-vibes/,,2025-09-07 11:58:47,distrowatch.com,
+release announcement,https://pointieststick.com/2025/09/06/announcing-the-alpha-release-of-kde-linux/,"Today I have something very exciting to share - the alpha release of KDE Linux, KDE's new operating system. KDE Linux is a new operating system intended for daily driving that showcases Plasma and KDE...",2025-09-07 11:58:47,distrowatch.com,
+Firefox Ending 32-bit Linux Support Next Year,https://news.slashdot.org/story/25/09/05/199223/firefox-ending-32-bit-linux-support-next-year,,2025-09-07 11:58:53,linux.slashdot.org,
+Linus Torvalds Marks Bcachefs as Now 'Externally Maintained',https://linux.slashdot.org/story/25/08/29/2033242/linus-torvalds-marks-bcachefs-as-now-externally-maintained,,2025-09-07 11:58:53,linux.slashdot.org,
+Linux Turns 34,https://linux.slashdot.org/story/25/08/25/2149223/linux-turns-34,,2025-09-07 11:58:53,linux.slashdot.org,
+Arch Linux Faces 'Ongoing' DDoS Attack,https://linux.slashdot.org/story/25/08/23/0513229/arch-linux-faces-ongoing-ddos-attack,,2025-09-07 11:58:53,linux.slashdot.org,
+LibreOffice 25.8 Slams the Door On Windows 7 and 8.x,https://tech.slashdot.org/story/25/08/23/0124202/libreoffice-258-slams-the-door-on-windows-7-and-8x,,2025-09-07 11:58:53,linux.slashdot.org,
+Ebook: Introducing LFCS Certification Preparation eBook,https://www.tecmint.com/lfcs-study-guide/,"For years, certifications in the Information Technology world have helped job candidates demonstrate their skills to potential employers. In the",2025-09-07 12:00:45,tecmint.com,
+Boost Your Career with RHCSA & RHCE Certification eBooks,https://www.tecmint.com/red-hat-rhcsa-rhce-exam-certification-book/,"Dear friends, If you’re looking to advance your Linux career and stand out in the competitive IT job market, we",2025-09-07 12:00:45,tecmint.com,
+Asciinema – Record and Share Your Terminal Sessions in Linux,https://www.tecmint.com/asciinema-record-terminal-sessions-in-linux/,Asciinema is an open-source terminal recording tool that makes it super easy to share your command-line work with others. Unlike,2025-09-07 12:00:45,tecmint.com,
+"Internxt Lifetime Plan – Pay Once, Get Storage, VPN & Antivirus Forever (87% Off)",https://www.tecmint.com/internxt-cloud-storage/,There are countless cloud storage platforms that provide safe and secure storage space for your files. Popular cloud storage apps,2025-09-07 12:00:45,tecmint.com,
+How to Check Exit Status for Command in Linux,https://www.tecmint.com/check-command-exit-status-in-linux/,"When working on a Linux system, every command you run returns a status code (also called an exit status or",2025-09-07 12:00:45,tecmint.com,
+Home,https://www.unixmen.com/,,2025-09-07 12:00:50,unixmen.com,
+Contact Us,https://www.unixmen.com/contact-us/,,2025-09-07 12:00:50,unixmen.com,
+About Us,https://www.unixmen.com/about-us/,,2025-09-07 12:00:50,unixmen.com,
+Advertising on Unixmen,https://www.unixmen.com/advertising/,,2025-09-07 12:00:50,unixmen.com,
+Become a Contributor,https://www.unixmen.com/work-for-us/,,2025-09-07 12:00:50,unixmen.com,
+"What are useful systemd commandsLast updated on March 17, 2023 by Dan Nanni",https://www.xmodulo.com/useful-systemd-commands.html,,2025-09-07 12:00:57,xmodulo.com,
+"How to include C++ code in C programLast updated on March 2, 2023 by Dan Nanni",https://www.xmodulo.com/include-cpp-code-c-program.html,,2025-09-07 12:00:57,xmodulo.com,
+"In Makefile, what does ""$<"" mean?",https://www.xmodulo.com/makefile-special-variable.html,,2025-09-07 12:00:57,xmodulo.com,
+How to get started with cloud-init,https://www.xmodulo.com/cloud-init.html,,2025-09-07 12:00:57,xmodulo.com,
+How to schedule a periodic task with systemd,https://www.xmodulo.com/schedule-periodic-task-systemd.html,,2025-09-07 12:00:57,xmodulo.com,
